@@ -1,0 +1,28 @@
+h1 {
+  color: #6f564c;
+}
+h2 {
+  color: #9d7a6b;
+}
+  body {
+  margin: 0; 
+  background-attachment: fixed;
+  color: #5c5549;
+  font-family: DSUI;
+}
+@font-face {
+    font-family: hibiya;
+    src:url(KH-Dot-Hibiya-32.ttf);
+}
+  
+
+
+ a {
+    color: #5c5549;
+  }
+
+  a:hover {
+    color: #f9a1ec;
+  }
+  
+ 
