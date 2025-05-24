@@ -24,4 +24,4 @@ jobs:
         cleanup: false
         neocities_supporter: false
         preview_before_deploy: true
-        dist_dir: . # deploy the root directory, or change to whatever folder contains your site files
+        dist_dir: public/neocities-shuripurin
