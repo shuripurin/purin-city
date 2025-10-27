@@ -156,13 +156,14 @@ box-shadow: 0px 0px 1px white, 1px 1px 0px #0000004d;
 
 /* stamp marquee container css  ***************************************************************************/
 #stamps {
-  padding-top: 0%;/* stamps top padding */
-  margin-left: 23%;/* stamps left margin */
-  margin-bottom:3%;/* stamps bottom margin */
-  width: 45%; /* stamps background width */
-  background-image: url("0427.jpg"); /* stamps background image */
-  overflow: hidden; /* hides content outside the box */
-  filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(1px 1px 0px #0000004d); /* stamps container shadow */
+  margin: 0 auto 3% auto;
+  width: auto; /* Remove fixed width */
+  max-width: 80%; /* Allow it to grow but not too wide */
+  display: flex;
+  justify-content: center;
+  background-image: url("0427.jpg");
+  overflow: hidden;
+  filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(1px 1px 0px #0000004d);
 }
 
 /* paper box css ******************************************************************************************/
@@ -332,8 +333,6 @@ box-shadow: 0px 0px 1px white, 1px 1px 0px #0000004d;
  
    <!-- paper clique box start here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
    
-             <div id= "girl">
-             <div style="width:90%;border:2px outset #dfe6e0; background: white;">
 
              <p>my cliques:</p>
  <!-- cliques start here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
@@ -347,9 +346,7 @@ box-shadow: 0px 0px 1px white, 1px 1px 0px #0000004d;
  
 <!-- cat clique -->        <a href="https://dust.kuchiki.net/" target="_blank"><img src="c1.gif" title="catastic!!"></a> <br><br>
          </div>
-         </div>
 
-          </div>
             <br>
          
           
