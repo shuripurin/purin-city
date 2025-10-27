@@ -13,5 +13,6 @@ jobs:
     - name: Deploy to Neocities
       uses: bcomnes/deploy-to-neocities@v1
       with:
-        api_token: ${{ secrets.NEOCITIES_API_KEY }        site_name: shuripurin
+        api_token: ${{ secrets.NEOCITIES_API_KEY }}
+        site_name: shuripurin
         dist_dir: public/neocities-shuripurin
