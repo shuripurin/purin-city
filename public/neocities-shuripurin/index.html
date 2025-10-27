@@ -314,6 +314,7 @@ box-shadow: 0px 0px 1px white, 1px 1px 0px #0000004d;
     <li><a href="#" class="option-link" data-option="opt5">blog </a></li>
     <li><a href="#" class="option-link" data-option="opt4">library</a></li>
     <li><a href="#" class="option-link" data-option="opt8">about </a></li>
+    <li><a href="https://shuripurin.neocities.org/projects" class="option-link">portfolio</a></li>
     <li><a href="https://neocities.org/site/shuripurin" class="option-link">profile</a></li>
     
 
@@ -704,5 +705,18 @@ box-shadow: 0px 0px 1px white, 1px 1px 0px #0000004d;
 <script> document.querySelectorAll('img').forEach(img => { img.setAttribute('loading', 'lazy'); }); </script>
 <!-- pages java script end here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
   </center>
+  <script>// Create sparkles when clicking anywhere
+document.addEventListener('click', function(e) {
+    const sparkle = document.createElement('img');
+    sparkle.src =  'stickers/angelpanda.gif'; 
+    sparkle.style.position = 'fixed';
+    sparkle.style.left = e.pageX + 'px';
+    sparkle.style.top = e.pageY + 'px';
+    sparkle.style.pointerEvents = 'none';
+    sparkle.style.zIndex = '10000';
+    document.body.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 1000);
+    
+});</script>
 </body>
 </html>
