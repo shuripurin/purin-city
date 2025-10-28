@@ -314,7 +314,7 @@ box-shadow: 0px 0px 1px white, 1px 1px 0px #0000004d;
     <li><a href="#" class="option-link" data-option="opt5">blog </a></li>
     <li><a href="#" class="option-link" data-option="opt4">library</a></li>
     <li><a href="#" class="option-link" data-option="opt8">about </a></li>
-    <li><a href="https://shuripurin.neocities.org/projects" class="option-link">portfolio</a></li>
+    <li><a href= "https://shuripurin.neocities.org/projects" class="option-link">portfolio</a></li>
     <li><a href="https://neocities.org/site/shuripurin" class="option-link">profile</a></li>
     
 
@@ -687,12 +687,17 @@ box-shadow: 0px 0px 1px white, 1px 1px 0px #0000004d;
 
   sections.forEach(section => section.style.display = 'none');
 
-  links.forEach(link => {
+ links.forEach(link => {
     link.addEventListener('click', function(e) {
-      e.preventDefault();
       const target = this.getAttribute('data-option');
-      sections.forEach(section => section.style.display = 'none');
-      document.querySelector(`.${target}`).style.display = 'block';
+      
+      // Only prevent default if it's an internal navigation link
+      if (target) {
+        e.preventDefault();
+        sections.forEach(section => section.style.display = 'none');
+        document.querySelector(`.${target}`).style.display = 'block';
+      }
+      // If no data-option, let the link work normally
     });
   });
 
