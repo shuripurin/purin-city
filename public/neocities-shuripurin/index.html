@@ -1,726 +1,554 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-
   <meta charset="UTF-8">
-  <title>purin city</title> <!-- title of website on tab-->
-   <link rel="icon" type="image" href="stickers/100kitty.gif"><!-- site icon on tab-->
-  <style>
-
-/* background css ***************************************************************************/
-
-body {
-  width: 100%;/* background width */
-  height: 100%; /* background height */
-  background-image: url("b15-bg-grid.gif"); /* background image */
-  background-repeat: repeat; /* makes the background image repeat itself*/
-}
-
-
-
-/* clover box css ***************************************************************************/
-
-/* Add to your CSS */
-[style*="overflow:scroll"] {
-  will-change: transform;
-  transform: translateZ(0);
-}
-
-.box12 {
-      margin: 1em 0;
-      width: 500px;
-    }
-
-    .u01 {
-      background: url(f-ue.gif) repeat-x;
-      height: 16px;
-      margin: 0 16px;
-    }
-
-    .s01 {
-      background: url(f-sita.gif) repeat-x;
-      height: 16px;
-      margin: 0 16px;
-    }
-
-    .box-top {
-      background-image: url(f-kado1.gif), url(f-kado2.gif);
-      background-position: top left, top right;
-      background-repeat: no-repeat, no-repeat;
-      height: 16px;
-    }
-
-    .box-center {
-      background-image: url(f-migi.gif), url(f-hidari.gif);
-      background-position: top right, top left;
-      background-repeat: repeat-y, repeat-y;
-    }
-
-    .box-inner {
-      background: #fff;
-      max-width: 100%; /* Ensures images scale down to fit the box */
-      overflow: scroll; /* Ensures content doesn't overflow the box */
-      margin: 0 16px;
-      height: 300px;
-    }
-
-    .box-bottom {
-      background-image: url(f-kado3.gif), url(f-kado4.gif);
-      background-position: top left, top right;
-      background-repeat: no-repeat, no-repeat;
-      height: 16px;
-    }
-
-/* box that contains all website content css ***************************************************************************/
-#container {
-  
-  padding-bottom: 1%;
-  width: 70%;
-  margin: 0% auto;
-  margin-top: 2%;
-  margin-bottom: 4%;
-   background: #f6f6f6 ; 
-  box-shadow: 0px 0px 1px white, 1px 1px 0px #0000004d;
-}
-
- content {
-  width: 99%;
-  height: 100%;
-  margin: 0% auto;
-box-shadow: 0px 0px 1px white, 1px 1px 0px #0000004d;
-}
-
-
-/* all inner containers css ***************************************************************************/
-#left, #right, #center {
-  display: inline-block; /* Key change: Make them inline-block */
-  vertical-align: top; /* Align them vertically at the top */
-  padding: 0% 0%;
-  margin-top: 0%;
-  background: #f6f6f6 ; 
-  box-shadow: 0px 0px 1px white, 1px 1px 0px #0000004d;
-}
-
-/* left inner container css ***************************************************************************/
-
-#left {
-  padding-bottom: 1%;
-  width: 21%;
-  margin-right: 1%;
-  margin-left: 1%;
-  float:left;
-  background-image: url("0427.jpg");
-
-}
-
-/* right inner container css ***************************************************************************/
-#right {
-  width: 23%;
-  margin-right: 1%;
-  padding-bottom:1%;
-  margin-left: 2%;
-  float:right;
-  background-image: url("0427.jpg");
-}
-
-
-/* angel box ***************************************************************************/
-#angel {
-  padding 0px;/* center padding bottom */
-  margin-top: 0%; /* center margin bottom*/
-  width: 170px;; /* ensure center spans full container width */
-  height: 130px;
-  border: ridge;
-  border-color:#ebf1fa;
-  margin-bottom: 20px;
-  overflow:hidden
-}
-
-/* button content boxes ***************************************************************************/
-#center {
-  padding-bottom: 3%;/* center padding bottom */
-  margin-bottom: 3%; /* center margin bottom*/
-  width: 50%; /* ensure center spans full container width */
-  /*background-repeat: repeat;*/
-  order: 1; /* ensure center is in the middle */
-  clear: both; /* force #center to start on a new line */
-}
-
-/* box for the paste-able button code css ***************************************************************************/
-#code {
-  background-color:#fff; /* code background color */
-  width: 40%; /* code width */
-  overflow:auto
-
-}
-
-/* stamp marquee container css  ***************************************************************************/
-#stamps {
-  margin: 0 auto 3% auto;
-  width: auto; /* Remove fixed width */
-  max-width: 80%; /* Allow it to grow but not too wide */
-  display: flex;
-  justify-content: center;
-  background-image: url("0427.jpg");
-  overflow: hidden;
-  filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(1px 1px 0px #0000004d);
-}
-
-/* paper box css ******************************************************************************************/
-#girl{
-  margin-top: 3%;
-  margin-bottom: 5%;
-  float:right;
-  width: 95%;
-  height: 20%;
-  background-image: white;
-  border-radius: 10px; /* Add rounded corners */
-  padding-bottom: 2%;
-  margin-right: 4%;
-  
-}
-  
-/* buttons css ***********************************************************************************************/
-.link-list {
-  list-style: none; /* Remove bullet points */
-  padding: 0;
-  margin: 0;
-  text-align: center; /* Center align the list */
-}
-
-.link-list li {
-  display: block; /* Display list items vertically */
-  margin: 10px 0; /* Add space between buttons */
-}
-
-.link-list a {
-  display: flex; /* Use flexbox */ 
-  justify-content: center; /* Center align the text horizontally */ 
-  display: block; /* Ensure the anchor takes up the full width */
-  width: 40%;  /*Set a fixed width for the buttons */
-  height:50%;
-  padding-bottom:6px;
-  padding-left:2px;
-  padding-right:2px;
-  padding-top: 1px; /* Add padding to make the buttons larger */
-  text-decoration: none; /* Remove underline from links */
-  /*background-image: url(""); /* Background image of the button */
-  color: #4e5052; /* Text color */
-  background-size: contain; /* Ensure the background image covers the button */
-  background-repeat: no-repeat; /* Prevent the background image from repeating */
-  text-align: center; /* Center align the text */
-  margin: 0 auto; /* Center the buttons horizontally */
-  line-height: 15px; 
-}
-
-.link-list a:hover {
-  background-color:  #f4edf5; /* Different background on hover */
-}
-
-/* cursor css ***************************************************************************/
-/* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/nature/nat-11/nat1028.ani), url(https://cur.cursors-4u.net/nature/nat-11/nat1028.gif), auto !important;} /* End https://www.cursors-4u.com */
-  </style>
-  
-  
-<!-- css ends here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
-<link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>shuripurin // purin.city</title>
+  <link rel="icon" type="image/gif" href="stickers/100kitty.gif">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- main container starts here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-        <div id="container">
-          <br>
- <!-- inner right container starts here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->         
-  <div id="right">
-          <center>
-          <div id="other">
-          <br>
-          <img src="Mwelcome.gif" width="40%;">
-          <br><br>
-          </div>
- <!-- blinkies start here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->   
+<div id="os-window">
 
-<br>
-<div id= "girl">
-  <div style="width:90%;border:2px outset #dfe6e0; height: 180px; background: white;overflow:scroll;">
-  <br>
-  scroll for blinkies<br>
-  <a href="https://www.glitter-graphics.com"><img src="http://dl4.glitter-graphics.net/pub/1399/1399854i8moqnl1z5.gif" width=11 height=10 border=0></a>
-  <br>
-<!-- kitty chan blinkie-->            <img src="blinkies/deq86e0-1a84b381-bc7f-417c-9953-564b77d08c63.gif"> <br>
-<!-- miku blinkie-->  <img src="blinkies/miku-fan.webp"><br>
-<!-- i love perfume blinkie-->      <img src="blinkies/perfumeblinkie.gif"><br>
-<!-- eva blinkie-->            <img src="blinkies/x24.gif"> <br>
-<!-- vocaloid blinkie-->      <img src="blinkies/vocaloid.gif"><br>
-<img src="blinkies/mypc.gif"><br>
- <!-- nintendogs blinkie-->     <img src="blinkies/70.gif"><br>
- <img src="blinkies/3xo1cq.gif"><br>
- <img src="blinkies/yu34jj.gif"><br>
- <img src="blinkies/x14.gif"><br>
-<a href="https://www.glitter-graphics.com"><img src="http://dl3.glitter-graphics.net/pub/2526/2526753yvxjzr7m5f.gif" width=150 height=20 border=0></a><br><a href="https://www.glitter-graphics.com" target=_blank></a>
-<a href="https://www.glitter-graphics.com"><img src="http://dl5.glitter-graphics.net/pub/3608/3608345r6l7gdjznr.gif" width=150 height=20 border=0></a><br><a href="https://www.glitter-graphics.com" target=_blank></a>
-  
-<!-- pc blinkie-->  <img src="blinkies/dep079d-d51606c8-8914-46ec-9998-92776cd4c54e.gif"><br>
-</div>
-  </div> 
- 
-<br>
-<a href="https://www.glitter-graphics.com"><img src="http://dl8.glitter-graphics.net/pub/43/43368io9mr07jyb.gif" width=138 height=140 border=0></a><br><a href="https://www.glitter-graphics.com" target=_blank></a>
-
-
-
-             
- <!-- paper box for link starts here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->  
- 
-  <div id= "girl">
-  <div style="width:90%;border:2px outset #dfe6e0; background: white;">
-         
-    <br>
-        <img src="stickers/angelpanda.gif" width="15%">
-        <br>
-       take a link home with you!
-       <br>
-       <br>
-     
-    <!-- my banner gif-->   <img src="purinbanner.gif">
-    
-   <!-- my code paster-->   
-<div id="code">
-  <xmp><a href="https://shuripurin.neocities.org/" target="_blank"><img src="https://shuripurin.neocities.org/purinbanner.gif"> </a> </xmp>
-  <br>
-  </div>
-  </div>
-  </div> 
-
-  </div>
-
- 
-   <!-- right box ends here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-
-   <!-- left box ends here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->   
-          <div id="left">
-          <center>
-
-  
- <!-- buttons start here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
- <div id= "girl">
-             
-  <br>
-          <ul class="link-list">
-
-    <li><a href="#" id="about-link" class="option-link" data-option="opt1">home</a></li>
-    <li><a href="#" class="option-link" data-option="opt2">links </a>  </li>
-    <li><a href="#" class="option-link" data-option="opt5">blog </a></li>
-    <li><a href="#" class="option-link" data-option="opt4">library</a></li>
-    <li><a href="#" class="option-link" data-option="opt8">about </a></li>
-    <li><a href="https://neocities.org/site/shuripurin" class="option-link">profile</a></li>
-    
-
-
-  </ul> 
-
- <!-- buttons end here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->   
-    
-<!-- wii ring start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-<br>
-<div style="width: 135px; /* <- Set any width you'd like! */">
-  <iframe
-    style="border: none; width: 100%"
-    src="https://neocities.jeith.com/wii-webring?site=https://shuripurin.neocities.org&variant=standard"></iframe>
-</div>  
- <!-- wii ring end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
- 
-   <!-- paper clique box start here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-   
-
-             <p>my cliques:</p>
- <!-- cliques start here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
- 
-
-
-<!-- hamtaro clique -->    <a href="http://www.chinako.net/hamster" target="_new"><img src="02.gif" border="0"></a>
-
-              <br>
-<!-- cafe rose clique -->  <a href="https://allyratworld.com/cafe/rose#join" target="_blank"><img src="88x31melo.png" title="cafe rose"></a><br>
- 
-<!-- cat clique -->        <a href="https://dust.kuchiki.net/" target="_blank"><img src="c1.gif" title="catastic!!"></a> <br><br>
-         </div>
-
-            <br>
-         
-          
-<div style="width:90%;border:2px outset #dfe6e0; background: white;">
-<br>
-   
-   <img src="stickers/tumblr_static_55p75kktz10ckw80wso4c8440.gif" width="100%">
-
- </div>
-              </center>
-                
-              </div>
-       
-        <center>
-<!-- center container start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->         
-          <div id="center">
-<!-- home start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
- <section class="jqueryOptions opt1">
-  <div id="content">
-             
-<center>
- <br><br>
-<div style="width:90%;border:2px outset #dfe6e0; background: white;">
-           
-            <p>
-        Hello, welcome to my personal website<br> I want to work on this website to utilize my coding skills <br> and to be able to have fun sharing it with the world. I will upload projects and such, but as of now this is a work in progress. <br>
-        THANKS TO EVERYONE FOR YOUR SUPPORT!  <br><img src="rosa3.gif">
-      </p> 
-   
-          </div>
-          </section>
-<!-- home end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-
-<!-- links start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-           <section class="jqueryOptions opt2">
-  <div id="content">
-  <div style="height:400px;width:95%;overflow:scroll;">
-  <br>
-<!-- material links start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->    
-  <div style="width:90%;border:2px outset #dfe6e0; background: white;">
-            <center>
-    <p><b>Material Links:</b></p>
-        <a href="http://cute.lolipop.jp/" target="_blank"><img src="links/hcb_88x31_003.gif"></a>
-        <a href="http://whimsical.heartette.net" target="_blank"><img src="links/whim.gif"></a>
-        <a href="https://foollovers.com/" target="_blank"><img src="links/foollovers8827.gif"></a>
-        <a href="http://tora7.ciao.jp/" target="_blank"><img src="links/tora7-b042.gif"></a>
-        <a href="http://bluedaisy.rdy.jp/bd/ "  target="_blank"><img src="links/bd1.gif"></a>
-        <a href="http://home.m07.itscom.net/pungum/index.html" target="_blank"><img src="links/banner2.gif"></a>
-        <a href="http://www.glitter-graphics.com" target="_blank" title='Myspace Graphics'><img src="http://dl3.glitter-graphics.net/pub/175/175903e9j385alj8.gif" width="20%" alt='myspace layouts, myspace codes, glitter graphics'></a>
-        <a href="https://www.fancyparts.com/" target="_blank"><img src="links/shop8831.gif"></a>
-        <a href="https://www.kabegamikan.com/" target="_blank"><img src="links/nya.gif"></a>
-        <a href="https://sozai.jpn.org/" target="_blank"><img src="links/jpn.gif"></a>
-        <a href="https://www.asterism-m.com/" target="_blank"><img src="links/asterism.gif"></a>
-        <a href="http://www.iriko34.com/" target="_blank"><img src="links/2007bana88-kuro.gif"></a>
-        <a href="https://pata2.jp/ " target="_blank"><img src="links/sky-banner7.gif"></a>
-        <a href="https://www.aoiweb.com/aoi2/index.html" target="_blank"><img src="links/bnraoi2.gif"></a>
-        <a href="http://www.first-moon.com/index.html" target="_blank"><img src="links/firstmoon_88bnr.gif"></a>
-        <a href="http://www.anne-box.com/" target="_blank"><img src="links/anne15.gif"></a>
-        <a href="https://www.schoolicons.com/" target="_blank"><img src="links/link_s.gif"></a>
-        <a href="https://www.web-style.co.jp/" target="_blank"><img src="links/webstyle_05.gif"></a>
-        <a href="http://kirakiraparts.web.fc2.com/" target="_blank"><img src="links/kira.gif"></a>
-        <a href="https://fc.ashrose.net/" target="_blank"><img src="links/bana200.gif"></a>
-        <a href="http://tiary.web.fc2.com/tiary.htm" target="_blank"><img src="links/tiary.gif"></a>
-        <a href="https://applehoney.michikusa.jp/index.html" target="_blank"><img src="links/apl.gif"></a>
-        <a href="https://graphic.neocities.org/" target="_blank"><img src="https://graphic.neocities.org/Button2.png"></a>
-        <a href="https://nukocities.neocities.org/" target="_blank"><img src="https://nukocities.neocities.org/img/nukocities.gif"></a>  
-        <a href="https://pixel-world.tumblr.com" target="_blank"><img src="https://64.media.tumblr.com/b35d3eb4420a7fead4b2a19159c7e591/tumblr_inline_rv2enc6iGT1qk1or3_500.png"></a>
-        <a href="http://www.usamimi.info/~labise/" target="_blank"><img src="links/labise-b-bn1.jpg"></a>
-        <a href="http://moko.pupu.jp/" target="_blank"><img src="links/mococoba007.gif"></a>
-        <a href="http://makipooh.fc2web.com/" target="_blank"><img src="links/banner-3.gif"></a>
-        <a href="http://www.oyone.org/" target="_blank"><img src="links/oyo1.gif"></a>
-        <a href="http://sozaiya405.chu.jp/" target="_blank"><img src="links/so.gif"></a>
-        <a href="http://www.pinkland.net/fairy.htm" target="_blank"><img src="links/pinkland.gif"></a>
-        <a href="https://www.mooncandy.net/rave/main.html" target="_blank"><img src="links/planet rave.gif"></a>
-        <a href="http://misa.phoophie.com/" target="_blank"><img src="links/misa.gif"></a>
-        <a href="http://www.sparklingice.net/dolls/" target="_blank"><img src="links/sparklingmedium61.gif"></a>  
-        <a href="http://www.mooncandy.net/stef/" target="_blank"><img src="links/marichancannelle1.gif"></a>
-        <a href="http://okashidoll.free.fr/" target="_blank"><img src="links/okashi.gif"></a>
-        <a href="http://www.mochidelicious.com" target="_blank"><img src="links/mochicookies.gif"></a>
-        <a href="https://pixelsafari.neocities.org/" target="_blank"><img src="links/pixelsafari.gif"></a>
-        <a href="http://nekojeta.fc2web.com/" target="_blank"><img src="links/or-8.gif"></a>
-        <a href="http://www5e.biglobe.ne.jp/~cep/" target="_blank"><img src="links/nbn2.gif"></a>
-        <a href="http://mooncat.official.jp/gothic-s.gif" target="_blank"><img src="links/gothic-s.gif"></a>
-        <a href="https://artwork.neocities.org/" target="_blank"><img src="links/artworkbuttonsanrio.gif"></a>    
-        <a href="https://www.animewallpapers.com/wallpapers/" target="_blank"><img src="links/animewallpapers.gif"></a>
-
-          </div>
-          <br>
-<!-- material links end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-
- <!-- neocities links start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->  
-<div style="width:90%;border:2px outset #dfe6e0; background: white;">
-    <p><b>Neocities Links:</b></p>
-      <a href="https://dataview.neocities.org/" target="_blank"><img src="links/banner.gif"></a>
-      <a href="https://rice.place/" target="_blank"><img src="https://rice.nekoweb.org/button/riceplace.png"></a>
-      <a href="https://kladovka.neocities.org/" target="_blank"><img src="links/kladovkabutton.png"></a>
-      <a href="https://poemdoll.neocities.org" target="_blank"><img src="https://i.imgur.com/6J58IeY.png" width= "15%;"></a>
-      <a href="https://dokode.moe/indexv3" target="_blank"><img src="links/dokodemobutton3.gif"></a>
-      <a href="https://zorrpu.neocities.org/" target="_blank"><img src="links/Zorp4 88x31.png"></a>
-      <a href="https://cocopie.neocities.org/" target="_blank"><img src="links/cocopie2.gif"></a>
-      <a href="https://swirl.neocities.org/" target="_blank"><img src="links/swirlbutton_01.gif"></a>
-      <a href="https://danppun.neocities.org" target="_blank"><img src="https://danppun.neocities.org/danppun_btn.png"></a>
-      <a href="https://kyu.neocities.org/" target="_blank"><img src="links/kyu.gif"></a>
-      <a href="https://rottenware.neocities.org/"><img src="https://rottenware.neocities.org/rotten banner.png"></a>
-      <a href="https://burgeritchi.neocities.org" target="_blank"><img src="https://files.catbox.moe/29hdqz.webp" width="88" height="31">
-      <a href="https://joyfulthought.neocities.org/"> <img src="links/webutton.gif" alt="joyfulthought"></a>
-      <a href="https://2cherrish.neocities.org/"><img src="https://file.garden/ZW0H9yEHZCM7d7rf/2cherrish%20stamp.gif"></a>
-      <a href="https://sunfishdreamworld.neocities.org/" target="_blank"><img src="links/sunfishdreamworld.gif"></a>
-      <a href="https://nalfae.neocities.org" target="_blank"><img src="https://nalfae.neocities.org/nalfaebutton.gif"></a>
-      <a href="https://hmln.neocities.org/" target="_blank"><img src="https://hmln.neocities.org/button.png"></a>
-            
-          </div>
-          <br>
-<!-- neocities links end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-<!-- pet links start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->   
- <div style="width:90%;border:2px outset #dfe6e0; background: white;">
-            <center>
-    <p><b>Cute Pet Links:</b></p>
-    <a href="http://myvitamin.nobody.jp/" target="_blank"><img src="links/bunner.gif"></a>
-      <a href="http://2shin.net/catlive/" target="_blank"><img src="links/nekostyle2.gif"></a>
-      <a href="http://tora7.ciao.jp/bob/pocha.html" target="_blank"><img src="links/df-banner.jpg"></a>
-      <a href="http://www.vesta.dti.ne.jp/%7Eisaka/" target="_blank"><img src="links/b31tama.gif"></a>
-      <a href="http://www7.plala.or.jp/nekojarashi/" target="_blank"><img src="links/70.gif"></a>
-      <a href="http://park3.wakwak.com/~ginpei-kato/" target="_blank"><img src="links/ban_gin-kato3.gif"></a>
-      <a href="http://www7.plala.or.jp/neco/cats/" target="_blank"><img src="links/nyankodouga.gif"></a>
-      <a href="http://nap.babymilk.jp/" target="_blank"><img src="links/nap.gif"></a>
-      <a href="http://www7a.biglobe.ne.jp/~nyans/" target="_blank"><img src="links/banaac.gif"></a>
-      <a href="http://www.gyaos-kingdom.com/" target="_blank"><img src="links/bnr_gyaos.gif" width="88" height="31"></a>
-      <a href=" http://bellmumu.chu.jp/" target="_blank"><img src="links/bellbena2.gif"></a>
-      <a href="https://plaza.rakuten.co.jp/tenkoro2/" target="_blank"><img src="links/1.gif"></a>
-
-            
-          </div>
-          <br>
-<!-- pet links end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
- <!-- artist links start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->  
-<div style="width:90%;border:2px outset #dfe6e0; background: white;">
-    <p><b>Artist Links:</b></p>
-      <a href="http://piclab.sakura.ne.jp/" target="_blank"><img src="links/psbana.gif"></a>
-      <a href="https://russia.sakura.ne.jp/" target="_blank"><img src="links/banner8.gif"></a>
-      <a href="http://www2.tba.t-com.ne.jp/kyanpisia/" target="_blank"><img src="links/kp.jpg"></a>
-      <a href="http://www12.wind.ne.jp/s15sakura/" target="_blank"><img src="links/wind.gif"></a>
-      <a href="http://frank-web.net/" target="_blank"><img src="links/frank-sozai-bn-16.gif"></a>
-      <a href="http://hakozumemikan.oboroduki.com/" target="_blank"><img src="links/hako.gif"></a>
-
-        
-          </div>
-          <br>
-<!-- artist links end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-<!-- other sites start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
- <div style="width:90%;border:2px outset #dfe6e0; background: white;">
-    
-   <p><b>Other Sites:</b></p>
-      <a href="https://oooeee.nekoweb.org" target="_blank"><img src="https://oooeee.nekoweb.org/img/misc/button.png"></a>
-      <a href="http://www.chinako.net/hamster/" target="_blank"><img src="links/hc02.gif"></a>
-      <a href="https://hamutaroko.tripod.com/" target="_blank"><img src="links/ham.gif"></a>
-      <a href="http://l-wings.jp/" target="_blank"><img src="links/banner3.png"></a>
-      <a href="http://web1.nazca.co.jp/hp/ppp/index2.html" target="_blank"><img src="links/ppp.GIF"></a>
-      <a href="http://dra-de.com" target="_blank"><img src="links/banner1.gif"></a>
-      <a href="https://www.broccoli.co.jp/dejiko/" target="_blank"><img src="links/digi_banner.gif"></a>
-      <a href="http://irurei.blog97.fc2.com/" target="_blank"><img src="links/nobanner.gif"></a>
-      <a href="http://sagapla.net/works/lovechu/fandisc.htm" target="_blank"><img src="links/nobanner.gif"></a>
-      <a href="http://www.pre-stage.jp/keychara/" target="_blank"><img src="links/key_bn06.gif"></a>
-      <a href="https://gameha.com/" target="_blank"><img src="links/gameha_m028.gif"></a>
-      <a href="http://dareka.gozaru.jp/" target="_blank"><img src="links/obanner.png"></a>
-      <a href="http://lacryma.info/" target="_blank"><img src="links/bn_tt_s.gif"></a>
-      <a href="https://www.tv-tokyo.co.jp/anime/prettyrhythm2013/index2.html" target="_blank"><img src="links/nobanner.gif"></a>
-      <a href="http://www.takaratomy-arts.co.jp/specials/prettyrhythm/" target="_blank"><img src="links/nobanner.gif"></a>
-      <a href="http://too.puni.to/" target="_blank"><img src="links/bnrmahokoto.jpg"></a>
-      <a href="https://hellokittyworld.tripod.com/index.html" target="_blank"><img src="links/kitty.jpg" width="30%"></a>
-      <a href="http://blue.ribbon.to/~anchan/" target="_blank"><img src="links/bana7.gif"></a>
-      <a href="https://cherie.nekoweb.org"><img src="https://cherie.nekoweb.org/image/assets/sitebuttonyay.gif" style="links/image-rendering:pixelated;height:31px;width:88px"></a>
-       
-       
-       
+  <div id="title-bar">
+    <span class="title-icon">&#9654;</span>
+    <marquee class="title-marquee" behavior="scroll" scrollamount="2">
+      I know the ending will be a happy one . (-&#12540;-*)&nbsp;&nbsp;&nbsp;&#9834; &#12424;&#12358;&#12371;&#12381; ! purin. city &#12408;&nbsp;&nbsp;&nbsp;&#10022; &#26356;&#26032;&#20013; . . . &#10022;&nbsp;&nbsp;&nbsp;&#9733; &#12356;&#12388;&#12418;&#12354;&#12426;&#12364;&#12392;&#12358;&#12372;&#12374;&#12356;&#12414;&#12377; &#9733;&nbsp;&nbsp;&nbsp;(-_-)zzz&nbsp;&nbsp;&nbsp;&#8734; shuripurin.neocities.org &#8734;
+    </marquee>
+    <div class="title-controls">
+      <button class="title-btn title-min">_</button>
+      <button class="title-btn title-max">&#9633;</button>
+      <button class="title-btn title-close">&#215;</button>
     </div>
-            
-        
-<!-- other sites end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-  </section>
+  </div>
 
-<!-- links end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
+  <div id="menu-bar">
+    <span class="menu-item">&#12501;&#12449;&#12452;&#12523;</span>
+    <span class="menu-item">&#26908;&#32034;</span>
+    <span class="menu-item">&#34920;&#31034;</span>
+    <span class="menu-item">&#12�;&#12523;&#12503;</span>
+    <span class="menu-sep">&#65372;</span>
+    <span class="menu-item">BBS</span>
+    <span class="menu-item menu-nav">&#9668;</span>
+    <span class="menu-item menu-nav">&#9658;</span>
+    <span class="menu-right">[ purin.city // neocities.org ]</span>
+  </div>
 
-<!-- reading list start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-            <section class="jqueryOptions opt4">
-            <br>
-<div id="content">
-  <div style="height:400px;width:95%;overflow:scroll;">
-  <center>
-  <!-- completed books start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-    <div style="width:90%;border:2px outset #dfe6e0; background: white;">
-    <br>
-          <center><b>Recently Completed Books:</b></center>
-          <br>
-      School Girl - Osamu Dazai<br>
-      The Setting Sun - Osamu Dazai <br>
-      No Longer Human - Osamu Dazai<br>
-      The Sensation of Being Somebody<br>
-      Boy's Abyss <br>
-      For Tommorow I will be Someone's Girlfriend<br>
-      Happiness - Shuzo Oshimi <br>
-      Vagabond<br>
-      Boku wa Mari no Naka - Shuzo Oshimi<br>
-      Peach Girl <br>
-      Okaeri ALice - Shuzo Oshimi<br>
-      Sweet Poolside - Shuzo Oshimi <br>
-      The Gift of Fear - Gaven De Becker<br>
-      Meditations - Marcus Aurelius<br>
-      Perfect Blue Anthology<br>
-      Crucial Conversations<br>
-      The Gods Lie<br>
-      Set Boundaries Find Peace<br><br>
+  <div id="toolbar">
+    <button class="toolbar-btn">&#9668;</button>
+    <button class="toolbar-btn">&#9658;</button>
+    <button class="toolbar-btn">&#8634;</button>
+    <span class="toolbar-sep">&#65372;</span>
+    <input type="text" class="toolbar-address" id="toolbar-addr" value="http://shuripurin.neocities.org/" readonly>
+    <button class="toolbar-btn toolbar-go">&#31227;&#21205;</button>
+  </div>
+
+  <div id="tab-bar">
+    <button class="tab active" data-tab="home">Home</button>
+    <button class="tab" data-tab="about">About</button>
+    <button class="tab" data-tab="links">Links</button>
+    <button class="tab" data-tab="library">Library</button>
+    <button class="tab" data-tab="blog">Blog</button>
+  </div>
+
+  <div id="window-body">
+
+    <div id="left-panel">
+      <div class="lp-char-wrap">
+        <img src="stickers/ayu.gif" alt="character" class="lp-char-img">
+      </div>
+      <div class="lp-username-box">
+        <span class="lp-username">purin. city/</span>
+      </div>
+      <div class="lp-kaomoji">(-_-)zzz</div>
+      <div class="music-player">
+        <div class="mp-header">&#9655; now playing:</div>
+        <div class="mp-song">
+          午睡に垂らす釣り糸<br>
+          ~Pearl Brothers~<br>
+          <span class="mp-artist">&#12510;&#12522;&#12473;&#12511;&#12476;&#12523;</span>
         </div>
-      
-        
-  <!-- completed end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->       
- <!-- reading now start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-  <br>
-    <div style="width:90%;border:2px outset #dfe6e0; background: white;">
-          <br><center><b>Reading:</b></center>
-          
-          
-          <br>
-         
-         
-          
-           </div>
-    
-   
-     <br>
-<!-- plan to read end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-  <center>
-  <!-- plan to read start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-    <div style="width:90%;border:2px outset #dfe6e0; background: white;">
-         <br> <center><b>Plan to Read:</b><br><br>
-         </center>
+        <div class="mp-bar-wrap">
+          <div class="mp-bar"><div class="mp-progress" id="mp-progress"></div></div>
+          <div class="mp-time" id="mp-time">0:44 / 5:26</div>
+        </div>
+        <div class="mp-controls">
+          <span class="mp-btn">|&#9668;</span>
+          <span class="mp-btn mp-play" id="mp-play-btn">&#9654;</span>
+          <span class="mp-btn">&#9658;|</span>
+          <span class="mp-btn">&#8635;</span>
+        </div>
+      </div>
+      <div class="lp-deco-row">
+        <img src="stickers/gikoneko.gif" alt="giko" class="lp-deco-gif">
+        <img src="stickers/monar.gif" alt="mona" class="lp-deco-gif">
+      </div>
+      <div class="lp-banner-wrap">
+        <img src="purinbanner.gif" alt="shuripurin" class="lp-banner">
+      </div>
+      <div class="lp-online">
+        <span class="lp-online-dot">&#9679;</span> online now
+      </div>
+      <div class="lp-webring">
+        <div class="lp-webring-label">// wii webring</div>
+        <iframe style="border:none;width:100%;" src="https://neocities.jeith.com/wii-webring?site=https://shuripurin.neocities.org&variant=compact"></iframe>
+      </div>
+      <div class="lp-stats">
+        <div>&#9658; est. 2023</div>
+        <div>&#9658; v3.0 layout</div>
+        <div>&#9658; best @ 760px</div>
+      </div>
+
+    </div>
+
+    <div id="right-panel">
+
+        <div id="tab-home" class="tab-content" style="display:block;">
+          <div class="thread-wrapper">
+
+            <div class="info-box">
+              <div class="info-box-header">
+                <span class="bbs-icon">&#9632;</span>
+                <span class="bbs-title">WELCOME . . . // &#12424;&#12358;&#12371;&#12381; !</span>
+                <span class="bbs-meta">No. 001 &nbsp; Posted: 12:00am</span>
+              </div>
+              <div class="info-box-body">
+                <div class="welcome-row">
+                  <img src="Mwelcome.gif" alt="welcome" class="welcome-gif">
+                  <div class="welcome-text">
+                    <p>&#12424;&#12358;&#12371;&#12381; ! you found <strong>purin.city</strong> &mdash; shuripurin's little corner of the internet. this site is a work-in-progress and a love letter to the old web. (-&#969;-)</p>
+                    <p style="margin-top:6px;">feel free to look around . leave a message in the shoutbox if you visit &mdash; i love knowing people were here &#9825;</p>
+                    <p class="welcome-note" style="margin-top:6px;"><img src="rosa3.gif" alt=""> &#10022; please sign the shoutbox if you drop by &#10022;</p>
+                  </div>
+                </div>
+                <div class="cbox-wrap">
+                  <div class="cbox-label">// shoutbox // &#12467;&#12513;&#12531;&#12488;&#27850;</div>
+                  <iframe src="https://www3.cbox.ws/box/?boxid=3539677&boxtag=pzUb2x" width="100%" height="350" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      <div id="tab-about" class="tab-content">
+        <div class="thread-wrapper">
+
+          <div class="info-box">
+            <div class="info-box-header">
+              <span class="bbs-icon">&#9632;</span>
+              <span class="bbs-title">ABOUT ME // &#12503;&#12525;&#12501;&#12451;&#12540;&#12523;</span>
+              <span class="bbs-meta">No. 001</span>
+            </div>
+            <div class="info-box-body">
+              <div class="about-layout">
+                <div class="about-imgs">
+                <img src="stickers/lotus.png" alt="lotus" class="about-char">
+                </div>
+                <div class="about-table-wrap">
+                  <table class="about-tbl">
+                    <tbody>
+                      <tr><td class="atk">name</td><td>Violette</td></tr>
+                      <tr><td class="atk">alias</td><td>purin / shuripurin</td></tr>
+                      <tr><td class="atk">ethnicity</td><td>vietnamese / european / chinese</td></tr>
+                      <tr><td class="atk">interests</td><td>coding, anime, analytics, pc building/gaming, reading, weight lifting, 3DS, cooking</td></tr>
+                      <tr><td class="atk">shows</td><td>code geass, steins;gate, welcome to the NHK, made in abyss, evangelion</td></tr>
+                      <tr><td class="atk">games</td><td>zero escape, style savvy, tomodachi life, overwatch, muse dash, cyberpunk, needy girl overdose, catherine classic, you and me and her</td></tr>
+                      <tr><td class="atk">socials</td><td><a href="https://www.youtube.com/@shuripurin" target="_blank">youtube &#8599;</a></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-box-header">
+              <span class="bbs-icon">&#9632;</span>
+              <span class="bbs-title">CLIQUES // &#12463;&#12522;&#12540;&#12463;</span>
+              <span class="bbs-meta">No. 002</span>
+            </div>
+            <div class="info-box-body">
+              <div class="cliques-grid">
+                <a href="http://www.chinako.net/hamster" target="_blank"><img src="02.gif" alt="hamtaro clique"></a>
+                <a href="https://allyratworld.com/cafe/rose#join" target="_blank"><img src="88x31melo.png" alt="cafe rose"></a>
+                <a href="https://dust.kuchiki.net/" target="_blank"><img src="c1.gif" alt="catastic"></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-box-header">
+              <span class="bbs-icon">&#9632;</span>
+              <span class="bbs-title">ABOUT THIS SITE</span>
+              <span class="bbs-meta">No. 003</span>
+            </div>
+            <div class="info-box-body">
+              <p>built by hand with love and late nights. inspired by japanese web culture of the early 2000s &mdash; 2ch browser UIs, geocities japan, and flash-era fan sites.</p>
+              <p style="margin-top:5px;">fonts: KH-Dot-Hibiya-32 // Nintendo DS BIOS // best viewed at 760px (-_-)</p>
+              <p style="margin-top:5px;">want to affiliate? grab my button:</p>
+              <div class="affiliate-block">
+                <img src="purinbanner.gif" alt="shuripurin 88x31" class="affiliate-btn">
+                <div class="code-snippet">&lt;a href="https://shuripurin.neocities.org"&gt;&lt;img src="YOUR_HOST/purinbanner.gif"&gt;&lt;/a&gt;</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="tab-links" class="tab-content">
+        <div class="thread-wrapper">
+
+          <div class="info-box">
+            <div class="info-box-header">
+              <span class="bbs-icon">&#9632;</span>
+              <span class="bbs-title">MATERIAL LINKS // &#32032;&#26448;&#12469;&#12452;&#12488;</span>
+              <span class="bbs-meta">No. 001</span>
+            </div>
+            <div class="info-box-body">
+              <div class="links-desc">graphics, resources and tools for making pages:</div>
+              <div class="btn88-grid">
+                <a href="http://cute.lolipop.jp/" target="_blank"><img src="links/hcb_88x31_003.gif" alt=""></a>
+                <a href="http://whimsical.heartette.net" target="_blank"><img src="links/whim.gif" alt=""></a>
+                <a href="https://foollovers.com/" target="_blank"><img src="links/foollovers8827.gif" alt=""></a>
+                <a href="http://tora7.ciao.jp/" target="_blank"><img src="links/tora7-b042.gif" alt=""></a>
+                <a href="http://bluedaisy.rdy.jp/bd/" target="_blank"><img src="links/bd1.gif" alt=""></a>
+                <a href="http://home.m07.itscom.net/pungum/index.html" target="_blank"><img src="links/banner2.gif" alt=""></a>
+                <a href="https://www.fancyparts.com/" target="_blank"><img src="links/shop8831.gif" alt=""></a>
+                <a href="https://www.kabegamikan.com/" target="_blank"><img src="links/nya.gif" alt=""></a>
+                <a href="https://sozai.jpn.org/" target="_blank"><img src="links/jpn.gif" alt=""></a>
+                <a href="https://www.asterism-m.com/" target="_blank"><img src="links/asterism.gif" alt=""></a>
+                <a href="http://www.iriko34.com/" target="_blank"><img src="links/2007bana88-kuro.gif" alt=""></a>
+                <a href="https://pata2.jp/" target="_blank"><img src="links/sky-banner7.gif" alt=""></a>
+                <a href="https://www.aoiweb.com/aoi2/index.html" target="_blank"><img src="links/bnraoi2.gif" alt=""></a>
+                <a href="http://www.first-moon.com/index.html" target="_blank"><img src="links/firstmoon_88bnr.gif" alt=""></a>
+                <a href="http://www.anne-box.com/" target="_blank"><img src="links/anne15.gif" alt=""></a>
+                <a href="https://www.schoolicons.com/" target="_blank"><img src="links/link_s.gif" alt=""></a>
+                <a href="http://kirakiraparts.web.fc2.com/" target="_blank"><img src="links/kira.gif" alt=""></a>
+                <a href="https://graphic.neocities.org/" target="_blank"><img src="https://graphic.neocities.org/Button2.png" alt=""></a>
+                <a href="https://nukocities.neocities.org/" target="_blank"><img src="https://nukocities.neocities.org/img/nukocities.gif" alt=""></a>
+                <a href="https://artwork.neocities.org/" target="_blank"><img src="links/artworkbuttonsanrio.gif" alt=""></a>
+                <a href="https://pixelsafari.neocities.org/" target="_blank"><img src="links/pixelsafari.gif" alt=""></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-box-header">
+              <span class="bbs-icon">&#9632;</span>
+              <span class="bbs-title">NEOCITIES LINKS</span>
+              <span class="bbs-meta">No. 002</span>
+            </div>
+            <div class="info-box-body">
+              <div class="links-desc">friends and cool people on neocities!</div>
+              <div class="btn88-grid">
+                <a href="https://dataview.neocities.org/" target="_blank"><img src="links/banner.gif" alt=""></a>
+                <a href="https://rice.place/" target="_blank"><img src="https://rice.nekoweb.org/button/riceplace.png" alt=""></a>
+                <a href="https://kladovka.neocities.org/" target="_blank"><img src="links/kladovkabutton.png" alt=""></a>
+                <a href="https://poemdoll.neocities.org" target="_blank"><img src="https://i.imgur.com/6J58IeY.png" alt=""></a>
+                <a href="https://dokode.moe/indexv3" target="_blank"><img src="links/dokodemobutton3.gif" alt=""></a>
+                <a href="https://cocopie.neocities.org/" target="_blank"><img src="links/cocopie2.gif" alt=""></a>
+                <a href="https://swirl.neocities.org/" target="_blank"><img src="links/swirlbutton_01.gif" alt=""></a>
+                <a href="https://danppun.neocities.org" target="_blank"><img src="https://danppun.neocities.org/danppun_btn.png" alt=""></a>
+                <a href="https://kyu.neocities.org/" target="_blank"><img src="links/kyu.gif" alt=""></a>
+                <a href="https://rottenware.neocities.org/"><img src="https://rottenware.neocities.org/rotten banner.png" alt=""></a>
+                <a href="https://burgeritchi.neocities.org" target="_blank"><img src="https://files.catbox.moe/29hdqz.webp" alt=""></a>
+                <a href="https://joyfulthought.neocities.org/"><img src="links/webutton.gif" alt="joyfulthought"></a>
+                <a href="https://2cherrish.neocities.org/"><img src="https://file.garden/ZW0H9yEHZCM7d7rf/2cherrish%20stamp.gif" alt=""></a>
+                <a href="https://sunfishdreamworld.neocities.org/" target="_blank"><img src="links/sunfishdreamworld.gif" alt=""></a>
+                <a href="https://nalfae.neocities.org" target="_blank"><img src="https://nalfae.neocities.org/nalfaebutton.gif" alt=""></a>
+                <a href="https://hmln.neocities.org/" target="_blank"><img src="https://hmln.neocities.org/button.png" alt=""></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-box-header">
+              <span class="bbs-icon">&#9632;</span>
+              <span class="bbs-title">CUTE PET LINKS</span>
+              <span class="bbs-meta">No. 003</span>
+            </div>
+            <div class="info-box-body">
+              <div class="btn88-grid">
+                <a href="http://myvitamin.nobody.jp/" target="_blank"><img src="links/bunner.gif" alt=""></a>
+                <a href="http://2shin.net/catlive/" target="_blank"><img src="links/nekostyle2.gif" alt=""></a>
+                <a href="http://tora7.ciao.jp/bob/pocha.html" target="_blank"><img src="links/df-banner.jpg" alt=""></a>
+                <a href="http://www.vesta.dti.ne.jp/~isaka/" target="_blank"><img src="links/b31tama.gif" alt=""></a>
+                <a href="http://www7.plala.or.jp/nekojarashi/" target="_blank"><img src="links/70.gif" alt=""></a>
+                <a href="http://www7.plala.or.jp/neco/cats/" target="_blank"><img src="links/nyankodouga.gif" alt=""></a>
+                <a href="http://nap.babymilk.jp/" target="_blank"><img src="links/nap.gif" alt=""></a>
+                <a href="http://www.gyaos-kingdom.com/" target="_blank"><img src="links/bnr_gyaos.gif" alt=""></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-box-header">
+              <span class="bbs-icon">&#9632;</span>
+              <span class="bbs-title">ARTIST LINKS</span>
+              <span class="bbs-meta">No. 004</span>
+            </div>
+            <div class="info-box-body">
+              <div class="btn88-grid">
+                <a href="http://piclab.sakura.ne.jp/" target="_blank"><img src="links/psbana.gif" alt=""></a>
+                <a href="https://russia.sakura.ne.jp/" target="_blank"><img src="links/banner8.gif" alt=""></a>
+                <a href="http://www2.tba.t-com.ne.jp/kyanpisia/" target="_blank"><img src="links/kp.jpg" alt=""></a>
+                <a href="http://frank-web.net/" target="_blank"><img src="links/frank-sozai-bn-16.gif" alt=""></a>
+                <a href="http://hakozumemikan.oboroduki.com/" target="_blank"><img src="links/hako.gif" alt=""></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-box-header">
+              <span class="bbs-icon">&#9632;</span>
+              <span class="bbs-title">OTHER SITES</span>
+              <span class="bbs-meta">No. 005</span>
+            </div>
+            <div class="info-box-body">
+              <div class="btn88-grid">
+                <a href="https://oooeee.nekoweb.org" target="_blank"><img src="https://oooeee.nekoweb.org/img/misc/button.png" alt=""></a>
+                <a href="http://www.chinako.net/hamster/" target="_blank"><img src="links/hc02.gif" alt=""></a>
+                <a href="https://hamutaroko.tripod.com/" target="_blank"><img src="links/ham.gif" alt=""></a>
+                <a href="http://l-wings.jp/" target="_blank"><img src="links/banner3.png" alt=""></a>
+                <a href="https://www.broccoli.co.jp/dejiko/" target="_blank"><img src="links/digi_banner.gif" alt=""></a>
+                <a href="http://www.pre-stage.jp/keychara/" target="_blank"><img src="links/key_bn06.gif" alt=""></a>
+                <a href="https://gameha.com/" target="_blank"><img src="links/gameha_m028.gif" alt=""></a>
+                <a href="http://lacryma.info/" target="_blank"><img src="links/bn_tt_s.gif" alt=""></a>
+                <a href="http://too.puni.to/" target="_blank"><img src="links/bnrmahokoto.jpg" alt=""></a>
+                <a href="https://cherie.nekoweb.org"><img src="https://cherie.nekoweb.org/image/assets/sitebuttonyay.gif" alt="cherie"></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="tab-library" class="tab-content">
+        <div class="thread-wrapper">
+          <div class="info-box">
+            <div class="info-box-header">
+              <span class="bbs-icon">&#9632;</span>
+              <span class="bbs-title">READING LIST // &#26412;&#26550;</span>
+              <span class="bbs-meta">No. 001</span>
+            </div>
+            <div class="info-box-body">
+              <p class="lib-intro">things I've read, am reading, or want to read. updated when I remember. (-_-)</p>
+              <div class="lib-section">
+                <div class="lib-sec-hdr">&#9658; completed // &#35501;&#20102;</div>
+                <table class="lib-tbl">
+                  <thead><tr class="lib-thead"><th>title</th><th>author</th><th></th></tr></thead>
+                  <tbody>
+                    <tr><td>School Girl</td><td>Osamu Dazai</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>The Setting Sun</td><td>Osamu Dazai</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>No Longer Human</td><td>Osamu Dazai</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>The Sensation of Being Somebody</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>Boy's Abyss</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>For Tomorrow I will be Someone's Girlfriend</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>Happiness</td><td>Shuzo Oshimi</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>Vagabond</td><td>Takehiko Inoue</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>Boku wa Mari no Naka</td><td>Shuzo Oshimi</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>Peach Girl</td><td>Miwa Ueda</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>Okaeri Alice</td><td>Shuzo Oshimi</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>Sweet Poolside</td><td>Shuzo Oshimi</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>The Gift of Fear</td><td>Gavin De Becker</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>Meditations</td><td>Marcus Aurelius</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>Perfect Blue Anthology</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>Crucial Conversations</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>The Gods Lie</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                    <tr><td>Set Boundaries Find Peace</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="lib-section">
+                <div class="lib-sec-hdr">&#9658; currently reading // &#35501;&#26360;&#20013;</div>
+                <table class="lib-tbl">
+                  <thead><tr class="lib-thead"><th>title</th><th>author</th><th>status</th></tr></thead>
+                  <tbody>
+                    <tr><td colspan="2">. . . ( updating soon ) . . .</td><td><span class="lib-status reading">&#35501;&#26360;&#20013;</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="lib-section">
+                <div class="lib-sec-hdr">&#9658; plan to read // &#35501;&#12415;&#12383;&#12356;</div>
+                <table class="lib-tbl">
+                  <thead><tr class="lib-thead"><th>title</th><th>type</th></tr></thead>
+                  <tbody>
+                    <tr><td>. . . ( updating soon ) . . .</td><td>&#8212;</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-blog" class="tab-content">
+        <div class="thread-wrapper">
+
+          <div class="info-box">
+            <div class="info-box-header">
+              <span class="bbs-icon">&#9632;</span>
+              <span class="bbs-title">FOOD DIARY // &#39293;&#26085;&#35352;</span>
+              <span class="bbs-meta">No. 001</span>
+            </div>
+            <div class="info-box-body">
+              <p class="blog-intro">mostly photos of things i've eaten and made. (-&#969;-)</p>
+              <div class="blog-grid">
+                <div class="blog-entry">
+                  <div class="blog-entry-hdr"><span class="blog-date">recent</span><span class="blog-tag">baking</span></div>
+                  <div class="blog-img-wrap"><img src="cake.PNG" alt="toro cake" class="blog-img"></div>
+                  <div class="blog-caption">Toro Inoue cake &mdash; baked this recently...</div>
+                </div>
+                <div class="blog-entry">
+                  <div class="blog-entry-hdr"><span class="blog-date">recent</span><span class="blog-tag">drinks</span></div>
+                  <div class="blog-img-wrap"><img src="wii.PNG" alt="wii drinks" class="blog-img"></div>
+                  <div class="blog-caption">Cute drinks. Blue raspberry flavor. wii.</div>
+                </div>
+                <div class="blog-entry">
+                  <div class="blog-entry-hdr"><span class="blog-date">recent</span><span class="blog-tag">drinks</span></div>
+                  <div class="blog-img-wrap"><img src="melon.PNG" alt="melon soda" class="blog-img"></div>
+                  <div class="blog-caption">Melon soda! One of my favorite drinks, even more special in this cup.</div>
+                </div>
+                <div class="blog-entry">
+                  <div class="blog-entry-hdr"><span class="blog-date">soon...</span><span class="blog-tag">update</span></div>
+                  <div class="blog-img-wrap blog-noimg"><span>more photos coming . . . (-_-)zzz</span></div>
+                  <div class="blog-caption">still uploading . . . check back later &#9825;</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-box-header">
+              <span class="bbs-icon">&#9632;</span>
+              <span class="bbs-title">UPDATE LOG // &#26356;&#26032;&#23653;&#27508;</span>
+              <span class="bbs-meta">No. 002</span>
+            </div>
+            <div class="info-box-body">
+              <table class="update-log-tbl">
+                <tbody>
+                  <tr><td class="ul-date">2025.03</td><td>v3.0 &mdash; complete redesign! syu.core-inspired OS window layout</td></tr>
+                  <tr><td class="ul-date">2024.xx</td><td>added library / reading list + more link buttons</td></tr>
+                  <tr><td class="ul-date">2023.11.10</td><td>site launched! v1.0 . hello world (-_-)&#12494;</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
   </div>
-<!-- plan to read end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-</center>
+
+  <div id="footer-bar">
+    <span class="footer-title">&#8801; @shuripurin's WebSite . . .</span>
+    <span class="footer-login">
+      Username:&nbsp;<input type="text" class="footer-input" size="7" autocomplete="off" tabindex="-1">
+      &nbsp;Password:&nbsp;<input type="password" class="footer-input" size="7" autocomplete="off" tabindex="-1">
+    </span>
+    <marquee class="footer-marquee" behavior="scroll" scrollamount="1">
+      &#12354;&#12387;&#12289;&#21496;&#12289;&#12394;&#12435;&#12390;&#20206;&#28982;&#65281;&#21531;&#12418;&#26716;&#12434;&#35211;&#12395;&#26469;&#12383;&#12398;&#65311;&nbsp;&nbsp;&#9733;&nbsp;&nbsp;&#12424;&#12358;&#12371;&#12381; purin.city &#12408;&nbsp;&nbsp;&#9733;&nbsp;&nbsp;shuripurin.neocities.org&nbsp;&nbsp;&#9733;&nbsp;&nbsp;&#12356;&#12388;&#12418;&#12354;&#12426;&#12364;&#12392;&#12358;&#12372;&#12374;&#12356;&#12414;&#12377;&nbsp;&nbsp;&#9733;&nbsp;&nbsp;(-_-)zzz&nbsp;&nbsp;&#9733;&nbsp;&nbsp;&#26356;&#26032;&#20013; . . .&nbsp;&nbsp;&#9733;
+    </marquee>
+  </div>
+
 </div>
-</section>
-<!-- reading list end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-<!-- kitchen start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-            <section class="jqueryOptions opt5">
- <div id="content">
-  <div style="height:400px;width:95%;overflow:scroll;">
-  <br>
-  <div style="width:90%;border:2px outset #dfe6e0; background: white;">
-  <br>
-        <img src="cake.PNG" width="50%"><br>
-        Toro Inoue cake, I baked this with my little brother recently...
-    </div>
-<br>
-  <div style="width:90%;border:2px outset #dfe6e0; background: white;">
-    <br><img src="wii.PNG" width="50%"><br>
-    Cute drinks, I also made with my brother. They are blue raspberry flavor, wii.
-    </div>
-     <br>
-  <div style="width:90%;border:2px outset #dfe6e0; background: white;">
-    <br><img src="melon.PNG" width="50%"><br>
-    Melon soda! One of my favorite drinks and it is even more special in this cup.
-    </div>
-  </div>git
-            </section>
-<!-- kitchen end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-<!-- about me start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-            <section class="jqueryOptions opt8">
-            
-             <div style="width:90%;border:2px outset #dfe6e0; background: white;">
-            
-            <p>Hello, it is me the webdev for <b>shuripurin city</b>. <img src="stickers/pix947.gif"><br>
-            This part of the website is for me to tell you a little about myself:<p>
-            <b>ethinicity:</b> vietnamese/european/chinese.<br>
-            <img src="stickers/kitty_4.webp"><b>interests:</b> coding, anime, analytics, pc building/gaming, <br>reading, lifting, playing 3DS, taekwondo, and cooking. <br> 
-            <img src="stickers/koto.webp" width="4%"> <b>favorite shows/movies:</b> oshi no ko, dan da dan, code geass, <br>steins;gate and welcome to the NHK. <br>
-            <img src="stickers/kitty_3.webp"> <b>favorite games:</b> zero escape, style savvy, tomodachi <br>collection/life, corpse party, muse dash, cyberpunk, <br>me and you and her, needy girl overdose and catherine classic.<br> 
-             <b> socials:</b> <a href="https://www.youtube.com/@shuripurin" target="_blank"><img src="https://www.freeiconspng.com/thumbs/youtube-logo-png/youtube-logo-icon-symbol-18.png" width="4%"></a> 
-   </div>
-            </section>
-<!-- about me end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-           </div>
-          
-<!-- stamps marquee start  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->            
-             <div id="stamps">
-            <marquee>
-              <img src="med30.gif" width="20%" style="margin-top: 2%; margin-bottom: 4%;">
-              <img src="stamps/digi.jpg"width="15%">
-              <img src="stamps/miku.jpg" width="15%">
-              <img src="stamps/purin.jpg" width="15%">
-              <img src="stamps/monkey.jpg" width="15%">
-              <img src="stamps/ZgH9J9k.png" width="15%">
-              <img src="stamps/domo.png" width="15%">
-              <img src="stamps/tea.png" width="15%">
-              <img src="stamps/tare.png" width="15%">
-           <img src="stamps/kkuma.jpg" width="15%">
-              <img src="stamps/ZeO4Hkg.png" width="15%"> 
-              <a href=""><img src="stamps/smart.png" width="15%"></a>
-              <a href=""><img src="stamps/nekop.gif" width="15%"></a>
-              <a href=""><img src="stamps/lucky.gif" width="15%"></a>
-              <a href=""><img src="stamps/leek.gif" width="15%"></a>
-              <a href=""><img src="stamps/kuma.gif" width="15%"></a>
-              <a href=""><img src="stamps/hachun.jpg" width="15%"></a>
-              <a href=""><img src="stamps/geass.png" width="15%"></a>
-              <a href="https://www.deviantart.com/puppystamps/art/33-714402056"><img src="stamps/dbtc45k-26ce2bd1-1372-4109-b186-675ad85f3d5d.png" width="15%"></a>
-              <a href="https://www.deviantart.com/puniplush/art/Sugarbunnies-Stamp-617702998"><img src="stamps/bunni.png" width="15%"></a>
-              <a href="https://www.deviantart.com/jellybees/art/Rilakkuma-stamp-2-734411633"><img src="stamps/clokuma.png" width="15%"></a>
-              <img src="stamps/co.png" width="15%">
-              <img src="stamps/ihcigo.jpg" width="15%">
-              <img src="stamps/kys.gif" width="17%">
-              <img src="stamps/stamp___hato__dove__by_emiliers_d2b53gu-fullview.jpg" width="16%">
-              <img src="stamps/madoka.jpg" width="15%">
-              <img src="stamps/f2u__chiitan_stamp_by_otterguppy_dd62rvi-fullview.jpg" width="15%">
-          
-              </marquee>
-               
-               </div>
-  <!-- stamps marquee end!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->    
-<!-- chat box start here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-          
- <div id="center">
- <br>
 
- <iframe src="https://www3.cbox.ws/box/?boxid=3539677&boxtag=pzUb2x" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
-            </div>   
-          
-<!-- chat box end here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<div id="stamps-wrap">
+  <marquee scrollamount="2" behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
+    <img src="med30.gif">
+    <img src="stamps/digi.jpg">
+    <img src="stamps/miku.jpg">
+    <img src="stamps/purin.jpg">
+    <img src="stamps/monkey.jpg">
+    <img src="stamps/ZgH9J9k.png">
+    <img src="stamps/domo.png">
+    <img src="stamps/tea.png">
+    <img src="stamps/tare.png">
+    <img src="stamps/kkuma.jpg">
+    <img src="stamps/ZeO4Hkg.png">
+    <img src="stamps/smart.png">
+    <img src="stamps/nekop.gif">
+    <img src="stamps/lucky.gif">
+    <img src="stamps/leek.gif">
+    <img src="stamps/kuma.gif">
+    <img src="stamps/hachun.jpg">
+    <img src="stamps/geass.png">
+    <img src="stamps/dbtc45k-26ce2bd1-1372-4109-b186-675ad85f3d5d.png">
+    <img src="stamps/bunni.png">
+    <img src="stamps/clokuma.png">
+    <img src="stamps/co.png">
+    <img src="stamps/ihcigo.jpg">
+    <img src="stamps/kys.gif">
+    <img src="stamps/madoka.jpg">
+  </marquee>
+</div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+  var TAB_URLS = {
+    home:    'http://shuripurin.neocities.org/',
+    about:   'http://shuripurin.neocities.org/about',
+    links:   'http://shuripurin.neocities.org/links',
+    library: 'http://shuripurin.neocities.org/library',
+    blog:    'http://shuripurin.neocities.org/blog'
+  };
 
-<!-- pages java script start here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
- document.addEventListener('DOMContentLoaded', function() {
-  const sections = document.querySelectorAll('.jqueryOptions');
-  const links = document.querySelectorAll('.option-link');
-
-  sections.forEach(section => section.style.display = 'none');
-
- links.forEach(link => {
-    link.addEventListener('click', function(e) {
-      const target = this.getAttribute('data-option');
-      
-      // Only prevent default if it's an internal navigation link
-      if (target) {
-        e.preventDefault();
-        sections.forEach(section => section.style.display = 'none');
-        document.querySelector(`.${target}`).style.display = 'block';
-      }
-      // If no data-option, let the link work normally
-    });
+  $('.tab').on('click', function () {
+    var tab = $(this).data('tab');
+    $('.tab').removeClass('active');
+    $(this).addClass('active');
+    $('.tab-content').hide();
+    $('#tab-' + tab).fadeIn(120);
+    $('#toolbar-addr').val(TAB_URLS[tab] || TAB_URLS.home);
   });
 
-  // Show the first section by default
-  sections[0].style.display = 'block';
+  var mpPlaying = false, mpProgress = 13, mpTotal = 326, mpInterval = null;
+
+  function mpTick() {
+    mpProgress += 0.04;
+    if (mpProgress >= 100) mpProgress = 0;
+    var e = Math.round((mpProgress/100)*mpTotal);
+    var em = Math.floor(e/60), es = e%60;
+    $('#mp-progress').css('width', mpProgress+'%');
+    $('#mp-time').text(em+':'+(es<10?'0':'')+es+' / 5:26');
+  }
+
+  $('#mp-play-btn').on('click', function () {
+    if (mpPlaying) { clearInterval(mpInterval); $(this).text('\u25B6'); mpPlaying=false; }
+    else { mpInterval=setInterval(mpTick,180); $(this).text('\u25A0'); mpPlaying=true; }
+  });
+
+  $('.title-close').on('click', function () {
+    $('#os-window').animate({opacity:0},300,function(){ $(this).animate({opacity:1},600); });
+  });
+
+  $('img').each(function(){ $(this).attr('loading','lazy'); });
 });
-    
+
+(function(){
+  var S=['\u2726','\u2727','\u2605','\u2606','\u273F','\u266A','\u2661','\uFF0A','\u2729','\u25C7'];
+  var C=['#ffb7c5','#ffd1dc','#c8a4d4','#a4c8d4','#8fa8c8','#c8a0b8','#f0d8b0','#a8d8b8'];
+  document.addEventListener('click',function(e){
+    for(var i=0;i<7;i++){
+      var s=document.createElement('span');
+      s.textContent=S[Math.floor(Math.random()*S.length)];
+      var col=C[Math.floor(Math.random()*C.length)];
+      var sz=8+Math.floor(Math.random()*12);
+      s.style.cssText='position:fixed;pointer-events:none;z-index:99999;font-size:'+sz+'px;left:'+e.clientX+'px;top:'+e.clientY+'px;color:'+col+';user-select:none;line-height:1;';
+      document.body.appendChild(s);
+      var dx=(Math.random()-0.5)*90,dy=-25-Math.random()*65,dur=480+Math.random()*380;
+      var a=s.animate([{transform:'translate(-50%,-50%) scale(1)',opacity:1},{transform:'translate(calc(-50% + '+dx+'px),calc(-50% + '+dy+'px)) scale(0.1)',opacity:0}],{duration:dur,easing:'ease-out'});
+      a.onfinish=function(){this.effect.target.remove();};
+    }
+  });
+}());
 </script>
 
-<script> document.querySelectorAll('img').forEach(img => { img.setAttribute('loading', 'lazy'); }); </script>
-<!-- pages java script end here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --> 
-  </center>
-  <script>// Create sparkles when clicking anywhere
-document.addEventListener('click', function(e) {
-    const sparkle = document.createElement('img');
-    sparkle.src =  'stickers/angelpanda.gif'; 
-    sparkle.style.position = 'fixed';
-    sparkle.style.left = e.pageX + 'px';
-    sparkle.style.top = e.pageY + 'px';
-    sparkle.style.pointerEvents = 'none';
-    sparkle.style.zIndex = '10000';
-    document.body.appendChild(sparkle);
-    setTimeout(() => sparkle.remove(), 1000);
-    
-});</script>
 </body>
 </html>
