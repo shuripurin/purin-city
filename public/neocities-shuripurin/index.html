@@ -64,23 +64,23 @@
       </div>
       <div class="lp-kaomoji">(-_-)zzz</div>
       <div class="music-player">
-        <div class="mp-header">&#9655; now playing:</div>
-        <div class="mp-song">
-          午睡に垂らす釣り糸<br>
-          ~Pearl Brothers~<br>
-          <span class="mp-artist">&#12510;&#12522;&#12473;&#12511;&#12476;&#12523;</span>
-        </div>
-        <div class="mp-bar-wrap">
-          <div class="mp-bar"><div class="mp-progress" id="mp-progress"></div></div>
-          <div class="mp-time" id="mp-time">0:44 / 5:26</div>
-        </div>
-        <div class="mp-controls">
-          <span class="mp-btn">|&#9668;</span>
-          <span class="mp-btn mp-play" id="mp-play-btn">&#9654;</span>
-          <span class="mp-btn">&#9658;|</span>
-          <span class="mp-btn">&#8635;</span>
-        </div>
-      </div>
+            <audio id="mp-audio" src="https://files.catbox.moe/j5ol7c.mp3" preload="none"></audio>
+            <div class="mp-header">&#9655; now playing:</div>
+            <div class="mp-song">
+              &#21320;&#30561;&#12395;&#22467;&#12425;&#12377;&#37431;&#12426;&#31309;<br>
+              <span class="mp-artist">Pearl Brothers</span>
+            </div>
+            <div class="mp-bar-wrap">
+              <div class="mp-bar"><div class="mp-progress" id="mp-progress"></div></div>
+              <div class="mp-time" id="mp-time">0:00 / 0:00</div>
+            </div>
+            <div class="mp-controls">
+              <span class="mp-btn">|&#9668;</span>
+              <span class="mp-btn mp-play" id="mp-play-btn">&#9654;</span>
+              <span class="mp-btn">&#9658;|</span>
+              <span class="mp-btn">&#8635;</span>
+            </div>
+          </div>
       <div class="lp-deco-row">
         <img src="stickers/gikoneko.gif" alt="giko" class="lp-deco-gif">
         <img src="stickers/monar.gif" alt="mona" class="lp-deco-gif">
@@ -508,21 +508,32 @@ $(document).ready(function () {
     $('#toolbar-addr').val(TAB_URLS[tab] || TAB_URLS.home);
   });
 
-  var mpPlaying = false, mpProgress = 13, mpTotal = 326, mpInterval = null;
+  var audio = document.getElementById('mp-audio');
 
-  function mpTick() {
-    mpProgress += 0.04;
-    if (mpProgress >= 100) mpProgress = 0;
-    var e = Math.round((mpProgress/100)*mpTotal);
-    var em = Math.floor(e/60), es = e%60;
-    $('#mp-progress').css('width', mpProgress+'%');
-    $('#mp-time').text(em+':'+(es<10?'0':'')+es+' / 5:26');
-  }
+  audio.addEventListener('timeupdate', function() {
+    if (!audio.duration) return;
+    var pct = (audio.currentTime / audio.duration) * 100;
+    $('#mp-progress').css('width', pct + '%');
+    var em = Math.floor(audio.currentTime/60), es = Math.floor(audio.currentTime%60);
+    var dm = Math.floor(audio.duration/60),   ds = Math.floor(audio.duration%60);
+    $('#mp-time').text(em+':'+(es<10?'0':'')+es+' / '+dm+':'+(ds<10?'0':'')+ds);
+  });
 
   $('#mp-play-btn').on('click', function () {
-    if (mpPlaying) { clearInterval(mpInterval); $(this).text('\u25B6'); mpPlaying=false; }
-    else { mpInterval=setInterval(mpTick,180); $(this).text('\u25A0'); mpPlaying=true; }
+    if (audio.paused) {
+      audio.play();
+      $(this).text('\u25A0');
+    } else {
+      audio.pause();
+      $(this).text('\u25B6');
+    }
   });
+
+  $('.mp-bar').on('click', function(e) {
+    var pct = e.offsetX / $(this).width();
+    audio.currentTime = pct * audio.duration;
+  });
+
 
   $('.title-close').on('click', function () {
     $('#os-window').animate({opacity:0},300,function(){ $(this).animate({opacity:1},600); });
