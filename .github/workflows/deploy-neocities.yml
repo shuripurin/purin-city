@@ -15,6 +15,9 @@ jobs:
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v1
         with:
+          # provide the secret under multiple keys to support different action versions
+          apiKey: ${{ secrets.NEOCITIES_API_TOKEN }}
           api_key: ${{ secrets.NEOCITIES_API_TOKEN }}
+          api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
           dist_dir: public
           cleanup: false
