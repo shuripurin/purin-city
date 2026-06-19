@@ -9,9 +9,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy Entire Root to Neocities
+
+      # Build an isolated staging folder containing only clean web files
+      - name: Stage Public Web Files
+        run: |
+          mkdir deploy_out
+          cp index.html deploy_out/
+          cp projects.html deploy_out/
+          if [ -f "style.css" ]; then cp style.css deploy_out/; fi
+          if [ -d "projects" ]; then cp -r projects deploy_out/; fi
+          if [ -d "stickers" ]; then cp -r stickers deploy_out/; fi
+          if [ -d "links" ]; then cp -r links deploy_out/; fi
+          if [ -d "stamps" ]; then cp -r stamps deploy_out/; fi
+          if [ -f "purinbanner.gif" ]; then cp purinbanner.gif deploy_out/; fi
+          if [ -f "Mwelcome.gif" ]; then cp Mwelcome.gif deploy_out/; fi
+          if [ -f "rosa3.gif" ]; then cp rosa3.gif deploy_out/; fi
+
+      - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v1
         with:
-          dist_dir: .
+          dist_dir: deploy_out
           api_token: ${{ secrets.NEOCITIES_API_KEY }}
           cleanup: false
