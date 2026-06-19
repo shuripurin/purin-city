@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Shuripurin City</title>
+    <link rel="icon" type="image" href="stickers/100kitty.gif">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Violette Davis - Portfolio">
+    <meta property="og:description" content="Business Analytics student at Oregon State University specializing in data analysis, web development, and market research">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shuripurin.neocities.org/portfolio.html">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Violette Davis - Portfolio">
+    <meta name="twitter:description" content="Business Analytics student at Oregon State University specializing in data analysis, web development, and market research">
+    
+    <style>
+      /* Background matching main site */
+      body {
+        width: 100%;
+        height: 100%;
+        background-image: url("b15-bg-grid.gif");
+        background-repeat: repeat;
+        color: #4e5052;
+      }
+
+      /* Main container matching site style */
+      #container {
+        padding-bottom: 1%;
+        width: 70%;
+        margin: 2% auto 4% auto;
+        background: #f6f6f6;
+        box-shadow: 0px 0px 1px white, 1px 1px 0px #0000004d;
+      }
+
+      .page-title {
+        text-align: center;
+        margin: 0;
+        padding: 30px 0 20px 0;
+        font-size: 2em;
+        color: #4e5052;
+      }
+
+      /* Tab Navigation */
+      .tab-nav {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px 0;
+        padding: 0 20px;
+        flex-wrap: wrap;
+      }
+
+      .tab-button {
+        padding: 12px 25px;
+        font-size: 1em;
+        background: white;
+        border: 2px outset #dfe6e0;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-weight: normal;
+        color: #4e5052;
+      }
+
+      .tab-button:hover {
+        background: #f4edf5;
+      }
+
+      .tab-button.active {
+        background: #dfe6e0;
+        border-style: inset;
+      }
+
+      /* Tab Content */
+      .tab-content {
+        display: none;
+        animation: fadeIn 0.4s;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      .section-container {
+        padding: 20px;
+        margin: 0 20px 30px 20px;
+      }
+
+      /* Project Cards matching site boxes */
+      .project-card {
+        background: white;
+        padding: 20px;
+        margin: 15px auto;
+        border: 2px outset #dfe6e0;
+        max-width: 90%;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+      }
+
+
+
+      .project-title {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+        color: #4e5052;
+        font-weight: bold;
+      }
+
+      .project-link {
+        display: inline-block;
+        margin: 10px 10px 10px 0;
+        color: #4e5052;
+        text-decoration: underline;
+      }
+
+      .project-link:hover {
+        color: #000;
+      }
+
+      .project-description {
+        line-height: 1.6;
+        margin: 15px 0;
+        color: #4e5052;
+      }
+
+      .skills-list {
+        margin-top: 15px;
+        padding: 15px;
+        background: #f6f6f6;
+        border: 2px inset #dfe6e0;
+      }
+
+      .skills-title {
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #4e5052;
+      }
+
+      .placeholder-text {
+        color: #888;
+        font-style: italic;
+        padding: 40px;
+        text-align: center;
+        background: white;
+        border: 2px outset #dfe6e0;
+        margin: 0 auto;
+        max-width: 90%;
+      }
+
+      /* About Me Section */
+      .about-section {
+        background: white;
+        padding: 25px;
+        margin: 15px auto;
+        border: 2px outset #dfe6e0;
+        max-width: 90%;
+        line-height: 1.8;
+        color: #4e5052;
+      }
+
+      /* Timeline */
+      .timeline-container {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .timeline-year {
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #4e5052;
+        margin: 30px 0 15px 0;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #dfe6e0;
+      }
+
+      .timeline-project {
+        background: white;
+        padding: 15px 20px;
+        margin: 10px 0 10px 20px;
+        border: 2px outset #dfe6e0;
+        border-left: 4px solid #a8d5ba;
+        transition: transform 0.2s ease;
+      }
+
+      .timeline-project:hover {
+        transform: translateX(5px);
+      }
+
+      .timeline-project-title {
+        font-weight: bold;
+        color: #4e5052;
+        margin-bottom: 5px;
+      }
+
+      .timeline-project-desc {
+        font-size: 0.9em;
+        color: #666;
+      }
+
+      /* Contact Section */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+
+      .contact-item {
+        background: white;
+        padding: 15px;
+        border: 2px outset #dfe6e0;
+        text-align: center;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+
+      .contact-item:hover {
+        transform: translateY(-2px);
+        background: #f4edf5;
+      }
+
+      .contact-label {
+        font-weight: bold;
+        color: #4e5052;
+        margin-bottom: 8px;
+        font-size: 0.9em;
+      }
+
+      /* Loading state for iframes */
+      .iframe-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 56.25%;
+        padding-bottom: 0;
+        box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+        margin-top: 1.6em;
+        margin-bottom: 0.9em;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .iframe-container::before {
+        content: 'Loading presentation...';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #888;
+        font-style: italic;
+        z-index: 0;
+      }
+
+      .iframe-container iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: none;
+        padding: 0;
+        margin: 0;
+        z-index: 1;
+      }
+
+      ul {
+        margin: 10px 0;
+        padding-left: 20px;
+      }
+
+      li {
+        margin: 8px 0;
+        line-height: 1.5;
+      }
+
+      /* Back to home link */
+      .back-link {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .back-link a {
+        color: #4e5052;
+        text-decoration: underline;
+      }
+
+      /* Stamp Marquee */
+      #stamps {
+        padding: 15px 0;
+        margin: 20px auto 30px auto;
+        width: 70%;
+        background-image: url("b15-bg-grid.gif");
+        overflow: hidden;
+        filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(1px 1px 0px #0000004d);
+        border: 2px outset #dfe6e0;
+      }
+
+      #stamps marquee {
+        display: flex;
+        align-items: center;
+      }
+
+      #stamps img {
+        margin: 0 10px;
+        height: 40px;
+        width: auto;
+        image-rendering: pixelated;
+      }
+
+      .stamps-label {
+        text-align: center;
+        font-size: 0.9em;
+        color: #4e5052;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
+        #container {
+          width: 90%;
+        }
+        
+        .tab-button {
+          padding: 10px 15px;
+          font-size: 0.9em;
+        }
+
+        .project-card {
+          padding: 15px;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .iframe-container {
+          margin-top: 1em;
+          margin-bottom: 1em;
+        }
+
+        #stamps {
+          width: 85%;
+        }
+      }
+
+      /* Cursor matching main site */
+      * {cursor: url(https://cur.cursors-4u.net/nature/nat-11/nat1028.ani), url(https://cur.cursors-4u.net/nature/nat-11/nat1028.gif), auto !important;}
+    </style>
+  </head>
+  <body>
+    <div id="container" role="main">
+      <h1 class="page-title">My Portfolio</h1>
+
+      <!-- Tab Navigation -->
+      <nav class="tab-nav" role="tablist" aria-label="Portfolio sections">
+        <button class="tab-button active" onclick="openTab(event, 'about')" role="tab" aria-selected="true" aria-controls="about">About Me</button>
+        <button class="tab-button" onclick="openTab(event, 'software')" role="tab" aria-selected="false" aria-controls="software">Software</button>
+        <button class="tab-button" onclick="openTab(event, 'data')" role="tab" aria-selected="false" aria-controls="data">Business Analysis</button>
+        <button class="tab-button" onclick="openTab(event, 'timeline')" role="tab" aria-selected="false" aria-controls="timeline">Timeline</button>
+        <button class="tab-button" onclick="openTab(event, 'contact')" role="tab" aria-selected="false" aria-controls="contact">Contact</button>
+        <button class="tab-button" onclick="openTab(event, 'art')" role="tab" aria-selected="false" aria-controls="art">Art</button>
+      </nav>
+
+   <!-- About Me Tab -->
+      <div id="about" class="tab-content active" role="tabpanel">
+        <div class="section-container">
+          
+          <!-- Skills Section -->
+          <div class="skills-list" style="max-width: 90%; margin: 0 auto 20px auto;">
+            <div class="skills-title" style="text-align: center; font-size: 1.1em; margin-bottom: 12px;">Skills & Technologies</div>
+            <div style="text-align: center;">Python • SQL • Java • JavaScript • HTML/CSS • Git • Data Analysis • Data Science • Data Visualization • Data Modeling • Predictive Analytics • Data Mining • Text Mining • Business Analytics • Financial Analysis • Dashboard Design • User Experience Design • UI/UX Design • Tableau • Power BI • Powerpoint • Business Intelligence (BI) • Database Schemas • Matplotlib • Seaborn • Pandas • NumPy • scikit-learn • MySQL • PostgreSQL • Microsoft Office • Excel • Figma • JIRA • Confluence • Project Management • Marketing</div>
+          </div>
+
+          <div class="about-section">
+            <h2 style="text-align: center; margin-bottom: 20px; color: #4e5052;">About Me <img loading="lazy" src="portfolio/cat466.gif" alt="Cat Sticker"></h2>
+            <p style="text-align: center; font-weight: bold; color: #4e5052; font-size: 1.1em; background: #dfe6e0; padding: 10px; border: 2px inset white; margin-bottom: 20px;">🎓 Update: Officially Graduated from Oregon State University (June 2026) with Magna Cum Laude Honors!</p>
+            
+            <p>I still remember building my first website in HTML back in 5th grade—the thrill of seeing my code come to life on screen ignited something in me. Today, I am proud to say that I have officially graduated from Oregon State University with a B.S. in Business Analytics, receiving the university's prestigious <strong>Award for Outstanding Achievement</strong>, an honor reserved for just the top 3 graduating students in the major this year.</p>
+            
+            <p>I chose business analytics because it perfectly merges my core technical capabilities with my fascination for understanding consumer behavior and conversion metrics. I thrive at the intersection of data engineering, funnel optimization, and high-growth strategy—building backend pipelines, automating infrastructure, and translating complex mathematical data models into visual business intelligence tools.</p>
+            
+            <p>Throughout my academic journey, I have focused on launching high-impact technical initiatives. I had the privilege of serving as the President of the OSU Business Analytics Club and acting as the Chief Marketing Officer for <strong>BeaverHacks</strong>, where I spearheaded digital optimization campaigns that generated 300,000+ views and scaled the event into Oregon's largest hackathon with over 450 attendees. Simultaneously, I applied my analytics toolkit within corporate and university structures, tracking metrics across $50M+ in digital assets at IndexCoop and architecting data scripts for 80,000+ enterprise users within university IT operations.</p>
+            
+            <p>When I'm not running predictive models, text mining large-scale open-source datasets, or debugging relational databases, I am actively constructing full-stack systems alongside a passionate community of driven developers.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Software Development Tab -->
+      <div id="software" class="tab-content" role="tabpanel">
+        <div class="section-container">
+          
+          <div class="project-card software">
+            <h3 class="project-title">CRWL: Concurrent Agent Pipeline <img loading="lazy" src="portfolio/cat466.gif" alt="Pipeline Icon" style="height: 1.3em; vertical-align: middle; margin-left: 5px;"></h3>
+            <span class="project-link" style="text-decoration: none; font-weight: bold; color: #666;">🏆 Won AWS Deep Agents Hackathon (Ghost Track)</span>
+            <div class="project-description">
+              <p>Architected a highly scalable concurrent data collection pipeline and dashboard leveraging autonomous AI agent networks:</p>
+              <ul>
+                <li>Designed a multi-agent backend architecture where autonomous Claude nodes concurrently crawl, clean, and process live web data.</li>
+                <li>Integrated Ghost's managed PostgreSQL infrastructure using structural database schemas and row-level locking to support conflict-free parallel writes.</li>
+                <li>Built a real-time responsive Next.js analytics dashboard to track streaming database metrics and monitor active pipeline ingestion health.</li>
+              </ul>
+            </div>
+            <div class="skills-list">
+              <div class="skills-title">Skills Used:</div>
+              <div>Data Engineering • Pipeline Architecture • Python • Next.js • PostgreSQL • Database Schemas • Multi-Agent Automation • Row-Level Locking</div>
+            </div>
+          </div>
+
+          <div class="project-card software">
+            <h3 class="project-title">Minty: Digital Tooth Fairy <img loading="lazy" src="tooth.png" alt="Minty Logo" style="height: 1.3em; vertical-align: middle; margin-left: 5px;"></h3>
+            <a href="https://github.com/owenkrause/minty" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Minty on GitHub">View on GitHub →</a>
+            <a href="https://devpost.com/software/minty-4vcu9m" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Minty on Devpost">View on Devpost →</a>
+            <a href="https://minty-prod.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Minty live demo">Live Demo →</a>
+            
+            <div class="project-description">
+              <p><strong>🏆 Won the Visa Track at DubHacks 2025</strong></p>
+              <p>Built an AI-powered app that gamifies dental hygiene by rewarding consistent brushing, teaching kids about compound investment and healthy habits through play:</p>
+              <ul>
+                <li>Integrated Gemini AI to detect and verify brushing activity in real-time</li>
+                <li>Connected to a Stripe-powered "tooth fairy" system for reward management</li>
+                <li>Gamified the dental hygiene experience to encourage consistent healthy habits</li>
+                <li>Implemented financial literacy features teaching kids about compound investment</li>
+                <li>Developed cross-platform functionality for easy parent-child interaction</li>
+              </ul>
+            </div>
+
+            <div class="skills-list">
+              <div class="skills-title">Skills Used:</div>
+              <div>Artificial Intelligence • Gemini AI • Stripe API • Web Development • Gamification • React • Payment Integration • Computer Vision</div>
+            </div>
+          </div>
+
+          <div class="project-card software">
+            <h3 class="project-title">StudyMaxx</h3>
+            <a href="https://github.com/shuripurin/studymaxx" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View StudyMaxx on GitHub">View on GitHub →</a>
+            <a href="https://devpost.com/software/studymaxx" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View StudyMaxx on Devpost">View on Devpost →</a>
+            <a href="https://studymaxx.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View StudyMaxx live demo">Live Demo →</a>
+            
+            <div class="project-description">
+              <p>Created a website to optimize the studying experience for BeaverHacks 2025 that includes:</p>
+              <ul>
+                <li>AI-generated learning plans using Groq + Gemini pipeline</li>
+                <li>Real-time study tracking with pomodoro timer implementation</li>
+                <li>Visualized user analytics with Plotly Dash</li>
+                <li>Google Calendar API syncing for seamless scheduling</li>
+                <li>Secure Google/email login with Firebase Authentication</li>
+                <li>Cloud-based backend with Flask deployed to Google Cloud Run</li>
+                <li>Frontend built with React, TailwindCSS, and Mantine</li>
+              </ul>
+            </div>
+
+            <div class="skills-list">
+              <div class="skills-title">Skills Used:</div>
+              <div>Figma • Python • Plotly • API Development • Artificial Intelligence • Web Development • Data Visualization • React • Flask • Firebase • Google Cloud</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Data Analysis Tab -->
+      <div id="data" class="tab-content" role="tabpanel">
+        <div class="section-container">
+          
+          <div class="project-card data">
+            <h3 class="project-title">Spotify Popularity Analysis</h3>
+            <a href="https://www.linkedin.com/in/violette-davis/details/projects/1741918489195/single-media-viewer/?profileId=ACoAAD_L8JkBedRAWfRu375LMenV8ZAE03Ab5fg" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Spotify project on LinkedIn">View on LinkedIn →</a>
+            
+            <div class="project-description">
+              <ul>
+                <li>Utilized Python with Pandas and NumPy to clean and preprocess data, ensuring high-quality input for analysis</li>
+                <li>Applied linear regression to identify key drivers of music popularity</li>
+                <li>Visualized results with Matplotlib to communicate findings effectively</li>
+                <li>Collaborated with a team to create dynamic visualizations in Power BI and Python, enhancing the final presentation where we detailed our analysis and insights on music popularity trends</li>
+              </ul>
+              <div class="iframe-container">
+                <iframe loading="lazy" src="https://www.canva.com/design/DAGhSDOZ5XQ/NNJzw10MBxqWrMEj-bRNew/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" title="Spotify Popularity Analysis Presentation" loading="lazy"></iframe>
+              </div>
+            </div>
+
+            <div class="skills-list">
+              <div class="skills-title">Skills Used:</div>
+              <div>Data Analysis • Python • Pandas • Matplotlib • Seaborn • NumPy • Power BI • Canva</div>
+            </div>
+          </div>
+
+          <div class="project-card data">
+            <h3 class="project-title">Tesla Data Analysis</h3>
+            
+            <div class="project-description">
+              <p>Led a team of students to conduct comprehensive market research and analysis of Tesla sales and market data, examining trends and patterns to provide strategic insights.</p>
+              <div class="iframe-container">
+                <iframe loading="lazy" src="https://www.canva.com/design/DAGc-eYUWlI/npHbidwpv1O2wKQUhzRw9g/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" title="Tesla Data Analysis Presentation" loading="lazy"></iframe>
+              </div>
+            </div>
+
+            <div class="skills-list">
+              <div class="skills-title">Skills Used:</div>
+              <div>Data Analysis • Python • Data Visualization • Canva • Team Leadership • Market Research</div>
+            </div>
+          </div>
+
+          <div class="project-card data">
+            <h3 class="project-title">Yelp Data Analysis</h3>
+            
+            <div class="project-description">
+              <ul>
+                <li>Worked in a team of students to utilize data mining, text mining and machine learning in Python in order to analyze more than 6,990,280 rows of data</li>
+                <li>Utilized a variety of packages to make inferences from data, and using Term Frequency-Inverse Document Frequency Vectorization to determine user sentiment</li>
+              </ul>
+              <div class="iframe-container">
+                <iframe loading="lazy" src="https://www.canva.com/design/DAGnrCREClQ/_kwTM14xFUPCoo0ajNUkxQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" title="Yelp Data Analysis Presentation" loading="lazy"></iframe>
+              </div>
+            </div>
+
+            <div class="skills-list">
+              <div class="skills-title">Skills Used:</div>
+              <div>Data Mining • Text Mining • Machine Learning • Python • TF-IDF • Sentiment Analysis • Team Collaboration</div>
+            </div>
+          </div>
+
+          <div class="project-card research">
+            <h3 class="project-title">BrainBytez Product Development</h3>
+            <a href="https://www.linkedin.com/in/violette-davis/details/projects/1596800563/multiple-media-viewer/?profileId=ACoAAD_L8JkBedRAWfRu375LMenV8ZAE03Ab5fg&treasuryMediaId=1717436649826" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View BrainBytez on LinkedIn">View on LinkedIn →</a>
+            <a href="https://www.tinkercad.com/things/gV19fKzfBSH-pineapple-prototype?sharecode=bXpp1g3K_qgVHOHRCYoxds1E6Zw5KKA5V5B0AH8rzrI" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View BrainBytez prototype on Tinkercad">View Prototype on Tinkercad →</a>
+            
+            <div class="project-description">
+              <ul>
+                <li>Collaborated with a team of students to develop and present "BrainBytez," a cutting-edge product prototype, in a competitive academic environment</li>
+                <li>Delivered a compelling presentation to a panel of judges, effectively communicating the product's features and market potential</li>
+                <li>Conducted comprehensive financial analysis, including cost estimates and revenue projections, to support the product's viability</li>
+                <li>Strategically formulated and executed a funding request, successfully pitching to potential inve
