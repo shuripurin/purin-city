@@ -1,0 +1,17 @@
+name: Deploy to Neocities
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy Entire Root to Neocities
+        uses: bcomnes/deploy-to-neocities@v1
+        with:
+          dist_dir: .
+          api_token: ${{ secrets.NEOCITIES_API_KEY }}
+          cleanup: false
