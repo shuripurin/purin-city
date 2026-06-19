@@ -12,12 +12,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy to Neocities
-        uses: bcomnes/deploy-to-neocities@v1
-        with:
-          # provide the secret under multiple keys to support different action versions
-          apiKey: ${{ secrets.NEOCITIES_API_TOKEN }}
-          api_key: ${{ secrets.NEOCITIES_API_TOKEN }}
-          api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
-          dist_dir: public
-          cleanup: false
+      - name: Upload projects.html to Neocities via API
+        env:
+          NEOCITIES_API_TOKEN: ${{ secrets.NEOCITIES_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          FILE=public/neocities-shuripurin/projects.html
+          if [ -f "$FILE" ]; then
+            echo "Uploading $FILE to Neocities..."
+            curl -s -X POST \
+              -F "api_key=${NEOCITIES_API_TOKEN}" \
+              -F "file=@${FILE};filename=projects.html" \
+              https://neocities.org/api/upload | sed -n '1,200p'
+          else
+            echo "Error: $FILE not found" >&2
+            exit 1
+          fi
