@@ -28,6 +28,10 @@
     body {
       min-height: 100vh;
       background-color: var(--bg-outer);
+      background-image: 
+        linear-gradient(rgba(38, 38, 42, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(38, 38, 42, 0.4) 1px, transparent 1px);
+      background-size: 24px 24px;
       font-family: var(--font-stack);
       font-size: 16px;
       color: var(--text-main);
@@ -260,18 +264,6 @@
       padding-bottom: 32px;
     }
 
-    .timeline-node::before {
-      content: '';
-      position: absolute;
-      left: -6px;
-      top: 6px;
-      width: 10px;
-      height: 10px;
-      background: var(--bg-outer);
-      border: 2px solid var(--text-main);
-      border-radius: 50%;
-    }
-
     .timeline-year {
       font-size: 20px;
       font-weight: 700;
@@ -301,6 +293,51 @@
 
     .timeline-project-desc {
       font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .certifications-matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .cert-profile-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      border-radius: 4px;
+    }
+
+    .cert-org {
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--accent-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .cert-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .cert-meta {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .cert-id-code {
+      font-family: monospace;
+      font-size: 11px;
+      background: #000000;
+      padding: 2px 6px;
+      border: 1px solid var(--border-color);
+      display: inline-block;
       color: var(--text-muted);
     }
 
@@ -358,6 +395,7 @@
     <button class="nav-tab active" data-tab="about">About Me</button>
     <button class="nav-tab" data-tab="software">Software Engineering</button>
     <button class="nav-tab" data-tab="data">Business Analysis</button>
+    <button class="nav-tab" data-tab="certs">Certifications</button>
     <button class="nav-tab" data-tab="timeline">Timeline</button>
     <button class="nav-tab" data-tab="contact">Contact & Socials</button>
   </div>
@@ -392,7 +430,6 @@
     <div id="tab-software" class="tab-viewport-content" style="display:none;">
       <h2 class="viewport-heading">Software Architecture & Systems Engineering</h2>
 
-      <!-- Restored Three Sigma Block -->
       <div class="portfolio-item-card">
         <div class="card-header-row">
           <div class="item-main-title">Three Sigma: AI Powered Market Maker</div>
@@ -524,7 +561,6 @@
     <div id="tab-data" class="tab-viewport-content" style="display:none;">
       <h2 class="viewport-heading">Data Science, Analytics & Corporate Research</h2>
 
-      <!-- Restored PlayStation Research Module -->
       <div class="portfolio-item-card">
         <div class="card-header-row">
           <div class="item-main-title">PlayStation Brand & User Behavior Research</div>
@@ -653,6 +689,56 @@
             <a href="https://www.tinkercad.com/things/gV19fKzfBSH-pineapple-prototype?sharecode=bXpp1g3K_qgVHOHRCYoxds1E6Zw5KKA5V5B0AH8rzrI" target="_blank">View Prototype on Tinkercad →</a>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- New Restored Certifications Viewport -->
+    <div id="tab-certs" class="tab-viewport-content" style="display:none;">
+      <h2 class="viewport-heading">Professional Credentials & Technical Certifications</h2>
+      <div class="certifications-matrix-grid">
+        
+        <div class="cert-profile-card">
+          <div class="cert-org">Anthropic</div>
+          <div class="cert-name">AI Fluency</div>
+          <div class="cert-meta">Issued Jun 2026</div>
+          <div class="cert-id-code">ID: d86mckqsi86j</div>
+        </div>
+
+        <div class="cert-profile-card">
+          <div class="cert-org">CITI Program</div>
+          <div class="cert-name">Group 1. Social / Behavioral Research</div>
+          <div class="cert-meta">Issued Apr 2026 · Expires Apr 2029</div>
+          <div class="cert-id-code">ID: 76438884</div>
+        </div>
+
+        <div class="cert-profile-card">
+          <div class="cert-org">DataCamp Skill Track</div>
+          <div class="cert-name">SQL Fundamentals</div>
+          <div class="cert-meta">Issued Jan 2025 // Core Relational Engines</div>
+          <div class="cert-id-code">ID: efab25713da3037f</div>
+        </div>
+
+        <div class="cert-profile-card">
+          <div class="cert-org">DataCamp</div>
+          <div class="cert-name">Intermediate Git</div>
+          <div class="cert-meta">Issued Mar 2025 // Branch Isolation Loops</div>
+          <div class="cert-id-code">ID: 1ef04d90c1da5947</div>
+        </div>
+
+        <div class="cert-profile-card">
+          <div class="cert-org">DataCamp</div>
+          <div class="cert-name">Data Science Track</div>
+          <div class="cert-meta">Issued Oct 2024 // Predictive Systems</div>
+          <div class="cert-id-code">ID: ba68a5d3185bb8ef</div>
+        </div>
+
+        <div class="cert-profile-card">
+          <div class="cert-org">Forage Job Simulation</div>
+          <div class="cert-name">Accenture North America - Data Analytics</div>
+          <div class="cert-meta">Issued Nov 2023 // Visual Dashboard Design</div>
+          <div class="cert-id-code">ID: vYeA3aFduKZP9uGSd</div>
+        </div>
+
       </div>
     </div>
 
