@@ -4,9 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>shuripurin // purin.city</title>
+  <title>shuripurin // portfolio</title>
   <link rel="icon" type="image/gif" href="stickers/100kitty.gif">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Spacing fixes for portfolio data within the native theme layout */
+    .portfolio-skills {
+      background: #ffffff;
+      border: 1px inset #ccc;
+      padding: 12px;
+      margin-bottom: 15px;
+      line-height: 1.6;
+      font-size: 0.95em;
+    }
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 56.25%;
+      margin: 15px 0;
+      border: 1px inset #ccc;
+    }
+    .iframe-wrapper iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border: none;
+    }
+    .project-meta-tag {
+      display: inline-block;
+      background: #dfe6e0;
+      padding: 2px 6px;
+      font-size: 0.85em;
+      font-weight: bold;
+      margin-bottom: 8px;
+      border: 1px outset #fff;
+    }
+  </style>
 </head>
 <body>
 
@@ -15,7 +51,7 @@
   <div id="title-bar">
     <span class="title-icon">&#9654;</span>
     <marquee class="title-marquee" behavior="scroll" scrollamount="2">
-      I know the ending will be a happy one . (-&#12540;-*)&nbsp;&nbsp;&nbsp;&#9834; &#12424;&#12358;&#12371;&#12381; ! purin. city &#12408;&nbsp;&nbsp;&nbsp;&#10022; &#26356;&#26032;&#20013; . . . &#10022;&nbsp;&nbsp;&nbsp;&#9733; &#12356;&#12388;&#12418;&#12354;&#12426;&#12364;&#12392;&#12358;&#12372;&#12374;&#12356;&#12414;&#12377; &#9733;&nbsp;&nbsp;&nbsp;(-_-)zzz&nbsp;&nbsp;&nbsp;&#8734; shuripurin.neocities.org &#8734;
+      I know the ending will be a happy one . (-ー-*)&nbsp;&nbsp;&nbsp;&#9834; ようこそ ! purin. city へ&nbsp;&nbsp;&nbsp;&#10022; Portfolio Verified . . . &#10022;&nbsp;&nbsp;&nbsp;&#9733; shuripurin.neocities.org &#9733;
     </marquee>
     <div class="title-controls">
       <button class="title-btn title-min">_</button>
@@ -25,32 +61,30 @@
   </div>
 
   <div id="menu-bar">
-    <span class="menu-item">&#12501;&#12449;&#12452;&#12523;</span>
-    <span class="menu-item">&#26908;&#32034;</span>
-    <span class="menu-item">&#34920;&#31034;</span>
-    <span class="menu-item">&#12�;&#12523;&#12503;</span>
-    <span class="menu-sep">&#65372;</span>
+    <span class="menu-item">ファイル</span>
+    <span class="menu-item">検索</span>
+    <span class="menu-item">表示</span>
+    <span class="menu-item">ヘルプ</span>
+    <span class="menu-sep">｜</span>
     <span class="menu-item">BBS</span>
     <span class="menu-item menu-nav">&#9668;</span>
     <span class="menu-item menu-nav">&#9658;</span>
-    <span class="menu-right">[ purin.city // neocities.org ]</span>
+    <span class="menu-right">[ purin.city // portfolio ]</span>
   </div>
 
   <div id="toolbar">
     <button class="toolbar-btn">&#9668;</button>
     <button class="toolbar-btn">&#9658;</button>
     <button class="toolbar-btn">&#8634;</button>
-    <span class="toolbar-sep">&#65372;</span>
-    <input type="text" class="toolbar-address" id="toolbar-addr" value="http://shuripurin.neocities.org/" readonly>
-    <button class="toolbar-btn toolbar-go">&#31227;&#21205;</button>
+    <span class="toolbar-sep">｜</span>
+    <input type="text" class="toolbar-address" id="toolbar-addr" value="http://shuripurin.neocities.org/projects" readonly>
+    <button class="toolbar-btn toolbar-go">移動</button>
   </div>
 
   <div id="tab-bar">
-    <button class="tab active" data-tab="home">Home</button>
-    <button class="tab" data-tab="about">About</button>
-    <button class="tab" data-tab="links">Links</button>
-    <button class="tab" data-tab="library">Library</button>
-    <button class="tab" data-tab="blog">Blog</button>
+    <button class="tab active" data-tab="projects">Projects</button>
+    <button class="tab" data-tab="about">About Me</button>
+    <button class="tab" data-tab="contact">Contact</button>
   </div>
 
   <div id="window-body">
@@ -67,7 +101,7 @@
             <audio id="mp-audio" src="https://files.catbox.moe/j5ol7c.mp3" preload="none"></audio>
             <div class="mp-header">&#9655; now playing:</div>
             <div class="mp-song">
-              &#21320;&#30561;&#12395;&#22467;&#12425;&#12377;&#37431;&#12426;&#31309;<br>
+              午睡に零らす釣り針<br>
               <span class="mp-artist">Pearl Brothers</span>
             </div>
             <div class="mp-bar-wrap">
@@ -91,42 +125,77 @@
       <div class="lp-online">
         <span class="lp-online-dot">&#9679;</span> online now
       </div>
-      <div class="lp-webring">
-        <div class="lp-webring-label">// wii webring</div>
-        <iframe style="border:none;width:100%;" src="https://neocities.jeith.com/wii-webring?site=https://shuripurin.neocities.org&variant=compact"></iframe>
-      </div>
       <div class="lp-stats">
         <div>&#9658; est. 2023</div>
         <div>&#9658; v3.0 layout</div>
         <div>&#9658; best @ 760px</div>
       </div>
-
     </div>
 
     <div id="right-panel">
 
-        <div id="tab-home" class="tab-content" style="display:block;">
+        <!-- Projects Panel (Active by Default) -->
+        <div id="tab-projects" class="tab-content" style="display:block;">
           <div class="thread-wrapper">
+            
+            <div class="info-box">
+              <div class="info-box-header">
+                <span class="bbs-icon">&#9632;</span>
+                <span class="bbs-title">TECHNICAL SKILLS // ✦ DATA ENG & ANL</span>
+                <span class="bbs-meta">Overview</span>
+              </div>
+              <div class="info-box-body">
+                <div class="portfolio-skills">
+                  <strong>Languages & Frameworks:</strong> Python • SQL • Java • JavaScript • HTML/CSS • React • Next.js • Flask • Node.js<br>
+                  <strong>Analytics & Data Systems:</strong> Data Pipelines • ETL Ingestion • Relational Systems • Predictive Models • Database Schemas • Tableau • Power BI • Excel
+                </div>
+              </div>
+            </div>
 
             <div class="info-box">
               <div class="info-box-header">
                 <span class="bbs-icon">&#9632;</span>
-                <span class="bbs-title">WELCOME . . . // &#12424;&#12358;&#12371;&#12381; !</span>
-                <span class="bbs-meta">No. 001 &nbsp; Posted: 12:00am</span>
+                <span class="bbs-title">CRWL: CONCURRENT AGENT PIPELINE // No. 001</span>
+                <span class="bbs-meta">🏆 AWS Deep Agents Hackathon Winner</span>
               </div>
               <div class="info-box-body">
-                <div class="welcome-row">
-                  <img src="Mwelcome.gif" alt="welcome" class="welcome-gif">
-                  <div class="welcome-text">
-                    <p>&#12424;&#12358;&#12371;&#12381; ! you found <strong>purin.city</strong> &mdash; this site is a work-in-progress always. (-&#969;-)</p>
-                    <p style="margin-top:6px;">feel free to look around . leave a message in the shoutbox if you visit &#9825;</p>
-                    <p class="welcome-note" style="margin-top:6px;"><img src="rosa3.gif" alt=""> &#10022; please sign the shoutbox if you drop by &#10022;</p>
-                  </div>
-                </div>
-                <div class="cbox-wrap">
-                  <div class="cbox-label">// shoutbox // &#12467;&#12513;&#12531;&#12488;&#27850;</div>
-                  <iframe src="https://www3.cbox.ws/box/?boxid=3539677&boxtag=pzUb2x" width="100%" height="350" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+                <div class="project-meta-tag">Data Engineering • Python • PostgreSQL • Next.js</div>
+                <p>Architected a highly scalable concurrent data collection pipeline utilizing autonomous multi-agent networks:</p>
+                <ul style="margin-left:20px; margin-top:5px; line-height:1.5;">
+                  <li>Designed backend execution graphs where autonomous script nodes concurrently pull and process live data sources.</li>
+                  <li>Integrated managed transactional architecture using custom schemas and row-level locks to completely prevent resource collisions.</li>
+                  <li>Built streaming web analytics viewports to monitor active processing and pipeline congestion real-time.</li>
+                </ul>
+              </div>
+            </div>
 
+            <div class="info-box">
+              <div class="info-box-header">
+                <span class="bbs-icon">&#9632;</span>
+                <span class="bbs-title">MINTY: DIGITAL TOOTH FAIRY // No. 002</span>
+                <span class="bbs-meta">🏆 DubHacks Visa Track Winner</span>
+              </div>
+              <div class="info-box-body">
+                <div class="project-meta-tag">Computer Vision • React • Gemini AI • Stripe API</div>
+                <p>Built an interactive web system gamifying long-term healthy habits and core financial literacy concepts for families:</p>
+                <ul style="margin-left:20px; margin-top:5px; line-height:1.5;">
+                  <li>Integrated live visual model hooks to detect and verify user brushing patterns securely.</li>
+                  <li>Designed automated ledger rules mirroring compounding interest structures to teach long-term financial modeling.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <div class="info-box-header">
+                <span class="bbs-icon">&#9632;</span>
+                <span class="bbs-title">SPOTIFY DATA POPULARITY SYSTEMS // No. 003</span>
+                <span class="bbs-meta">Case Study</span>
+              </div>
+              <div class="info-box-body">
+                <div class="project-meta-tag">Predictive Modeling • Power BI • Pandas • NumPy</div>
+                <p>Evaluated core trends driving popularity indexing utilizing linear tracking equations and correlation matrices within Python modules.</p>
+                <div class="iframe-wrapper">
+                  <iframe src="https://www.canva.com/design/DAGhSDOZ5XQ/NNJzw10MBxqWrMEj-bRNew/view?embed" allowfullscreen></iframe>
                 </div>
               </div>
             </div>
@@ -134,370 +203,64 @@
           </div>
         </div>
 
-      <div id="tab-about" class="tab-content">
-        <div class="thread-wrapper">
-
-          <div class="info-box">
-            <div class="info-box-header">
-              <span class="bbs-icon">&#9632;</span>
-              <span class="bbs-title">ABOUT ME // &#12503;&#12525;&#12501;&#12451;&#12540;&#12523;</span>
-              <span class="bbs-meta">No. 001</span>
-            </div>
-            <div class="info-box-body">
-              <div class="about-layout">
-                <div class="about-imgs">
-                <img src="stickers/lotus.png" alt="lotus" class="about-char">
-                </div>
-                <div class="about-table-wrap">
-                  <table class="about-tbl">
-                    <tbody>
-                      <tr><td class="atk">name</td><td>Vi</td></tr>
-                      <tr><td class="atk">alias</td><td>purin / shuripurin</td></tr>
-                      <tr><td class="atk">ethnicity</td><td>vietnamese / european / chinese</td></tr>
-                      <tr><td class="atk">interests</td><td>coding, anime, analytics, pc building/gaming, reading, weight lifting, 3DS, cooking</td></tr>
-                      <tr><td class="atk">shows</td><td>code geass, steins;gate, welcome to the NHK, made in abyss, evangelion</td></tr>
-                      <tr><td class="atk">games</td><td>zero escape, style savvy, tomodachi life, overwatch, muse dash, cyberpunk, needy girl overdose, catherine classic, you and me and her</td></tr>
-                      <tr><td class="atk">socials</td><td><a href="https://www.youtube.com/@shuripurin" target="_blank">youtube &#8599;</a></td></tr>
-                    </tbody>
-                  </table>
-                </div>
+        <!-- About Panel -->
+        <div id="tab-about" class="tab-content" style="display:none;">
+          <div class="thread-wrapper">
+            <div class="info-box">
+              <div class="info-box-header">
+                <span class="bbs-icon">&#9632;</span>
+                <span class="bbs-title">PROFESSIONAL PROFILE // プロフィール</span>
+                <span class="bbs-meta">Credentials</span>
               </div>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <div class="info-box-header">
-              <span class="bbs-icon">&#9632;</span>
-              <span class="bbs-title">CLIQUES // &#12463;&#12522;&#12540;&#12463;</span>
-              <span class="bbs-meta">No. 002</span>
-            </div>
-            <div class="info-box-body">
-              <div class="cliques-grid">
-                <a href="http://www.chinako.net/hamster" target="_blank"><img src="02.gif" alt="hamtaro clique"></a>
-                <a href="https://allyratworld.com/cafe/rose#join" target="_blank"><img src="88x31melo.png" alt="cafe rose"></a>
-                <a href="https://dust.kuchiki.net/" target="_blank"><img src="c1.gif" alt="catastic"></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <div class="info-box-header">
-              <span class="bbs-icon">&#9632;</span>
-              <span class="bbs-title">ABOUT THIS SITE</span>
-              <span class="bbs-meta">No. 003</span>
-            </div>
-            <div class="info-box-body">
-              <p> my personal website, inspired by 2ch browser UIs, geocities japan, and flash-era fan sites.</p>
-              <p style="margin-top:5px;">fonts: KH-Dot-Hibiya-32 // Nintendo DS BIOS // best viewed at 760px (-_-)</p>
-              <p style="margin-top:5px;">want to affiliate? grab my button:</p>
-              <div class="affiliate-block">
-                <img src="purinbanner.gif" alt="shuripurin 88x31" class="affiliate-btn">
-                <div class="code-snippet">&lt;a href="https://shuripurin.neocities.org"&gt;&lt;img src="YOUR_HOST/purinbanner.gif"&gt;&lt;/a&gt;</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div id="tab-links" class="tab-content">
-        <div class="thread-wrapper">
-
-          <div class="info-box">
-            <div class="info-box-header">
-              <span class="bbs-icon">&#9632;</span>
-              <span class="bbs-title">MATERIAL LINKS // &#32032;&#26448;&#12469;&#12452;&#12488;</span>
-              <span class="bbs-meta">No. 001</span>
-            </div>
-            <div class="info-box-body">
-              <div class="links-desc">graphics, resources and tools for making pages:</div>
-              <div class="btn88-grid">
-                <a href="http://cute.lolipop.jp/" target="_blank"><img src="links/hcb_88x31_003.gif" alt=""></a>
-                <a href="http://whimsical.heartette.net" target="_blank"><img src="links/whim.gif" alt=""></a>
-                <a href="https://foollovers.com/" target="_blank"><img src="links/foollovers8827.gif" alt=""></a>
-                <a href="http://tora7.ciao.jp/" target="_blank"><img src="links/tora7-b042.gif" alt=""></a>
-                <a href="http://bluedaisy.rdy.jp/bd/" target="_blank"><img src="links/bd1.gif" alt=""></a>
-                <a href="http://home.m07.itscom.net/pungum/index.html" target="_blank"><img src="links/banner2.gif" alt=""></a>
-                <a href="https://www.fancyparts.com/" target="_blank"><img src="links/shop8831.gif" alt=""></a>
-                <a href="https://www.kabegamikan.com/" target="_blank"><img src="links/nya.gif" alt=""></a>
-                <a href="https://sozai.jpn.org/" target="_blank"><img src="links/jpn.gif" alt=""></a>
-                <a href="https://www.asterism-m.com/" target="_blank"><img src="links/asterism.gif" alt=""></a>
-                <a href="http://www.iriko34.com/" target="_blank"><img src="links/2007bana88-kuro.gif" alt=""></a>
-                <a href="https://pata2.jp/" target="_blank"><img src="links/sky-banner7.gif" alt=""></a>
-                <a href="https://www.aoiweb.com/aoi2/index.html" target="_blank"><img src="links/bnraoi2.gif" alt=""></a>
-                <a href="http://www.first-moon.com/index.html" target="_blank"><img src="links/firstmoon_88bnr.gif" alt=""></a>
-                <a href="http://www.anne-box.com/" target="_blank"><img src="links/anne15.gif" alt=""></a>
-                <a href="https://www.schoolicons.com/" target="_blank"><img src="links/link_s.gif" alt=""></a>
-                <a href="http://kirakiraparts.web.fc2.com/" target="_blank"><img src="links/kira.gif" alt=""></a>
-                <a href="https://graphic.neocities.org/" target="_blank"><img src="https://graphic.neocities.org/Button2.png" alt=""></a>
-                <a href="https://nukocities.neocities.org/" target="_blank"><img src="https://nukocities.neocities.org/img/nukocities.gif" alt=""></a>
-                <a href="https://artwork.neocities.org/" target="_blank"><img src="links/artworkbuttonsanrio.gif" alt=""></a>
-                <a href="https://pixelsafari.neocities.org/" target="_blank"><img src="links/pixelsafari.gif" alt=""></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <div class="info-box-header">
-              <span class="bbs-icon">&#9632;</span>
-              <span class="bbs-title">NEOCITIES LINKS</span>
-              <span class="bbs-meta">No. 002</span>
-            </div>
-            <div class="info-box-body">
-              <div class="links-desc">friends and cool people on neocities!</div>
-              <div class="btn88-grid">
-                <a href="https://dataview.neocities.org/" target="_blank"><img src="links/banner.gif" alt=""></a>
-                <a href="https://rice.place/" target="_blank"><img src="https://rice.nekoweb.org/button/riceplace.png" alt=""></a>
-                <a href="https://kladovka.neocities.org/" target="_blank"><img src="links/kladovkabutton.png" alt=""></a>
-                <a href="https://dokode.moe/indexv3" target="_blank"><img src="links/dokodemobutton3.gif" alt=""></a>
-                <a href="https://cocopie.neocities.org/" target="_blank"><img src="links/cocopie2.gif" alt=""></a>
-                <a href="https://swirl.neocities.org/" target="_blank"><img src="links/swirlbutton_01.gif" alt=""></a>
-                <a href="https://danppun.neocities.org" target="_blank"><img src="https://danppun.neocities.org/danppun_btn.png" alt=""></a>
-                <a href="https://kyu.neocities.org/" target="_blank"><img src="links/kyu.gif" alt=""></a>
-                <a href="https://rottenware.neocities.org/"><img src="https://rottenware.neocities.org/rotten banner.png" alt=""></a>
-                <a href="https://burgeritchi.neocities.org" target="_blank"><img src="https://files.catbox.moe/29hdqz.webp" alt=""></a>
-                <a href="https://joyfulthought.neocities.org/"><img src="links/webutton.gif" alt="joyfulthought"></a>
-                <a href="https://2cherrish.neocities.org/"><img src="https://file.garden/ZW0H9yEHZCM7d7rf/2cherrish%20stamp.gif" alt=""></a>
-                <a href="https://sunfishdreamworld.neocities.org/" target="_blank"><img src="links/sunfishdreamworld.gif" alt=""></a>
-                <a href="https://nalfae.neocities.org" target="_blank"><img src="https://nalfae.neocities.org/nalfaebutton.gif" alt=""></a>
-                <a href="https://hmln.neocities.org/" target="_blank"><img src="https://hmln.neocities.org/button.png" alt=""></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <div class="info-box-header">
-              <span class="bbs-icon">&#9632;</span>
-              <span class="bbs-title">CUTE PET LINKS</span>
-              <span class="bbs-meta">No. 003</span>
-            </div>
-            <div class="info-box-body">
-              <div class="btn88-grid">
-                <a href="http://myvitamin.nobody.jp/" target="_blank"><img src="links/bunner.gif" alt=""></a>
-                <a href="http://2shin.net/catlive/" target="_blank"><img src="links/nekostyle2.gif" alt=""></a>
-                <a href="http://tora7.ciao.jp/bob/pocha.html" target="_blank"><img src="links/df-banner.jpg" alt=""></a>
-                <a href="http://www.vesta.dti.ne.jp/~isaka/" target="_blank"><img src="links/b31tama.gif" alt=""></a>
-                <a href="http://www7.plala.or.jp/nekojarashi/" target="_blank"><img src="links/70.gif" alt=""></a>
-                <a href="http://www7.plala.or.jp/neco/cats/" target="_blank"><img src="links/nyankodouga.gif" alt=""></a>
-                <a href="http://nap.babymilk.jp/" target="_blank"><img src="links/nap.gif" alt=""></a>
-                <a href="http://www.gyaos-kingdom.com/" target="_blank"><img src="links/bnr_gyaos.gif" alt=""></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <div class="info-box-header">
-              <span class="bbs-icon">&#9632;</span>
-              <span class="bbs-title">ARTIST LINKS</span>
-              <span class="bbs-meta">No. 004</span>
-            </div>
-            <div class="info-box-body">
-              <div class="btn88-grid">
-                <a href="http://piclab.sakura.ne.jp/" target="_blank"><img src="links/psbana.gif" alt=""></a>
-                <a href="https://russia.sakura.ne.jp/" target="_blank"><img src="links/banner8.gif" alt=""></a>
-                <a href="http://www2.tba.t-com.ne.jp/kyanpisia/" target="_blank"><img src="links/kp.jpg" alt=""></a>
-                <a href="http://frank-web.net/" target="_blank"><img src="links/frank-sozai-bn-16.gif" alt=""></a>
-                <a href="http://hakozumemikan.oboroduki.com/" target="_blank"><img src="links/hako.gif" alt=""></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <div class="info-box-header">
-              <span class="bbs-icon">&#9632;</span>
-              <span class="bbs-title">OTHER SITES</span>
-              <span class="bbs-meta">No. 005</span>
-            </div>
-            <div class="info-box-body">
-              <div class="btn88-grid">
-                <a href="https://oooeee.nekoweb.org" target="_blank"><img src="https://oooeee.nekoweb.org/img/misc/button.png" alt=""></a>
-                <a href="http://www.chinako.net/hamster/" target="_blank"><img src="links/hc02.gif" alt=""></a>
-                <a href="https://hamutaroko.tripod.com/" target="_blank"><img src="links/ham.gif" alt=""></a>
-                <a href="http://l-wings.jp/" target="_blank"><img src="links/banner3.png" alt=""></a>
-                <a href="https://www.broccoli.co.jp/dejiko/" target="_blank"><img src="links/digi_banner.gif" alt=""></a>
-                <a href="http://www.pre-stage.jp/keychara/" target="_blank"><img src="links/key_bn06.gif" alt=""></a>
-                <a href="https://gameha.com/" target="_blank"><img src="links/gameha_m028.gif" alt=""></a>
-                <a href="http://lacryma.info/" target="_blank"><img src="links/bn_tt_s.gif" alt=""></a>
-                <a href="http://too.puni.to/" target="_blank"><img src="links/bnrmahokoto.jpg" alt=""></a>
-                <a href="https://cherie.nekoweb.org"><img src="https://cherie.nekoweb.org/image/assets/sitebuttonyay.gif" alt="cherie"></a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div id="tab-library" class="tab-content">
-        <div class="thread-wrapper">
-          <div class="info-box">
-            <div class="info-box-header">
-              <span class="bbs-icon">&#9632;</span>
-              <span class="bbs-title">READING LIST // &#26412;&#26550;</span>
-              <span class="bbs-meta">No. 001</span>
-            </div>
-            <div class="info-box-body">
-              <p class="lib-intro">things I've read, am reading, or want to read. updated when I remember. (-_-)</p>
-              <div class="lib-section">
-                <div class="lib-sec-hdr">&#9658; completed // &#35501;&#20102;</div>
-                <table class="lib-tbl">
-                  <thead><tr class="lib-thead"><th>title</th><th>author</th><th></th></tr></thead>
-                  <tbody>
-                    <tr><td>School Girl</td><td>Osamu Dazai</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>The Setting Sun</td><td>Osamu Dazai</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>No Longer Human</td><td>Osamu Dazai</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>The Sensation of Being Somebody</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>Boy's Abyss</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>For Tomorrow I will be Someone's Girlfriend</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>Happiness</td><td>Shuzo Oshimi</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>Vagabond</td><td>Takehiko Inoue</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>Boku wa Mari no Naka</td><td>Shuzo Oshimi</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>Peach Girl</td><td>Miwa Ueda</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>Okaeri Alice</td><td>Shuzo Oshimi</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>Sweet Poolside</td><td>Shuzo Oshimi</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>The Gift of Fear</td><td>Gavin De Becker</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>Meditations</td><td>Marcus Aurelius</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>Perfect Blue Anthology</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>Crucial Conversations</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>The Gods Lie</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                    <tr><td>Set Boundaries Find Peace</td><td>&#8212;</td><td><span class="lib-status done">&#10003;</span></td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="lib-section">
-                <div class="lib-sec-hdr">&#9658; currently reading // &#35501;&#26360;&#20013;</div>
-                <table class="lib-tbl">
-                  <thead><tr class="lib-thead"><th>title</th><th>author</th><th>status</th></tr></thead>
-                  <tbody>
-                    <tr><td colspan="2">. . . ( updating soon ) . . .</td><td><span class="lib-status reading">&#35501;&#26360;&#20013;</span></td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="lib-section">
-                <div class="lib-sec-hdr">&#9658; plan to read // &#35501;&#12415;&#12383;&#12356;</div>
-                <table class="lib-tbl">
-                  <thead><tr class="lib-thead"><th>title</th><th>type</th></tr></thead>
-                  <tbody>
-                    <tr><td>. . . ( updating soon ) . . .</td><td>&#8212;</td></tr>
-                  </tbody>
-                </table>
+              <div class="info-box-body">
+                <p style="font-weight:bold; background:#dfe6e0; padding:8px; border:1px inset #fff; margin-bottom:12px; text-align:center;">
+                  🎓 Graduated from Oregon State University with Magna Cum Laude Honors!
+                </p>
+                <p>I specialize in building programmatic data systems, optimizing user activation maps, and bridging backend mechanics with high-growth strategic dashboards.</p>
+                <p style="margin-top:10px;">Served as Chief Marketing Officer for BeaverHacks, managing conversion operations that scaled regional reach loops directly to 450+ physical attendees.</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div id="tab-blog" class="tab-content">
-        <div class="thread-wrapper">
-
-          <div class="info-box">
-            <div class="info-box-header">
-              <span class="bbs-icon">&#9632;</span>
-              <span class="bbs-title">FOOD DIARY // &#39293;&#26085;&#35352;</span>
-              <span class="bbs-meta">No. 001</span>
-            </div>
-            <div class="info-box-body">
-              <p class="blog-intro">mostly photos of things i've eaten and made. (-&#969;-)</p>
-              <div class="blog-grid">
-                <div class="blog-entry">
-                  <div class="blog-entry-hdr"><span class="blog-date">recent</span><span class="blog-tag">baking</span></div>
-                  <div class="blog-img-wrap"><img src="cake.PNG" alt="toro cake" class="blog-img"></div>
-                  <div class="blog-caption">Toro Inoue cake &mdash; baked this recently...</div>
-                </div>
-                <div class="blog-entry">
-                  <div class="blog-entry-hdr"><span class="blog-date">recent</span><span class="blog-tag">drinks</span></div>
-                  <div class="blog-img-wrap"><img src="wii.PNG" alt="wii drinks" class="blog-img"></div>
-                  <div class="blog-caption">Cute drinks. Blue raspberry flavor. wii.</div>
-                </div>
-                <div class="blog-entry">
-                  <div class="blog-entry-hdr"><span class="blog-date">recent</span><span class="blog-tag">drinks</span></div>
-                  <div class="blog-img-wrap"><img src="melon.PNG" alt="melon soda" class="blog-img"></div>
-                  <div class="blog-caption">Melon soda! One of my favorite drinks, even more special in this cup.</div>
-                </div>
-                <div class="blog-entry">
-                  <div class="blog-entry-hdr"><span class="blog-date">soon...</span><span class="blog-tag">update</span></div>
-                  <div class="blog-img-wrap blog-noimg"><span>more photos coming . . . (-_-)zzz</span></div>
-                  <div class="blog-caption">still uploading . . . check back later &#9825;</div>
-                </div>
+        <!-- Contact Panel -->
+        <div id="tab-contact" class="tab-content" style="display:none;">
+          <div class="thread-wrapper">
+            <div class="info-box">
+              <div class="info-box-header">
+                <span class="bbs-icon">&#9632;</span>
+                <span class="bbs-title">CHANNELS // CONNECT</span>
+                <span class="bbs-meta">Links</span>
+              </div>
+              <div class="info-box-body">
+                <ul style="margin-left:20px; line-height:1.8;">
+                  <li><strong>Email:</strong> <a href="mailto:violettesdavis@icloud.com">violettesdavis@icloud.com</a></li>
+                  <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/violette-davis/" target="_blank">Violette Davis</a></li>
+                </ul>
               </div>
             </div>
           </div>
-
-          <div class="info-box">
-            <div class="info-box-header">
-              <span class="bbs-icon">&#9632;</span>
-              <span class="bbs-title">UPDATE LOG // &#26356;&#26032;&#23653;&#27508;</span>
-              <span class="bbs-meta">No. 002</span>
-            </div>
-            <div class="info-box-body">
-              <table class="update-log-tbl">
-                <tbody>
-                  <tr><td class="ul-date">2025.03</td><td>v3.0 &mdash; complete redesign! syu.core-inspired OS window layout</td></tr>
-                  <tr><td class="ul-date">2024.xx</td><td>added library / reading list + more link buttons</td></tr>
-                  <tr><td class="ul-date">2023.11.10</td><td>site launched! v1.0 . hello world (-_-)&#12494;</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
         </div>
-      </div>
 
     </div>
   </div>
 
   <div id="footer-bar">
-    <span class="footer-title">&#8801; @shuripurin's WebSite . . .</span>
-    <span class="footer-login">
-      Username:&nbsp;<input type="text" class="footer-input" size="7" autocomplete="off" tabindex="-1">
-      &nbsp;Password:&nbsp;<input type="password" class="footer-input" size="7" autocomplete="off" tabindex="-1">
-    </span>
+    <span class="footer-title">≡ @shuripurin's Portfolio . . .</span>
     <marquee class="footer-marquee" behavior="scroll" scrollamount="1">
-      &#12354;&#12387;&#12289;&#21496;&#12289;&#12394;&#12435;&#12390;&#20206;&#28982;&#65281;&#21531;&#12418;&#26716;&#12434;&#35211;&#12395;&#26469;&#12383;&#12398;&#65311;&nbsp;&nbsp;&#9733;&nbsp;&nbsp;&#12424;&#12358;&#12371;&#12381; purin.city &#12408;&nbsp;&nbsp;&#9733;&nbsp;&nbsp;shuripurin.neocities.org&nbsp;&nbsp;&#9733;&nbsp;&nbsp;&#12356;&#12388;&#12418;&#12354;&#12426;&#12364;&#12392;&#12358;&#12372;&#12374;&#12356;&#12414;&#12377;&nbsp;&nbsp;&#9733;&nbsp;&nbsp;(-_-)zzz&nbsp;&nbsp;&#9733;&nbsp;&nbsp;&#26356;&#26032;&#20013; . . .&nbsp;&nbsp;&#9733;
+      あっ、司、なんて偶然！君も桜を見に来たの？&nbsp;&nbsp;★&nbsp;&nbsp;Welcome to my technical portfolio workspace.&nbsp;&nbsp;★&nbsp;&nbsp;(-_-)zzz
     </marquee>
   </div>
 
 </div>
 
-<div id="stamps-wrap">
-  <marquee scrollamount="2" behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
-    <img src="med30.gif">
-    <img src="stamps/digi.jpg">
-    <img src="stamps/miku.jpg">
-    <img src="stamps/purin.jpg">
-    <img src="stamps/monkey.jpg">
-    <img src="stamps/ZgH9J9k.png">
-    <img src="stamps/domo.png">
-    <img src="stamps/tea.png">
-    <img src="stamps/tare.png">
-    <img src="stamps/kkuma.jpg">
-    <img src="stamps/ZeO4Hkg.png">
-    <img src="stamps/smart.png">
-    <img src="stamps/nekop.gif">
-    <img src="stamps/lucky.gif">
-    <img src="stamps/leek.gif">
-    <img src="stamps/kuma.gif">
-    <img src="stamps/hachun.jpg">
-    <img src="stamps/geass.png">
-    <img src="stamps/dbtc45k-26ce2bd1-1372-4109-b186-675ad85f3d5d.png">
-    <img src="stamps/bunni.png">
-    <img src="stamps/clokuma.png">
-    <img src="stamps/co.png">
-    <img src="stamps/ihcigo.jpg">
-    <img src="stamps/kys.gif">
-    <img src="stamps/madoka.jpg">
-  </marquee>
-</div>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  
 $(document).ready(function () {
   var TAB_URLS = {
-    home:    'http://shuripurin.neocities.org/',
-    about:   'http://shuripurin.neocities.org/about',
-    links:   'http://shuripurin.neocities.org/links',
-    library: 'http://shuripurin.neocities.org/library',
-    blog:    'http://shuripurin.neocities.org/blog'
+    projects: 'http://shuripurin.neocities.org/projects',
+    about:    'http://shuripurin.neocities.org/projects/about',
+    contact:  'http://shuripurin.neocities.org/projects/contact'
   };
 
   $('.tab').on('click', function () {
@@ -506,64 +269,27 @@ $(document).ready(function () {
     $(this).addClass('active');
     $('.tab-content').hide();
     $('#tab-' + tab).fadeIn(120);
-    $('#toolbar-addr').val(TAB_URLS[tab] || TAB_URLS.home);
+    $('#toolbar-addr').val(TAB_URLS[tab] || TAB_URLS.projects);
   });
-  // Auto-switch to the Projects tab if the URL contains 'projects'
-  if (window.location.pathname.includes('projects') || window.location.hash === '#projects') {
-    $('.tab[data-tab="projects"]').trigger('click');
-  }
-  var audio = document.getElementById('mp-audio');
 
+  var audio = document.getElementById('mp-audio');
   audio.addEventListener('timeupdate', function() {
     if (!audio.duration) return;
     var pct = (audio.currentTime / audio.duration) * 100;
     $('#mp-progress').css('width', pct + '%');
-    var em = Math.floor(audio.currentTime/60), es = Math.floor(audio.currentTime%60);
-    var dm = Math.floor(audio.duration/60),   ds = Math.floor(audio.duration%60);
-    $('#mp-time').text(em+':'+(es<10?'0':'')+es+' / '+dm+':'+(ds<10?'0':'')+ds);
   });
 
   $('#mp-play-btn').on('click', function () {
-    if (audio.paused) {
-      audio.play();
-      $(this).text('\u25A0');
-    } else {
-      audio.pause();
-      $(this).text('\u25B6');
-    }
+    if (audio.paused) { audio.play(); $(this).text('■'); } 
+    else { audio.pause(); $(this).text('▶'); }
   });
-
-  $('.mp-bar').on('click', function(e) {
-    var pct = e.offsetX / $(this).width();
-    audio.currentTime = pct * audio.duration;
-  });
-
-
-  $('.title-close').on('click', function () {
-    $('#os-window').animate({opacity:0},300,function(){ $(this).animate({opacity:1},600); });
-  });
-
-  $('img').each(function(){ $(this).attr('loading','lazy'); });
 });
-
-(function(){
-  var S=['\u2726','\u2727','\u2605','\u2606','\u273F','\u266A','\u2661','\uFF0A','\u2729','\u25C7'];
-  var C=['#ffb7c5','#ffd1dc','#c8a4d4','#a4c8d4','#8fa8c8','#c8a0b8','#f0d8b0','#a8d8b8'];
-  document.addEventListener('click',function(e){
-    for(var i=0;i<7;i++){
-      var s=document.createElement('span');
-      s.textContent=S[Math.floor(Math.random()*S.length)];
-      var col=C[Math.floor(Math.random()*C.length)];
-      var sz=8+Math.floor(Math.random()*12);
-      s.style.cssText='position:fixed;pointer-events:none;z-index:99999;font-size:'+sz+'px;left:'+e.clientX+'px;top:'+e.clientY+'px;color:'+col+';user-select:none;line-height:1;';
-      document.body.appendChild(s);
-      var dx=(Math.random()-0.5)*90,dy=-25-Math.random()*65,dur=480+Math.random()*380;
-      var a=s.animate([{transform:'translate(-50%,-50%) scale(1)',opacity:1},{transform:'translate(calc(-50% + '+dx+'px),calc(-50% + '+dy+'px)) scale(0.1)',opacity:0}],{duration:dur,easing:'ease-out'});
-      a.onfinish=function(){this.effect.target.remove();};
-    }
-  });
-}());
 </script>
-
 </body>
-</html>
+</html># Push the true projects data directly into the folder routing copy
+cp projects.html projects/index.html
+
+# Deploy it all cleanly to GitHub
+git add projects.html projects/index.html
+git commit -m "Restore missing dedicated project data modules to portfolio tracking files"
+git push origin main --force
