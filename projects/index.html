@@ -8,24 +8,35 @@
   <link rel="icon" type="image/gif" href="stickers/100kitty.gif">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Spacing fixes for portfolio data within the native theme layout */
-    .portfolio-skills {
+    /* Professional layout overrides designed to mesh perfectly with the v3.0 frame */
+    .portfolio-skills-grid {
       background: #ffffff;
-      border: 1px inset #ccc;
+      border: 1px inset var(--box-border);
       padding: 12px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       line-height: 1.6;
-      font-size: 0.95em;
+      font-size: 11px;
+      text-align: center;
     }
-    .iframe-wrapper {
+    .project-meta-tag {
+      display: inline-block;
+      background: #dfe6e0;
+      padding: 2px 6px;
+      font-size: 10px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      border: 1px outset #fff;
+    }
+    .iframe-container {
       position: relative;
       width: 100%;
       height: 0;
       padding-top: 56.25%;
-      margin: 15px 0;
-      border: 1px inset #ccc;
+      margin: 12px 0 4px 0;
+      border: 1px inset var(--box-border);
+      overflow: hidden;
     }
-    .iframe-wrapper iframe {
+    .iframe-container iframe {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -33,14 +44,65 @@
       left: 0;
       border: none;
     }
-    .project-meta-tag {
-      display: inline-block;
-      background: #dfe6e0;
-      padding: 2px 6px;
-      font-size: 0.85em;
+    .p-award-banner {
+      text-align: center;
       font-weight: bold;
-      margin-bottom: 8px;
-      border: 1px outset #fff;
+      color: var(--text-main);
+      font-size: 11px;
+      background: #dfe6e0;
+      padding: 8px;
+      border: 1px inset #fff;
+      margin-bottom: 15px;
+    }
+    .timeline-year {
+      font-size: 13px;
+      font-weight: bold;
+      color: var(--box-header-text);
+      margin: 15px 0 8px 0;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--box-border);
+    }
+    .timeline-project {
+      background: #ffffff;
+      padding: 10px 14px;
+      margin: 8px 0 8px 12px;
+      border: 1px solid var(--box-border);
+      border-left: 4px solid var(--accent-blue-dim);
+    }
+    .timeline-project-title {
+      font-weight: bold;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+    .timeline-project-desc {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 5px;
+    }
+    .contact-card {
+      background: #ffffff;
+      padding: 12px;
+      border: 1px solid var(--box-border);
+      text-align: center;
+    }
+    .contact-label {
+      font-weight: bold;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      font-size: 10px;
+    }
+    ul.portfolio-bullets {
+      margin: 6px 0 6px 18px;
+      list-style-type: disc;
+    }
+    ul.portfolio-bullets li {
+      margin: 4px 0;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -51,7 +113,7 @@
   <div id="title-bar">
     <span class="title-icon">&#9654;</span>
     <marquee class="title-marquee" behavior="scroll" scrollamount="2">
-      I know the ending will be a happy one . (-ー-*)&nbsp;&nbsp;&nbsp;&#9834; ようこそ ! purin. city へ&nbsp;&nbsp;&nbsp;&#10022; Portfolio Verified . . . &#10022;&nbsp;&nbsp;&nbsp;&#9733; shuripurin.neocities.org &#9733;
+      I know the ending will be a happy one . (-ー-*)&nbsp;&nbsp;&nbsp;&#9834; ようこそ ! purin. city へ&nbsp;&nbsp;&nbsp;&#10022; Portfolio Mode Verified . . . &#10022;&nbsp;&nbsp;&nbsp;&#9733; shuripurin.neocities.org &#9733;
     </marquee>
     <div class="title-controls">
       <button class="title-btn title-min">_</button>
@@ -82,8 +144,10 @@
   </div>
 
   <div id="tab-bar">
-    <button class="tab active" data-tab="projects">Projects</button>
-    <button class="tab" data-tab="about">About Me</button>
+    <button class="tab active" data-tab="about">About Me</button>
+    <button class="tab" data-tab="software">Software</button>
+    <button class="tab" data-tab="data">Business Analysis</button>
+    <button class="tab" data-tab="timeline">Timeline</button>
     <button class="tab" data-tab="contact">Contact</button>
   </div>
 
@@ -134,20 +198,18 @@
 
     <div id="right-panel">
 
-        <!-- Projects Panel (Active by Default) -->
-        <div id="tab-projects" class="tab-content" style="display:block;">
+        <!-- About Me Tab (Active by Default) -->
+        <div id="tab-about" class="tab-content" style="display:block;">
           <div class="thread-wrapper">
-            
             <div class="info-box">
               <div class="info-box-header">
                 <span class="bbs-icon">&#9632;</span>
-                <span class="bbs-title">TECHNICAL SKILLS // ✦ DATA ENG & ANL</span>
-                <span class="bbs-meta">Overview</span>
+                <span class="bbs-title">TECHNICAL TOOLS // SKILLS & TECHNOLOGIES</span>
+                <span class="bbs-meta">Summary</span>
               </div>
               <div class="info-box-body">
-                <div class="portfolio-skills">
-                  <strong>Languages & Frameworks:</strong> Python • SQL • Java • JavaScript • HTML/CSS • React • Next.js • Flask • Node.js<br>
-                  <strong>Analytics & Data Systems:</strong> Data Pipelines • ETL Ingestion • Relational Systems • Predictive Models • Database Schemas • Tableau • Power BI • Excel
+                <div class="portfolio-skills-grid">
+                  Python • SQL • Java • JavaScript • HTML/CSS • Git • Data Analysis • Data Science • Data Visualization • Data Modeling • Predictive Analytics • Data Mining • Text Mining • Business Analytics • Financial Analysis • Dashboard Design • User Experience Design • UI/UX Design • Tableau • Power BI • Powerpoint • Business Intelligence (BI) • Database Schemas • Matplotlib • Seaborn • Pandas • NumPy • scikit-learn • MySQL • PostgreSQL • Microsoft Office • Excel • Figma • JIRA • Confluence • Project Management • Marketing
                 </div>
               </div>
             </div>
@@ -155,16 +217,38 @@
             <div class="info-box">
               <div class="info-box-header">
                 <span class="bbs-icon">&#9632;</span>
-                <span class="bbs-title">CRWL: CONCURRENT AGENT PIPELINE // No. 001</span>
-                <span class="bbs-meta">🏆 AWS Deep Agents Hackathon Winner</span>
+                <span class="bbs-title">VIOLETTE DAVIS // ABOUT ME</span>
+                <span class="bbs-meta">No. 001</span>
               </div>
               <div class="info-box-body">
-                <div class="project-meta-tag">Data Engineering • Python • PostgreSQL • Next.js</div>
-                <p>Architected a highly scalable concurrent data collection pipeline utilizing autonomous multi-agent networks:</p>
-                <ul style="margin-left:20px; margin-top:5px; line-height:1.5;">
-                  <li>Designed backend execution graphs where autonomous script nodes concurrently pull and process live data sources.</li>
-                  <li>Integrated managed transactional architecture using custom schemas and row-level locks to completely prevent resource collisions.</li>
-                  <li>Built streaming web analytics viewports to monitor active processing and pipeline congestion real-time.</li>
+                <div class="p-award-banner">
+                  🎓 Update: Officially Graduated from Oregon State University (June 2026) with Magna Cum Laude Honors!
+                </div>
+                <p>I still remember building my first website in HTML back in 5th grade—the thrill of seeing my code come to life on screen ignited something in me. Today, I am proud to say that I have officially graduated from Oregon State University with a B.S. in Business Analytics, receiving the university's prestigious <strong>Award for Outstanding Achievement</strong>, an honor reserved for just the top 3 graduating students in the major this year.</p>
+                <p style="margin-top:8px;">I chose business analytics because it perfectly merges my core technical capabilities with my fascination for understanding consumer behavior and conversion metrics. I thrive at the intersection of data engineering, funnel optimization, and high-growth strategy—building backend pipelines, automating infrastructure, and translating complex mathematical data models into visual business intelligence tools.</p>
+                <p style="margin-top:8px;">Throughout my academic journey, I have focused on launching high-impact technical initiatives. I had the privilege of serving as the President of the OSU Business Analytics Club and acting as the Chief Marketing Officer for <strong>BeaverHacks</strong>, where I spearheaded digital optimization campaigns that generated 300,000+ views and scaled the event into Oregon's largest hackathon with over 450 attendees. Simultaneously, I applied my analytics toolkit within corporate and university structures, tracking metrics across $50M+ in digital assets at IndexCoop and architecting data scripts for 80,000+ enterprise users within university IT operations.</p>
+                <p style="margin-top:8px;">When I'm not running predictive models, text mining large-scale open-source datasets, or debugging relational databases, I am actively constructing full-stack systems alongside a passionate community of driven developers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Software Development Tab -->
+        <div id="tab-software" class="tab-content" style="display:none;">
+          <div class="thread-wrapper">
+            <div class="info-box">
+              <div class="info-box-header">
+                <span class="bbs-icon">&#9632;</span>
+                <span class="bbs-title">CRWL: CONCURRENT AGENT PIPELINE // No. 001</span>
+                <span class="bbs-meta">🏆 AWS Deep Agents Winner</span>
+              </div>
+              <div class="info-box-body">
+                <div class="project-meta-tag">Data Engineering • Pipeline Architecture • Python • Next.js • PostgreSQL</div>
+                <p>Architected a highly scalable concurrent data collection pipeline and dashboard leveraging autonomous AI agent networks:</p>
+                <ul class="portfolio-bullets">
+                  <li>Designed a multi-agent backend architecture where autonomous Claude nodes concurrently crawl, clean, and process live web data.</li>
+                  <li>Integrated Ghost's managed PostgreSQL infrastructure using structural database schemas and row-level locking to support conflict-free parallel writes.</li>
+                  <li>Built a real-time responsive Next.js analytics dashboard to track streaming database metrics and monitor active pipeline ingestion health.</li>
                 </ul>
               </div>
             </div>
@@ -176,11 +260,15 @@
                 <span class="bbs-meta">🏆 DubHacks Visa Track Winner</span>
               </div>
               <div class="info-box-body">
-                <div class="project-meta-tag">Computer Vision • React • Gemini AI • Stripe API</div>
-                <p>Built an interactive web system gamifying long-term healthy habits and core financial literacy concepts for families:</p>
-                <ul style="margin-left:20px; margin-top:5px; line-height:1.5;">
-                  <li>Integrated live visual model hooks to detect and verify user brushing patterns securely.</li>
-                  <li>Designed automated ledger rules mirroring compounding interest structures to teach long-term financial modeling.</li>
+                <div class="project-meta-tag">AI • Gemini AI • Stripe API • React • Computer Vision</div>
+                <p style="margin-bottom:6px;"><strong>Links:</strong> <a href="https://github.com/owenkrause/minty" target="_blank">GitHub</a> • <a href="https://devpost.com/software/minty-4vcu9m" target="_blank">Devpost</a> • <a href="https://minty-prod.vercel.app/" target="_blank">Live Demo</a></p>
+                <p>Built an AI-powered app that gamifies dental hygiene by rewarding consistent brushing, teaching kids about compound investment and healthy habits through play:</p>
+                <ul class="portfolio-bullets">
+                  <li>Integrated Gemini AI to detect and verify brushing activity in real-time.</li>
+                  <li>Connected to a Stripe-powered "tooth fairy" system for reward management.</li>
+                  <li>Gamified the dental hygiene experience to encourage consistent healthy habits.</li>
+                  <li>Implemented financial literacy features teaching kids about compound investment.</li>
+                  <li>Developed cross-platform functionality for easy parent-child interaction.</li>
                 </ul>
               </div>
             </div>
@@ -188,55 +276,152 @@
             <div class="info-box">
               <div class="info-box-header">
                 <span class="bbs-icon">&#9632;</span>
-                <span class="bbs-title">SPOTIFY DATA POPULARITY SYSTEMS // No. 003</span>
-                <span class="bbs-meta">Case Study</span>
+                <span class="bbs-title">STUDYMAXX // No. 003</span>
+                <span class="bbs-meta">Project Repo</span>
               </div>
               <div class="info-box-body">
-                <div class="project-meta-tag">Predictive Modeling • Power BI • Pandas • NumPy</div>
-                <p>Evaluated core trends driving popularity indexing utilizing linear tracking equations and correlation matrices within Python modules.</p>
-                <div class="iframe-wrapper">
-                  <iframe src="https://www.canva.com/design/DAGhSDOZ5XQ/NNJzw10MBxqWrMEj-bRNew/view?embed" allowfullscreen></iframe>
-                </div>
+                <div class="project-meta-tag">Python • Plotly • React • Flask • Firebase • Google Cloud</div>
+                <p style="margin-bottom:6px;"><strong>Links:</strong> <a href="https://github.com/shuripurin/studymaxx" target="_blank">GitHub</a> • <a href="https://devpost.com/software/studymaxx" target="_blank">Devpost</a> • <a href="https://studymaxx.vercel.app/" target="_blank">Live Demo</a></p>
+                <p>Created a website to optimize the studying experience for BeaverHacks 2025 that includes:</p>
+                <ul class="portfolio-bullets">
+                  <li>AI-generated learning plans using Groq + Gemini pipeline.</li>
+                  <li>Real-time study tracking with pomodoro timer implementation.</li>
+                  <li>Visualized user analytics with Plotly Dash.</li>
+                  <li>Google Calendar API syncing for seamless scheduling.</li>
+                  <li>Secure Google/email login with Firebase Authentication.</li>
+                  <li>Cloud-based backend with Flask deployed to Google Cloud Run.</li>
+                </ul>
               </div>
             </div>
-
           </div>
         </div>
 
-        <!-- About Panel -->
-        <div id="tab-about" class="tab-content" style="display:none;">
+        <!-- Data Analysis Tab -->
+        <div id="tab-data" class="tab-content" style="display:none;">
           <div class="thread-wrapper">
             <div class="info-box">
               <div class="info-box-header">
                 <span class="bbs-icon">&#9632;</span>
-                <span class="bbs-title">PROFESSIONAL PROFILE // プロフィール</span>
-                <span class="bbs-meta">Credentials</span>
+                <span class="bbs-title">SPOTIFY POPULARITY ANALYSIS // Case Study</span>
+                <span class="bbs-meta"><a href="https://www.linkedin.com/in/violette-davis/" target="_blank">LinkedIn ↗</a></span>
               </div>
               <div class="info-box-body">
-                <p style="font-weight:bold; background:#dfe6e0; padding:8px; border:1px inset #fff; margin-bottom:12px; text-align:center;">
-                  🎓 Graduated from Oregon State University with Magna Cum Laude Honors!
-                </p>
-                <p>I specialize in building programmatic data systems, optimizing user activation maps, and bridging backend mechanics with high-growth strategic dashboards.</p>
-                <p style="margin-top:10px;">Served as Chief Marketing Officer for BeaverHacks, managing conversion operations that scaled regional reach loops directly to 450+ physical attendees.</p>
+                <div class="project-meta-tag">Data Analysis • Python • Pandas • Matplotlib • Power BI</div>
+                <ul class="portfolio-bullets">
+                  <li>Utilized Python with Pandas and NumPy to clean and preprocess data, ensuring high-quality input for analysis.</li>
+                  <li>Applied linear regression to identify key drivers of music popularity.</li>
+                  <li>Collaborated with a team to create dynamic visualizations in Power BI and Python, enhancing the final presentation.</li>
+                </ul>
+                <div class="iframe-container">
+                  <iframe loading="lazy" src="https://www.canva.com/design/DAGhSDOZ5XQ/NNJzw10MBxqWrMEj-bRNew/view?embed" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <div class="info-box-header">
+                <span class="bbs-icon">&#9632;</span>
+                <span class="bbs-title">TESLA DATA ANALYSIS // Case Study</span>
+                <span class="bbs-meta">Market Research</span>
+              </div>
+              <div class="info-box-body">
+                <div class="project-meta-tag">Data Analysis • Python • Data Visualization • Canva</div>
+                <p>Led a team of students to conduct comprehensive market research and analysis of Tesla sales and market data, examining trends and patterns to provide strategic insights.</p>
+                <div class="iframe-container">
+                  <iframe loading="lazy" src="https://www.canva.com/design/DAGc-eYUWlI/npHbidwpv1O2wKQUhzRw9g/view?embed" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <div class="info-box-header">
+                <span class="bbs-icon">&#9632;</span>
+                <span class="bbs-title">YELP DATA ANALYSIS // Machine Learning</span>
+                <span class="bbs-meta">Text Mining</span>
+              </div>
+              <div class="info-box-body">
+                <div class="project-meta-tag">Data Mining • Text Mining • Machine Learning • TF-IDF</div>
+                <ul class="portfolio-bullets">
+                  <li>Worked in a team of students to utilize data mining, text mining and machine learning in Python in order to analyze more than 6,990,280 rows of data.</li>
+                  <li>Utilized a variety of packages to make inferences from data, and using Term Frequency-Inverse Document Frequency Vectorization to determine user sentiment.</li>
+                </ul>
+                <div class="iframe-container">
+                  <iframe loading="lazy" src="https://www.canva.com/design/DAGnrCREClQ/_kwTM14xFUPCoo0ajNUkxQ/view?embed" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <div class="info-box-header">
+                <span class="bbs-icon">&#9632;</span>
+                <span class="bbs-title">BRAINBYTEZ PRODUCT DEVELOPMENT // Venture Pitch</span>
+                <span class="bbs-meta">Financials</span>
+              </div>
+              <div class="info-box-body">
+                <div class="project-meta-tag">Financial Analysis • Cost Projections • Prototypes • Figma</div>
+                <p style="margin-bottom:6px;"><strong>Prototype Link:</strong> <a href="https://www.tinkercad.com/things/gV19fKzfBSH-pineapple-prototype?sharecode=bXpp1g3K_qgVHOHRCYoxds1E6Zw5KKA5V5B0AH8rzrI" target="_blank">View on Tinkercad</a></p>
+                <ul class="portfolio-bullets">
+                  <li>Collaborated with a team of students to develop and present "BrainBytez," a cutting-edge product prototype, in a competitive academic environment.</li>
+                  <li>Conducted comprehensive financial analysis, including cost estimates and revenue projections, to support the product's viability.</li>
+                  <li>Strategically formulated and executed a funding request, successfully pitching to potential investors.</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Contact Panel -->
+        <!-- Timeline Tab -->
+        <div id="tab-timeline" class="tab-content" style="display:none;">
+          <div class="thread-wrapper">
+            <div class="info-box">
+              <div class="info-box-header">
+                <span class="bbs-icon">&#9632;</span>
+                <span class="bbs-title">CHRONOLOGICAL MILESTONES // EXPERIENCE LOG</span>
+                <span class="bbs-meta">Timeline</span>
+              </div>
+              <div class="info-box-body">
+                
+                <div class="timeline-year">2026</div>
+                <div class="timeline-project">
+                  <div class="timeline-project-title">Graduation & Honors</div>
+                  <div class="timeline-project-desc">Graduated Magna Cum Laude from OSU with a B.S. in Business Analytics. Received the Award for Outstanding Achievement.</div>
+                </div>
+                <div class="timeline-project">
+                  <div class="timeline-project-title">AWS Deep Agents Hackathon</div>
+                  <div class="timeline-project-desc">Architected the CRWL concurrent script graph processing node architecture and secured the track win.</div>
+                </div>
+
+                <div class="timeline-year">2025</div>
+                <div class="timeline-project">
+                  <div class="timeline-project-title">DubHacks & BeaverHacks Activation Loop</div>
+                  <div class="timeline-project-desc">Won the Visa Track with Minty. Led marketing pipelines for BeaverHacks scaling attendance to over 450+ concurrent developers.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Tab -->
         <div id="tab-contact" class="tab-content" style="display:none;">
           <div class="thread-wrapper">
             <div class="info-box">
               <div class="info-box-header">
                 <span class="bbs-icon">&#9632;</span>
-                <span class="bbs-title">CHANNELS // CONNECT</span>
-                <span class="bbs-meta">Links</span>
+                <span class="bbs-title">CONNECT // INQUIRIES & NETWORKING</span>
+                <span class="bbs-meta">Channels</span>
               </div>
               <div class="info-box-body">
-                <ul style="margin-left:20px; line-height:1.8;">
-                  <li><strong>Email:</strong> <a href="mailto:violettesdavis@icloud.com">violettesdavis@icloud.com</a></li>
-                  <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/violette-davis/" target="_blank">Violette Davis</a></li>
-                </ul>
+                <p style="margin-bottom:12px;">Feel free to drop a message or reach out via my verified professional networks:</p>
+                <div class="contact-grid">
+                  <div class="contact-card">
+                    <div class="contact-label">Email</div>
+                    <a href="mailto:violettesdavis@icloud.com">violettesdavis@icloud.com</a>
+                  </div>
+                  <div class="contact-card">
+                    <div class="contact-label">LinkedIn</div>
+                    <a href="https://www.linkedin.com/in/violette-davis/" target="_blank">Violette Davis ↗</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -246,9 +431,9 @@
   </div>
 
   <div id="footer-bar">
-    <span class="footer-title">≡ @shuripurin's Portfolio . . .</span>
+    <span class="footer-title">≡ @shuripurin's Portfolio Workspace . . .</span>
     <marquee class="footer-marquee" behavior="scroll" scrollamount="1">
-      あっ、司、なんて偶然！君も桜を見に来たの？&nbsp;&nbsp;★&nbsp;&nbsp;Welcome to my technical portfolio workspace.&nbsp;&nbsp;★&nbsp;&nbsp;(-_-)zzz
+      Welcome to my verified professional portfolio overview. Specializing in Business Analytics, Data Pipelines, and Systems Engineering.
     </marquee>
   </div>
 
@@ -258,8 +443,10 @@
 <script>
 $(document).ready(function () {
   var TAB_URLS = {
-    projects: 'http://shuripurin.neocities.org/projects',
     about:    'http://shuripurin.neocities.org/projects/about',
+    software: 'http://shuripurin.neocities.org/projects/software',
+    data:     'http://shuripurin.neocities.org/projects/data',
+    timeline: 'http://shuripurin.neocities.org/projects/timeline',
     contact:  'http://shuripurin.neocities.org/projects/contact'
   };
 
@@ -286,10 +473,4 @@ $(document).ready(function () {
 });
 </script>
 </body>
-</html># Push the true projects data directly into the folder routing copy
-cp projects.html projects/index.html
-
-# Deploy it all cleanly to GitHub
-git add projects.html projects/index.html
-git commit -m "Restore missing dedicated project data modules to portfolio tracking files"
-git push origin main --force
+</html>
