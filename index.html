@@ -490,6 +490,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+  
 $(document).ready(function () {
   var TAB_URLS = {
     home:    'http://shuripurin.neocities.org/',
@@ -507,7 +508,10 @@ $(document).ready(function () {
     $('#tab-' + tab).fadeIn(120);
     $('#toolbar-addr').val(TAB_URLS[tab] || TAB_URLS.home);
   });
-
+  // Auto-switch to the Projects tab if the URL contains 'projects'
+  if (window.location.pathname.includes('projects') || window.location.hash === '#projects') {
+    $('.tab[data-tab="projects"]').trigger('click');
+  }
   var audio = document.getElementById('mp-audio');
 
   audio.addEventListener('timeupdate', function() {
