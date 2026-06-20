@@ -863,6 +863,4 @@ ol {
     body {
         overflow-x: scroll;
     }
-}git add style.css
-git commit -m "Synchronize and fix missing v3.0 core layout theme stylesheets"
-git push origin main --force
+}
