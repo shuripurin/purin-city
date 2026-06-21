@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Violette Davis // Technical Portfolio</title>
+  <link rel="icon" type="image/gif" href="stickers/100kitty.gif">
+  <style>
+    :root {
+      --bg-outer: #0a0a0c;
+      --win-bg: #141416;
+      --border-color: #26262a;
+      --accent-neon: #ffffff;
+      --accent-muted: #8e8e93;
+      --text-main: #f5f5f7;
+      --text-muted: #a1a1a6;
+      --text-link: #ffffff;
+      --bg-card: #1c1c1e;
+      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: var(--bg-outer);
+      background-image: 
+        linear-gradient(rgba(38, 38, 42, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(38, 38, 42, 0.4) 1px, transparent 1px);
+      background-size: 24px 24px;
+      font-family: var(--font-stack);
+      font-size: 16px;
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    #portfolio-app {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: var(--win-bg);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+    }
+
+    #top-status-bar {
+      background: #000000;
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: monospace;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--accent-muted);
+    }
+
+    .status-left span {
+      color: var(--text-main);
+      font-weight: bold;
+    }
+
+    #nav-tab-bar {
+      display: flex;
+      background: #111112;
+      border-bottom: 1px solid var(--border-color);
+      overflow-x: auto;
+    }
+
+    .nav-tab {
+      padding: 18px 28px;
+      font-size: 15px;
+      font-weight: 500;
+      background: transparent;
+      border: none;
+      border-right: 1px solid var(--border-color);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-tab:hover {
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-main);
+    }
+
+    .nav-tab.active {
+      background: var(--win-bg);
+      color: var(--text-main);
+      border-bottom: 2px solid var(--accent-neon);
+    }
+
+    #main-content-viewport {
+      padding: 40px;
+      min-height: 500px;
+    }
+
+    .tab-viewport-content {
+      display: none;
+      animation: contentFade 0.3s ease-in-out;
+    }
+
+    @keyframes contentFade {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .viewport-heading {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      color: var(--text-main);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+
+    .skills-cluster-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      border-radius: 4px;
+      margin-bottom: 32px;
+    }
+
+    .skills-cluster-box h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-muted);
+      margin-bottom: 12px;
+    }
+
+    .skills-text-matrix {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-main);
+    }
+
+    .portfolio-item-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 32px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      transition: border-color 0.2s ease;
+    }
+
+    .portfolio-item-card:hover {
+      border-color: var(--accent-muted);
+    }
+
+    .card-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      gap: 16px;
+    }
+
+    .item-main-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .item-award-badge {
+      font-family: monospace;
+      font-size: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 4px 10px;
+      border-radius: 2px;
+      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      white-space: nowrap;
+    }
+
+    .meta-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tech-pill {
+      background: #000000;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 4px 12px;
+      font-size: 12px;
+      font-family: monospace;
+      border-radius: 2px;
+    }
+
+    .item-body-narrative p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .item-body-narrative ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .item-body-narrative li {
+      margin-bottom: 8px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .project-action-links {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .project-action-links a {
+      color: var(--text-link);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-right: 20px;
+      border-bottom: 1px dashed var(--accent-muted);
+    }
+
+    .project-action-links a:hover {
+      border-bottom-style: solid;
+    }
+
+    .embedded-report-iframe-wrap {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 56.25%;
+      margin-top: 20px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .embedded-report-iframe-wrap iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border: none;
+    }
+
+    .timeline-node {
+      border-left: 2px solid var(--border-color);
+      padding-left: 24px;
+      position: relative;
+      padding-bottom: 32px;
+    }
+
+    .timeline-year {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 24px;
+      margin-bottom: 16px;
+      font-family: monospace;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 4px;
+    }
+
+    .timeline-project {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--accent-muted);
+      padding: 20px;
+      margin-left: 16px;
+      margin-bottom: 16px;
+    }
+
+    .timeline-project-title {
+      font-weight: bold;
+      color: var(--text-main);
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .timeline-project-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .certifications-matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .cert-profile-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      border-radius: 4px;
+    }
+
+    .cert-org {
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--accent-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .cert-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .cert-meta {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .cert-id-code {
+      font-family: monospace;
+      font-size: 11px;
+      background: #000000;
+      padding: 2px 6px;
+      border: 1px solid var(--border-color);
+      display: inline-block;
+      color: var(--text-muted);
+    }
+
+    .contact-channels-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .channel-anchor-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: block;
+      transition: background 0.2s ease;
+    }
+
+    .channel-anchor-card:hover {
+      background: rgba(255, 255, 255, 0.02);
+      border-color: var(--accent-muted);
+    }
+
+    .channel-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .channel-value {
+      font-size: 16px;
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    @media (max-width: 768px) {
+      #main-content-viewport { padding: 24px; }
+      .card-header-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="portfolio-app">
+
+  <div id="top-status-bar">
+    <div class="status-left">SYS_REF: <span>VIOLETTE_DAVIS_PORTFOLIO_V3.1</span></div>
+    <div class="status-right">LOC: OR_USA // 2026</div>
+  </div>
+
+  <div id="nav-tab-bar">
+    <button class="nav-tab active" data-tab="about">About Me</button>
+    <button class="nav-tab" data-tab="data">Business Analysis</button>
+    <button class="nav-tab" data-tab="software">Software Engineering</button>
+    <button class="nav-tab" data-tab="certs">Certifications</button>
+    <button class="nav-tab" data-tab="timeline">Timeline</button>
+    <button class="nav-tab" data-tab="contact">Contact & Socials</button>
+  </div>
+
+  <div id="main-content-viewport">
+
+    <!-- About Me Viewport -->
+    <div id="tab-about" class="tab-viewport-content" style="display:block;">
+      <h2 class="viewport-heading">Executive Summary</h2>
+      
+      <div class="skills-cluster-box">
+        <h3>Skills & Technologies Matrix</h3>
+        <div class="skills-text-matrix">
+          Python • SQL • Java • JavaScript • HTML/CSS • Git • Data Analysis • Data Science • Data Visualization • Data Modeling • Predictive Analytics • Data Mining • Text Mining • Business Analytics • Financial Analysis • Dashboard Design • User Experience Design • UI/UX Design • Tableau • Power BI • Powerpoint • Business Intelligence (BI) • Database Schemas • Matplotlib • Seaborn • Pandas • NumPy • scikit-learn • MySQL • PostgreSQL • Microsoft Office • Excel • Figma • JIRA • Confluence • Project Management • Marketing
+        </div>
+      </div>
+
+      <div class="portfolio-item-card">
+        <p style="font-weight: bold; color: var(--text-main); font-size: 18px; background: rgba(255, 255, 255, 0.03); padding: 16px; border: 1px solid var(--border-color); margin-bottom: 24px; text-align: center;">
+          🎓 Officially Graduated from Oregon State University with Magna Cum Laude Honors!
+        </p>
+        <div class="item-body-narrative" style="font-size: 17px; line-height: 1.8;">
+          <p>I still remember building my first website in HTML back in 5th grade—the thrill of seeing my code come to life on screen ignited something in me. Today, I am proud to say that I have officially graduated from Oregon State University with a B.S. in Business Analytics, receiving the university's prestigious <strong>Award for Outstanding Achievement</strong>, an honor reserved for just the top 3 graduating students in the major this year.</p>
+          <p style="margin-top:12px;">I chose business analytics because it perfectly merges my core technical capabilities with my fascination for understanding consumer behavior and conversion metrics. I thrive at the intersection of data engineering, funnel optimization, and high-growth strategy—building backend pipelines, automating infrastructure, and translating complex mathematical data models into visual business intelligence tools.</p>
+          <p style="margin-top:12px;">Throughout my academic journey, I have focused on launching high-impact technical initiatives. I had the privilege of serving as the President of the OSU Business Analytics Club and acting as the Chief Marketing Officer for <strong>BeaverHacks</strong>, where I spearheaded digital optimization campaigns that generated 300,000+ views and scaled the event into Oregon's largest hackathon with over 450 attendees. Simultaneously, I applied my analytics toolkit within corporate and university structures, tracking metrics across $50M+ in digital assets at IndexCoop and architecting data scripts for 80,000+ enterprise users within university IT operations.</p>
+          <p style="margin-top:12px;">When I'm not running predictive models, text mining large-scale open-source datasets, or debugging relational databases, I am actively constructing full-stack systems alongside a passionate community of driven developers.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Software Engineering Viewport -->
+    <div id="tab-software" class="tab-viewport-content" style="display:none;">
+      <h2 class="viewport-heading">Software Architecture & Systems Engineering</h2>
+
+      <div class="portfolio-item-card">
+        <div class="card-header-row">
+          <div class="item-main-title">Three Sigma: AI Powered Market Maker</div>
+          <div class="item-award-badge">Quantitative Systems Engine</div>
+        </div>
+        <div class="meta-tag-row">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Scikit-Learn</span>
+          <span class="tech-pill">Polymarket SDK</span>
+          <span class="tech-pill">Next.js</span>
+          <span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">Algorithmic Trading</span>
+        </div>
+        <div class="item-body-narrative">
+          <p>Developed a real-time automated quantitative processing client loop for smart decentralized forecasting environments:</p>
+          <ul>
+            <li>Built predictive machine learning structures using scikit-learn frameworks to map optimal order spread intervals against structural velocity metrics dynamically.</li>
+            <li>Configured end-to-end event loops through Polymarket's central-limit order book (CLOB) client SDK to handle programmatic position allocations cleanly.</li>
+            <li>Created a unified TypeScript-driven Next.js analytical tracking desk to verify open market risk data and real-time position vectors.</li>
+          </ul>
+          <div class="project-action-links">
+            <a href="https://github.com/cassiusfive/polyqh" target="_blank">View on GitHub →</a>
+            <a href="https://devpost.com/software/three-sigma" target="_blank">View on Devpost →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item-card">
+        <div class="card-header-row">
+          <div class="item-main-title">CRWL: Concurrent Agent Pipeline</div>
+          <div class="item-award-badge">🏆 Won AWS Deep Agents Hackathon (Ghost Track)</div>
+        </div>
+        <div class="meta-tag-row">
+          <span class="tech-pill">Data Engineering</span>
+          <span class="tech-pill">Pipeline Architecture</span>
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Next.js</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">Database Schemas</span>
+          <span class="tech-pill">Multi-Agent Automation</span>
+          <span class="tech-pill">Row-Level Locking</span>
+        </div>
+        <div class="item-body-narrative">
+          <p>Architected a highly scalable concurrent data collection pipeline and dashboard leveraging autonomous AI agent networks:</p>
+          <ul>
+            <li>Designed a multi-agent backend architecture where autonomous Claude nodes concurrently crawl, clean, and process live web data.</li>
+            <li>Integrated Ghost's managed PostgreSQL infrastructure using structural database schemas and row-level locking to support conflict-free parallel writes.</li>
+            <li>Built a real-time responsive Next.js analytics dashboard to track streaming database metrics and monitor active pipeline ingestion health.</li>
+          </ul>
+          <div class="project-action-links">
+            <a href="https://github.com/shuripurin/crwl" target="_blank">View on GitHub →</a>
+            <a href="https://devpost.com/software/dashe" target="_blank">View on Devpost →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item-card">
+        <div class="card-header-row">
+          <div class="item-main-title">Minty: Digital Tooth Fairy System</div>
+          <div class="item-award-badge">🏆 Won the Visa Track at DubHacks 2025</div>
+        </div>
+        <div class="meta-tag-row">
+          <span class="tech-pill">Artificial Intelligence</span>
+          <span class="tech-pill">Gemini AI</span>
+          <span class="tech-pill">Stripe API</span>
+          <span class="tech-pill">Web Development</span>
+          <span class="tech-pill">Gamification</span>
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">Payment Integration</span>
+          <span class="tech-pill">Computer Vision</span>
+        </div>
+        <div class="item-body-narrative">
+          <p>Built an AI-powered app that gamifies dental hygiene by rewarding consistent brushing, teaching kids about compound investment and healthy habits through play:</p>
+          <ul>
+            <li>Integrated Gemini AI to detect and verify brushing activity in real-time</li>
+            <li>Connected to a Stripe-powered "tooth fairy" system for reward management</li>
+            <li>Gamified the dental hygiene experience to encourage consistent healthy habits</li>
+            <li>Implemented financial literacy features teaching kids about compound investment</li>
+            <li>Developed cross-platform functionality for easy parent-child interaction</li>
+            <li>Leveraged computer vision pipelines to analyze live webcam feeds tracking motion profiles</li>
+          </ul>
+          <div class="project-action-links">
+            <a href="https://github.com/owenkrause/minty" target="_blank">View on GitHub →</a>
+            <a href="https://devpost.com/software/minty-4vcu9m" target="_blank">View on Devpost →</a>
+            <a href="https://minty-prod.vercel.app/" target="_blank">Live Demo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item-card">
+        <div class="card-header-row">
+          <div class="item-main-title">StudyMaxx Academic Dashboard</div>
+          <div class="item-award-badge">BeaverHacks 2025 Submission</div>
+        </div>
+        <div class="meta-tag-row">
+          <span class="tech-pill">Figma</span>
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Plotly</span>
+          <span class="tech-pill">API Development</span>
+          <span class="tech-pill">Artificial Intelligence</span>
+          <span class="tech-pill">Web Development</span>
+          <span class="tech-pill">Data Visualization</span>
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">Flask</span>
+          <span class="tech-pill">Firebase</span>
+          <span class="tech-pill">Google Cloud</span>
+        </div>
+        <div class="item-body-narrative">
+          <p>Created a website to optimize the studying experience for BeaverHacks 2025 that includes:</p>
+          <ul>
+            <li>AI-generated learning plans using Groq + Gemini pipeline</li>
+            <li>Real-time study tracking with pomodoro timer implementation</li>
+            <li>Visualized user analytics with Plotly Dash</li>
+            <li>Google Calendar API syncing for seamless scheduling</li>
+            <li>Secure Google/email login with Firebase Authentication</li>
+            <li>Cloud-based backend with Flask deployed to Google Cloud Run</li>
+            <li>Frontend built with React, TailwindCSS, and Mantine</li>
+          </ul>
+          <div class="project-action-links">
+            <a href="https://github.com/shuripurin/studymaxx" target="_blank">View on GitHub →</a>
+            <a href="https://devpost.com/software/studymaxx" target="_blank">View on Devpost →</a>
+            <a href="https://studymaxx.vercel.app/" target="_blank">Live Demo →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Business Analysis Viewport -->
+    <div id="tab-data" class="tab-viewport-content" style="display:none;">
+      <h2 class="viewport-heading">Data Science, Analytics & Corporate Research</h2>
+
+      <div class="portfolio-item-card">
+        <div class="card-header-row">
+          <div class="item-main-title">Yelp Large-Scale Text Mining Engine</div>
+          <div class="item-award-badge">Machine Learning Framework</div>
+        </div>
+        <div class="meta-tag-row">
+          <span class="tech-pill">Data Mining</span>
+          <span class="tech-pill">Text Mining</span>
+          <span class="tech-pill">Machine Learning</span>
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">TF-IDF Vectorization</span>
+          <span class="tech-pill">Sentiment Analysis</span>
+          <span class="tech-pill">Team Collaboration</span>
+        </div>
+        <div class="item-body-narrative">
+          <p>Processed massive distributed datasets using classification metrics and mathematical vector analysis:</p>
+          <ul>
+            <li>Worked in a team of students to utilize data mining, text mining and machine learning in Python in order to analyze more than 6,990,280 rows of data</li>
+            <li>Utilized a variety of packages to make inferences from data, and using Term Frequency-Inverse Document Frequency Vectorization to determine user sentiment</li>
+          </ul>
+          <div class="embedded-report-iframe-wrap">
+            <iframe src="https://www.canva.com/design/DAGnrCREClQ/_kwTM14xFUPCoo0ajNUkxQ/view?embed" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item-card">
+        <div class="card-header-row">
+          <div class="item-main-title">Spotify Asset Popularity Modeling</div>
+          <div class="item-award-badge">Predictive Analytical Modeling</div>
+        </div>
+        <div class="meta-tag-row">
+          <span class="tech-pill">Data Analysis</span>
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Pandas</span>
+          <span class="tech-pill">Matplotlib</span>
+          <span class="tech-pill">Seaborn</span>
+          <span class="tech-pill">NumPy</span>
+          <span class="tech-pill">Power BI</span>
+          <span class="tech-pill">Canva</span>
+        </div>
+        <div class="item-body-narrative">
+          <p>Evaluated variables driving streaming velocity using regression frameworks and clean database sorting layers:</p>
+          <ul>
+            <li>Utilized Python with Pandas and NumPy to clean and preprocess data, ensuring high-quality input for analysis</li>
+            <li>Applied linear regression to identify key drivers of music popularity</li>
+            <li>Visualized results with Matplotlib to communicate findings effectively</li>
+            <li>Collaborated with a team to create dynamic visualizations in Power BI and Python, enhancing the final presentation where we detailed our analysis and insights on music popularity trends</li>
+          </ul>
+          <p style="margin-top: 12px; font-weight: 500;"><a href="https://www.linkedin.com/in/violette-davis/" style="color:var(--text-main); text-decoration: underline;" target="_blank">View Project Hub on LinkedIn →</a></p>
+          <div class="embedded-report-iframe-wrap">
+            <iframe src="https://www.canva.com/design/DAGhSDOZ5XQ/NNJzw10MBxqWrMEj-bRNew/view?embed" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item-card">
+        <div class="card-header-row">
+          <div class="item-main-title">PlayStation Brand & User Behavior Research</div>
+          <div class="item-award-badge">OSU Institutional Focus Group Analysis</div>
+        </div>
+        <div class="meta-tag-row">
+          <span class="tech-pill">User Behavior Tracking</span>
+          <span class="tech-pill">Qualitative Research</span>
+          <span class="tech-pill">Strategic Intelligence</span>
+          <span class="tech-pill">Academic Jury Briefs</span>
+        </div>
+        <div class="item-body-narrative">
+          <p>Conducted focused corporate evaluation tracks examining product performance and user distribution variables for structural optimization models:</p>
+          <ul>
+            <li>Conducted a comprehensive focus group exploring PlayStation consumer usage constraints and feedback loops to extract core qualitative insights.</li>
+            <li>Parsed targeted metrics to craft personalized operational recommendations map sets for potential future brand initiatives.</li>
+            <li>Wrote a technical strategic analysis paper detailing structural patterns and presented findings cleanly before university academic panels.</li>
+          </ul>
+          <div class="project-action-links" style="margin-bottom: 4px;">
+            <a href="https://www.canva.com/design/DAGXzNiVrQU/-18O6f3ej7rB4IPB61bElA/view" target="_blank">Direct Presentation Link →</a>
+          </div>
+          <div class="embedded-report-iframe-wrap">
+            <iframe loading="lazy" src="https://www.canva.com/design/DAGXzNiVrQU/-18O6f3ej7rB4IPB61bElA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item-card">
+        <div class="card-header-row">
+          <div class="item-main-title">Tesla Corporate Data Analysis</div>
+          <div class="item-award-badge">Market Research Portfolio</div>
+        </div>
+        <div class="meta-tag-row">
+          <span class="tech-pill">Data Analysis</span>
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Data Visualization</span>
+          <span class="tech-pill">Canva</span>
+          <span class="tech-pill">Team Leadership</span>
+          <span class="tech-pill">Market Research</span>
+        </div>
+        <div class="item-body-narrative">
+          <p>Led a team of students to conduct comprehensive market research and analysis of Tesla sales and market data, examining trends and patterns to provide strategic insights.</p>
+          <div class="embedded-report-iframe-wrap">
+            <iframe src="https://www.canva.com/design/DAGc-eYUWlI/npHbidwpv1O2wKQUhzRw9g/view?embed" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item-card">
+        <div class="card-header-row">
+          <div class="item-main-title">BrainBytez Corporate Product Development</div>
+          <div class="item-award-badge">Venture Financial Analysis</div>
+        </div>
+        <div class="meta-tag-row">
+          <span class="tech-pill">Financial Analysis</span>
+          <span class="tech-pill">Cost Estimates</span>
+          <span class="tech-pill">Revenue Projections</span>
+          <span class="tech-pill">Tinkercad Modeling</span>
+          <span class="tech-pill">Venture Pitching</span>
+        </div>
+        <div class="item-body-narrative">
+          <p>Collaborated with a team of students to develop and present "BrainBytez," a cutting-edge product prototype, in a competitive academic environment:</p>
+          <ul>
+            <li>Delivered a compelling presentation to a panel of judges, effectively communicating the product's features and market potential</li>
+            <li>Conducted comprehensive financial analysis, including cost estimates and revenue projections, to support the product's viability</li>
+            <li>Strategically formulated and executed a funding request, successfully pitching to potential investors</li>
+          </ul>
+          <div class="project-action-links">
+            <a href="https://www.linkedin.com/in/violette-davis/" target="_blank">View on LinkedIn →</a>
+            <a href="https://www.tinkercad.com/things/gV19fKzfBSH-pineapple-prototype?sharecode=bXpp1g3K_qgVHOHRCYoxds1E6Zw5KKA5V5B0AH8rzrI" target="_blank">View Prototype on Tinkercad →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Restored Certifications Viewport -->
+    <div id="tab-certs" class="tab-viewport-content" style="display:none;">
+      <h2 class="viewport-heading">Professional Credentials & Technical Certifications</h2>
+      <div class="certifications-matrix-grid">
+        
+        <div class="cert-profile-card">
+          <div class="cert-org">Anthropic</div>
+          <div class="cert-name">AI Fluency</div>
+          <div class="cert-meta">Issued Jun 2026</div>
+          <div class="cert-id-code">ID: d86mckqsi86j</div>
+        </div>
+
+        <div class="cert-profile-card">
+          <div class="cert-org">CITI Program</div>
+          <div class="cert-name">Group 1. Social / Behavioral Research</div>
+          <div class="cert-meta">Issued Apr 2026 · Expires Apr 2029</div>
+          <div class="cert-id-code">ID: 76438884</div>
+        </div>
+
+        <div class="cert-profile-card">
+          <div class="cert-org">DataCamp Skill Track</div>
+          <div class="cert-name">SQL Fundamentals</div>
+          <div class="cert-meta">Issued Jan 2025 // Core Relational Engines</div>
+          <div class="cert-id-code">ID: efab25713da3037f</div>
+        </div>
+
+        <div class="cert-profile-card">
+          <div class="cert-org">DataCamp</div>
+          <div class="cert-name">Intermediate Git</div>
+          <div class="cert-meta">Issued Mar 2025 // Branch Isolation Loops</div>
+          <div class="cert-id-code">ID: 1ef04d90c1da5947</div>
+        </div>
+
+        <div class="cert-profile-card">
+          <div class="cert-org">DataCamp</div>
+          <div class="cert-name">Data Science Track</div>
+          <div class="cert-meta">Issued Oct 2024 // Predictive Systems</div>
+          <div class="cert-id-code">ID: ba68a5d3185bb8ef</div>
+        </div>
+
+        <div class="cert-profile-card">
+          <div class="cert-org">Forage Job Simulation</div>
+          <div class="cert-name">Accenture North America - Data Analytics</div>
+          <div class="cert-meta">Issued Nov 2023 // Visual Dashboard Design</div>
+          <div class="cert-id-code">ID: vYeA3aFduKZP9uGSd</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Timeline Viewport -->
+    <div id="tab-timeline" class="tab-viewport-content" style="display:none;">
+      <h2 class="viewport-heading">Chronological Milestones</h2>
+      
+      <div class="timeline-year">2026</div>
+      <div class="timeline-project">
+        <div class="timeline-project-title">OSU Graduation & Major Distinction</div>
+        <div class="timeline-project-desc">Graduated Magna Cum Laude from Oregon State University with a B.S. in Business Analytics. Awarded the Award for Outstanding Achievement (reserved for top 3 students in the major).</div>
+      </div>
+      <div class="timeline-project">
+        <div class="timeline-project-title">AWS Deep Agents Hackathon Triumph</div>
+        <div class="timeline-project-desc">Developed the CRWL multi-agent scrapping node matrix, establishing concurrent PostgreSQL handling, and secured first place prize.</div>
+      </div>
+
+      <div class="timeline-year">2025</div>
+      <div class="timeline-project">
+        <div class="timeline-project-title">Three Sigma Market Maker Prototyping</div>
+        <div class="timeline-project-desc">Engineered custom spreading math layers using scikit-learn coupled with automated central limit order book transaction SDK arrays.</div>
+      </div>
+      <div class="timeline-project">
+        <div class="timeline-project-title">DubHacks Visa Track Victory</div>
+        <div class="timeline-project-desc">Co-engineered Minty, mapping live webcam computer vision models with payment automation layers to claim the headline track prize.</div>
+      </div>
+      <div class="timeline-project">
+        <div class="timeline-project-title">BeaverHacks Infrastructure Deployment & club Leadership</div>
+        <div class="timeline-project-desc">Served as President of the OSU Business Analytics Club and CMO of BeaverHacks, managing conversion loops that drove 300,000+ impressions and brought 450+ physical attendees live.</div>
+      </div>
+
+      <div class="timeline-year">2024</div>
+      <div class="timeline-project">
+        <div class="timeline-project-title">PlayStation User Metrics Analysis</div>
+        <div class="timeline-project-desc">Directed structural focus cohorts evaluating behavioral preference logs across gaming environments for university strategy presentations.</div>
+      </div>
+    </div>
+
+    <!-- Contact Viewport -->
+    <div id="tab-contact" class="tab-viewport-content" style="display:none;">
+      <h2 class="viewport-heading">Verified Communication Channels & Professional Networks</h2>
+      <div class="contact-channels-box">
+        <a href="mailto:violettesdavis@icloud.com" class="channel-anchor-card">
+          <div class="channel-title">Direct Email</div>
+          <div class="channel-value">violettesdavis@icloud.com</div>
+        </a>
+        <a href="https://www.linkedin.com/in/violette-davis/" target="_blank" class="channel-anchor-card">
+          <div class="channel-title">LinkedIn Connection</div>
+          <div class="channel-value">linkedin.com/in/violette-davis</div>
+        </a>
+        <a href="https://github.com/shuripurin" target="_blank" class="channel-anchor-card">
+          <div class="channel-title">GitHub Portfolio</div>
+          <div class="channel-value">github.com/shuripurin</div>
+        </a>
+        <a href="https://devpost.com/shuripurin" target="_blank" class="channel-anchor-card">
+          <div class="channel-title">Devpost Profile</div>
+          <div class="channel-value">devpost.com/shuripurin</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.nav-tab').on('click', function() {
+      var targetTab = $(this).data('tab');
+      $('.nav-tab').removeClass('active');
+      $(this).addClass('active');
+      $('.tab-viewport-content').hide();
+      $('#tab-' + targetTab).fadeIn(200);
+    });
+  });
+</script>
+</body>
+</html>
