@@ -488,10 +488,8 @@
   </marquee>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function () {
   var TAB_URLS = {
     home:    'http://shuripurin.neocities.org/',
     about:   'http://shuripurin.neocities.org/about',
@@ -500,50 +498,88 @@ $(document).ready(function () {
     blog:    'http://shuripurin.neocities.org/blog'
   };
 
-  $('.tab').on('click', function () {
-    var tab = $(this).data('tab');
-    $('.tab').removeClass('active');
-    $(this).addClass('active');
-    $('.tab-content').hide();
-    $('#tab-' + tab).fadeIn(120);
-    $('#toolbar-addr').val(TAB_URLS[tab] || TAB_URLS.home);
+  // Tab click handler
+  document.querySelectorAll('.tab').forEach(function(tabBtn) {
+    tabBtn.addEventListener('click', function() {
+      var tab = this.getAttribute('data-tab');
+      
+      // Remove active class from all tabs
+      document.querySelectorAll('.tab').forEach(function(t) {
+        t.classList.remove('active');
+      });
+      
+      // Add active class to clicked tab
+      this.classList.add('active');
+      
+      // Hide all tab content
+      document.querySelectorAll('.tab-content').forEach(function(content) {
+        content.style.display = 'none';
+      });
+      
+      // Show selected tab with fade effect
+      var tabContent = document.getElementById('tab-' + tab);
+      if (tabContent) {
+        tabContent.style.display = 'block';
+        tabContent.style.opacity = '0';
+        tabContent.offsetHeight; // Trigger reflow
+        tabContent.style.transition = 'opacity 0.12s';
+        tabContent.style.opacity = '1';
+      }
+      
+      document.getElementById('toolbar-addr').value = TAB_URLS[tab] || TAB_URLS.home;
+    });
   });
+  
   // Auto-switch to the Projects tab if the URL contains 'projects'
   if (window.location.pathname.includes('projects') || window.location.hash === '#projects') {
-    $('.tab[data-tab="projects"]').trigger('click');
+    var projectsTab = document.querySelector('.tab[data-tab="projects"]');
+    if (projectsTab) projectsTab.click();
   }
+  
   var audio = document.getElementById('mp-audio');
+  var mpProgress = document.getElementById('mp-progress');
+  var mpTime = document.getElementById('mp-time');
+  var mpPlayBtn = document.getElementById('mp-play-btn');
+  var mpBar = document.querySelector('.mp-bar');
 
   audio.addEventListener('timeupdate', function() {
     if (!audio.duration) return;
     var pct = (audio.currentTime / audio.duration) * 100;
-    $('#mp-progress').css('width', pct + '%');
+    mpProgress.style.width = pct + '%';
     var em = Math.floor(audio.currentTime/60), es = Math.floor(audio.currentTime%60);
-    var dm = Math.floor(audio.duration/60),   ds = Math.floor(audio.duration%60);
-    $('#mp-time').text(em+':'+(es<10?'0':'')+es+' / '+dm+':'+(ds<10?'0':'')+ds);
+    var dm = Math.floor(audio.duration/60), ds = Math.floor(audio.duration%60);
+    mpTime.textContent = em+':'+(es<10?'0':'')+es+' / '+dm+':'+(ds<10?'0':'')+ds;
   });
 
-  $('#mp-play-btn').on('click', function () {
+  mpPlayBtn.addEventListener('click', function() {
     if (audio.paused) {
       audio.play();
-      $(this).text('\u25A0');
+      this.textContent = '\u25A0';
     } else {
       audio.pause();
-      $(this).text('\u25B6');
+      this.textContent = '\u25B6';
     }
   });
 
-  $('.mp-bar').on('click', function(e) {
-    var pct = e.offsetX / $(this).width();
+  mpBar.addEventListener('click', function(e) {
+    var pct = e.offsetX / this.offsetWidth;
     audio.currentTime = pct * audio.duration;
   });
 
-
-  $('.title-close').on('click', function () {
-    $('#os-window').animate({opacity:0},300,function(){ $(this).animate({opacity:1},600); });
+  document.querySelector('.title-close').addEventListener('click', function() {
+    var osWindow = document.getElementById('os-window');
+    osWindow.style.transition = 'opacity 0.3s';
+    osWindow.style.opacity = '0';
+    setTimeout(function() {
+      osWindow.style.transition = 'opacity 0.6s';
+      osWindow.style.opacity = '1';
+    }, 300);
   });
 
-  $('img').each(function(){ $(this).attr('loading','lazy'); });
+  // Lazy load images
+  document.querySelectorAll('img').forEach(function(img) {
+    img.setAttribute('loading', 'lazy');
+  });
 });
 
 (function(){
