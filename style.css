@@ -497,6 +497,7 @@ ol {
     padding: 6px 9px 8px;
     font-size: 11px;
     line-height: 1.75;
+    color: var(--text-main) !important;
 }
 .info-box-body p {
     font-size: 11px;
