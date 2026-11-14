@@ -16,6 +16,8 @@ jobs:
           mkdir deploy_out
           cp index.html deploy_out/
           cp projects.html deploy_out/
+          if [ -f "projects.css" ]; then cp projects.css deploy_out/; fi
+          if [ -f "profile.jpg" ]; then cp profile.jpg deploy_out/; fi
           if [ -f "style.css" ]; then cp style.css deploy_out/; fi
           if [ -d "projects" ]; then cp -r projects deploy_out/; fi
           if [ -d "stickers" ]; then cp -r stickers deploy_out/; fi

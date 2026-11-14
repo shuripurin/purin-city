@@ -381,49 +381,167 @@
       .card-header-row { flex-direction: column; align-items: flex-start; gap: 8px; }
     }
   </style>
+  <link rel="stylesheet" href="projects.css">
 </head>
 <body>
 
 <div id="portfolio-app">
 
+  <div id="window-title-bar">
+    <span class="window-icon">&#9654;</span>
+    <span class="window-title">VIOLETTE_DAVIS_PORTFOLIO_V4.0.exe</span>
+    <div class="window-controls" aria-label="Window controls">
+      <button class="window-control" type="button" aria-label="Minimize window">_</button>
+      <button class="window-control" type="button" aria-label="Toggle window size">&#9633;</button>
+      <button class="window-control close-control" type="button" aria-label="Close window">&#215;</button>
+    </div>
+  </div>
+
   <div id="top-status-bar">
-    <div class="status-left">SYS_REF: <span>VIOLETTE_DAVIS_PORTFOLIO_V3.1</span></div>
-    <div class="status-right">LOC: OR_USA // 2026</div>
+    <div class="status-left">SYS_REF: <span>VIOLETTE_DAVIS_PORTFOLIO_V4.0.exe</span></div>
+    <div class="status-right">LOC: SF_CA // 2026</div>
   </div>
 
-  <div id="nav-tab-bar">
-    <button class="nav-tab active" data-tab="about">About Me</button>
-    <button class="nav-tab" data-tab="data">Business Analysis</button>
-    <button class="nav-tab" data-tab="software">Software Engineering</button>
-    <button class="nav-tab" data-tab="certs">Certifications</button>
-    <button class="nav-tab" data-tab="timeline">Timeline</button>
-    <button class="nav-tab" data-tab="contact">Contact & Socials</button>
+  <div id="nav-tab-bar" role="tablist" aria-label="Portfolio folders">
+    <button class="nav-tab active" type="button" role="tab" aria-selected="true" data-tab="about">Overview.exe</button>
+    <button class="nav-tab" type="button" role="tab" aria-selected="false" data-tab="experience">Experience.dir</button>
+    <button class="nav-tab" type="button" role="tab" aria-selected="false" data-tab="software">Systems_&amp;_Code.dir</button>
+    <button class="nav-tab" type="button" role="tab" aria-selected="false" data-tab="data">Analytics_&amp;_Research.dir</button>
+    <button class="nav-tab" type="button" role="tab" aria-selected="false" data-tab="certs">Credentials.dat</button>
   </div>
 
-  <div id="main-content-viewport">
+  <div class="workspace-grid">
+    <aside class="profile-sidebar" aria-label="Profile and skills">
+      <section class="side-widget profile-widget">
+        <div class="widget-title">Profile.ini</div>
+        <img class="profile-avatar" src="profile.jpg" alt="Violette Davis profile photo">
+        <div class="profile-mark" aria-hidden="true" hidden>VD</div>
+        <h1>Violette Davis</h1>
+        <p class="profile-alias">purin / shuripurin</p>
+        <dl class="profile-facts">
+          <div><dt>LOC</dt><dd>San Francisco, CA</dd></div>
+          <div><dt>EDU</dt><dd>B.S. Business Analytics<br>Cum Laude, Top 3 in Major<br>Oregon State University</dd></div>
+          <div><dt>FOCUS</dt><dd>Business &amp; Product Analytics<br>Growth / Gaming</dd></div>
+        </dl>
+        <div class="contact-shortcuts" aria-label="Contact links">
+          <a href="mailto:violettesdavis@icloud.com" class="copy-link" data-copy="violettesdavis@icloud.com">Email</a>
+          <a href="https://www.linkedin.com/in/violette-davis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/shuripurin" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://devpost.com/shuripurin" target="_blank" rel="noopener noreferrer">Devpost</a>
+          <a href="https://shuripurin.neocities.org/" target="_blank" rel="noopener noreferrer">ShuriPurin City</a>
+        </div>
+      </section>
+
+      <section class="side-widget skills-widget">
+        <div class="widget-title">Skills.dat</div>
+        <div class="skill-meter">
+          <div class="skill-label"><span>SQL &amp; Databases</span><span>88%</span></div>
+          <div class="meter-track" role="img" aria-label="SQL and databases: 88 percent"><span style="--meter:88%"></span></div>
+          <p>PostgreSQL / MySQL</p>
+        </div>
+        <div class="skill-meter">
+          <div class="skill-label"><span>Python &amp; ML</span><span>92%</span></div>
+          <div class="meter-track" role="img" aria-label="Python and machine learning: 92 percent"><span style="--meter:92%"></span></div>
+          <p>Pandas / Scikit-Learn</p>
+        </div>
+        <div class="skill-meter">
+          <div class="skill-label"><span>BI &amp; Visualization</span><span>84%</span></div>
+          <div class="meter-track" role="img" aria-label="Business intelligence and visualization: 84 percent"><span style="--meter:84%"></span></div>
+          <p>Tableau / Power BI</p>
+        </div>
+        <div class="skill-meter">
+          <div class="skill-label"><span>Growth &amp; Ops</span><span>86%</span></div>
+          <div class="meter-track" role="img" aria-label="Growth and operations: 86 percent"><span style="--meter:86%"></span></div>
+          <p>Clay / Analytics / HTML-CSS-JS</p>
+        </div>
+      </section>
+      <div class="sidebar-status"><span class="online-dot"></span> AVAILABLE FOR OPPORTUNITIES</div>
+    </aside>
+
+  <main id="main-content-viewport">
+    <section class="metrics-strip" aria-label="Career highlights">
+      <div class="metric-tile"><span class="metric-value">80,000+</span><span class="metric-label">Enterprise accounts automated</span><span class="metric-note">Python / OSU UIT</span></div>
+      <div class="metric-tile"><span class="metric-value">$50M+</span><span class="metric-label">Digital assets analyzed</span><span class="metric-note">Index Coop</span></div>
+      <div class="metric-tile"><span class="metric-value">70,000+</span><span class="metric-label">Users scaled</span><span class="metric-note">shuripurin.neocities.org</span></div>
+      <div class="metric-tile"><span class="metric-value">2x</span><span class="metric-label">Hackathon track winner</span><span class="metric-note">AWS & Visa</span></div>
+    </section>
 
     <!-- About Me Viewport -->
     <div id="tab-about" class="tab-viewport-content" style="display:block;">
-      <h2 class="viewport-heading">Executive Summary</h2>
+      <h2 class="viewport-heading">About Me</h2>
       
       <div class="skills-cluster-box">
         <h3>Skills & Technologies Matrix</h3>
         <div class="skills-text-matrix">
-          Python • SQL • Java • JavaScript • HTML/CSS • Git • Data Analysis • Data Science • Data Visualization • Data Modeling • Predictive Analytics • Data Mining • Text Mining • Business Analytics • Financial Analysis • Dashboard Design • User Experience Design • UI/UX Design • Tableau • Power BI • Powerpoint • Business Intelligence (BI) • Database Schemas • Matplotlib • Seaborn • Pandas • NumPy • scikit-learn • MySQL • PostgreSQL • Microsoft Office • Excel • Figma • JIRA • Confluence • Project Management • Marketing
+          Python • SQL • Java • JavaScript • HTML/CSS • Git • Data Analysis • Data Science • Data Visualization • Data Modeling • Predictive Analytics • Data Mining • Text Mining • Business Analytics • Financial Analysis • Dashboard Design • User Experience Design • UI/UX Design • Tableau • Power BI • Powerpoint • Business Intelligence (BI) • Database Schemas • Matplotlib • Seaborn • Pandas • NumPy • scikit-learn • MySQL • PostgreSQL • Microsoft Office • Excel • Figma • JIRA • Project Management • Marketing
         </div>
       </div>
 
       <div class="portfolio-item-card">
         <p style="font-weight: bold; color: var(--text-main); font-size: 18px; background: rgba(255, 255, 255, 0.03); padding: 16px; border: 1px solid var(--border-color); margin-bottom: 24px; text-align: center;">
-          🎓 Officially Graduated from Oregon State University with Magna Cum Laude Honors!
+          Graduated from Oregon State University with Cum Laude Honors!
         </p>
         <div class="item-body-narrative" style="font-size: 17px; line-height: 1.8;">
-          <p>I still remember building my first website in HTML back in 5th grade—the thrill of seeing my code come to life on screen ignited something in me. Today, I am proud to say that I have officially graduated from Oregon State University with a B.S. in Business Analytics, receiving the university's prestigious <strong>Award for Outstanding Achievement</strong>, an honor reserved for just the top 3 graduating students in the major this year.</p>
-          <p style="margin-top:12px;">I chose business analytics because it perfectly merges my core technical capabilities with my fascination for understanding consumer behavior and conversion metrics. I thrive at the intersection of data engineering, funnel optimization, and high-growth strategy—building backend pipelines, automating infrastructure, and translating complex mathematical data models into visual business intelligence tools.</p>
+          <p>I still remember building my first website in HTML back in 5th grade, when the thrill of seeing my code come to life on screen ignited something in me. I have graduated from Oregon State University with a B.S. in Business Analytics, Cum Laude, and received the university's <strong>Award for Outstanding Achievement</strong>, reserved for the top 3 graduating students in the major.</p>
+          <p style="margin-top:12px;">I chose business analytics because it brings together my technical skills and my curiosity about consumer behavior and conversion. I work at the intersection of data engineering, funnel optimization, and growth strategy, building backend pipelines, automating infrastructure, and translating complex data models into useful business intelligence.</p>
           <p style="margin-top:12px;">Throughout my academic journey, I have focused on launching high-impact technical initiatives. I had the privilege of serving as the President of the OSU Business Analytics Club and acting as the Chief Marketing Officer for <strong>BeaverHacks</strong>, where I spearheaded digital optimization campaigns that generated 300,000+ views and scaled the event into Oregon's largest hackathon with over 450 attendees. Simultaneously, I applied my analytics toolkit within corporate and university structures, tracking metrics across $50M+ in digital assets at IndexCoop and architecting data scripts for 80,000+ enterprise users within university IT operations.</p>
-          <p style="margin-top:12px;">When I'm not running predictive models, text mining large-scale open-source datasets, or debugging relational databases, I am actively constructing full-stack systems alongside a passionate community of driven developers.</p>
+          <p style="margin-top:12px;">My passion for nerd culture, from anime and games to the online communities built around them, shapes how I think about products. I love seeing how people discover, share, and participate, and I bring that perspective to gaming and creator-economy work.</p>
         </div>
       </div>
+    </div>
+
+    <div id="tab-experience" class="tab-viewport-content">
+      <h2 class="viewport-heading">Experience &amp; Growth</h2>
+      <p class="section-intro">A mix of product analytics, go-to-market experiments, operational automation, and gaming research.</p>
+
+      <article class="portfolio-item-card experience-card" data-file="Pensive_Growth_Strategy.exe">
+        <div class="card-header-row"><div class="item-main-title">Pensive / Builders: Growth Strategy Contractor</div><div class="item-award-badge">JUL–AUG 2026 · SF</div></div>
+        <div class="item-body-narrative"><ul>
+          <li>Sourced 40,000+ leads with Clay and BrowserOS for targeted growth campaigns.</li>
+          <li>Drove 2,700+ event views and 132 gated sign-ups through conversion-focused distribution.</li>
+          <li>Built X, LinkedIn, and UGC channels from zero to establish repeatable audience growth.</li>
+        </ul></div>
+      </article>
+
+      <article class="portfolio-item-card experience-card" data-file="OSU_UIT_Identity_Access.py">
+        <div class="card-header-row"><div class="item-main-title">Oregon State University UIT: Identity &amp; Access Management Analyst</div><div class="item-award-badge">FEB 2025–JUN 2026 · OSU</div></div>
+        <div class="item-body-narrative"><ul>
+          <li>Cleared a multi-year compliance backlog within weeks by streamlining identity review operations.</li>
+          <li>Engineered Python automation that prevented 80,000+ users from being locked out of two-factor authentication.</li>
+        </ul></div>
+      </article>
+
+      <article class="portfolio-item-card experience-card" data-file="Index_Coop_Product_Analytics.py">
+        <div class="card-header-row"><div class="item-main-title">Index Coop: Analytics &amp; Product Intern</div><div class="item-award-badge">JUN 2025</div></div>
+        <div class="item-body-narrative"><ul>
+          <li>Analyzed acquisition funnels and user retention across $50M+ in digital assets.</li>
+          <li>Used Python and SQL to translate product and on-chain data into actionable insights.</li>
+        </ul></div>
+      </article>
+
+      <article class="portfolio-item-card experience-card" data-file="Mobalytics_Expansion.ppt">
+        <div class="card-header-row"><div class="item-main-title">Mobalytics: Gaming &amp; Market Research Extern</div><div class="item-award-badge">REMOTE</div></div>
+        <div class="item-body-narrative"><ul>
+          <li>Evaluated prospective game titles for platform expansion using player engagement and retention signals.</li>
+          <li>Combined market sizing and gaming-market research to support title prioritization.</li>
+        </ul></div>
+      </article>
+
+      <article class="portfolio-item-card experience-card" data-file="Fonco_Studios_Production.log">
+        <div class="card-header-row"><div class="item-main-title">Fonco Studios: Production Coordinator &amp; Business Analytics Intern</div><div class="item-award-badge">LA · 2024 &amp; 2026</div></div>
+        <div class="item-body-narrative"><ul>
+          <li>Coordinated cross-functional cast and crew schedules and resolved live production bottlenecks.</li>
+          <li>Analyzed film public-relations and digital performance metrics to inform production decisions.</li>
+        </ul></div>
+      </article>
+
+      <article class="portfolio-item-card experience-card" data-file="BeaverHacks_Growth.exe">
+        <div class="card-header-row"><div class="item-main-title">BeaverHacks CMO, Business Analytics Club President</div><div class="item-award-badge">OREGON STATE UNIVERSITY</div></div>
+        <div class="item-body-narrative"><ul>
+          <li>Scaled BeaverHacks to 450+ attendees, 1,000+ members, and 300,000+ views.</li>
+          <li>Grew Business Analytics Club attendance by 428% through community and event growth initiatives.</li>
+        </ul></div>
+      </article>
     </div>
 
     <!-- Software Engineering Viewport -->
@@ -504,12 +622,9 @@
         <div class="item-body-narrative">
           <p>Built an AI-powered app that gamifies dental hygiene by rewarding consistent brushing, teaching kids about compound investment and healthy habits through play:</p>
           <ul>
-            <li>Integrated Gemini AI to detect and verify brushing activity in real-time</li>
-            <li>Connected to a Stripe-powered "tooth fairy" system for reward management</li>
-            <li>Gamified the dental hygiene experience to encourage consistent healthy habits</li>
-            <li>Implemented financial literacy features teaching kids about compound investment</li>
-            <li>Developed cross-platform functionality for easy parent-child interaction</li>
-            <li>Leveraged computer vision pipelines to analyze live webcam feeds tracking motion profiles</li>
+            <li>Integrated Gemini AI and computer vision to verify brushing activity from live webcam feeds.</li>
+            <li>Connected a Stripe-powered tooth-fairy rewards system to encourage consistent brushing.</li>
+            <li>Combined gamified parent-child experiences with financial literacy lessons on compound investment.</li>
           </ul>
           <div class="project-action-links">
             <a href="https://github.com/owenkrause/minty" target="_blank">View on GitHub →</a>
@@ -540,18 +655,36 @@
         <div class="item-body-narrative">
           <p>Created a website to optimize the studying experience for BeaverHacks 2025 that includes:</p>
           <ul>
-            <li>AI-generated learning plans using Groq + Gemini pipeline</li>
-            <li>Real-time study tracking with pomodoro timer implementation</li>
-            <li>Visualized user analytics with Plotly Dash</li>
-            <li>Google Calendar API syncing for seamless scheduling</li>
-            <li>Secure Google/email login with Firebase Authentication</li>
-            <li>Cloud-based backend with Flask deployed to Google Cloud Run</li>
-            <li>Frontend built with React, TailwindCSS, and Mantine</li>
+            <li>Generated personalized learning plans with a Groq + Gemini pipeline.</li>
+            <li>Combined Pomodoro study tracking with Plotly Dash analytics.</li>
+            <li>Integrated Google Calendar, Firebase authentication, and a Flask backend on Google Cloud Run with a React frontend.</li>
           </ul>
           <div class="project-action-links">
             <a href="https://github.com/shuripurin/studymaxx" target="_blank">View on GitHub →</a>
             <a href="https://devpost.com/software/studymaxx" target="_blank">View on Devpost →</a>
             <a href="https://studymaxx.vercel.app/" target="_blank">Live Demo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item-card" data-file="Job_Tracker_Analytics.app">
+        <div class="card-header-row">
+          <div class="item-main-title">CSV Funnel &amp; Application Analytics Visualizer</div>
+          <div class="item-award-badge">Interactive Utility</div>
+        </div>
+        <div class="meta-tag-row">
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">CSV Ingestion</span>
+          <span class="tech-pill">Funnel Analytics</span>
+          <span class="tech-pill">Data Visualization</span>
+        </div>
+        <div class="item-body-narrative">
+          <ul>
+            <li>Import job-application CSVs in the browser and visualize activity across application stages.</li>
+            <li>Turn pipeline data into an interactive view of job-search progress and conversion.</li>
+          </ul>
+          <div class="project-action-links">
+            <a href="https://github.com/shuripurin/job-tracker-app" target="_blank">View on GitHub →</a>
           </div>
         </div>
       </div>
@@ -605,14 +738,49 @@
         <div class="item-body-narrative">
           <p>Evaluated variables driving streaming velocity using regression frameworks and clean database sorting layers:</p>
           <ul>
-            <li>Utilized Python with Pandas and NumPy to clean and preprocess data, ensuring high-quality input for analysis</li>
-            <li>Applied linear regression to identify key drivers of music popularity</li>
-            <li>Visualized results with Matplotlib to communicate findings effectively</li>
-            <li>Collaborated with a team to create dynamic visualizations in Power BI and Python, enhancing the final presentation where we detailed our analysis and insights on music popularity trends</li>
+            <li>Cleaned and analyzed Spotify data with Python, Pandas, and NumPy; applied linear regression to identify popularity drivers.</li>
+            <li>Visualized model results with Matplotlib and Seaborn for clear communication.</li>
+            <li>Collaborated on Power BI and Python dashboards presenting music popularity trends.</li>
           </ul>
           <p style="margin-top: 12px; font-weight: 500;"><a href="https://www.linkedin.com/in/violette-davis/" style="color:var(--text-main); text-decoration: underline;" target="_blank">View Project Hub on LinkedIn →</a></p>
           <div class="embedded-report-iframe-wrap">
             <iframe src="https://www.canva.com/design/DAGhSDOZ5XQ/NNJzw10MBxqWrMEj-bRNew/view?embed" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item-card" data-file="Video_Game_Sales_Sentiment.sql">
+        <div class="card-header-row">
+          <div class="item-main-title">Video Game Sales &amp; Sentiment SQL Analysis</div>
+          <div class="item-award-badge">PostgreSQL Analysis</div>
+        </div>
+        <div class="meta-tag-row">
+          <span class="tech-pill">SQL</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">Joining &amp; Set Operations</span>
+        </div>
+        <div class="item-body-narrative">
+          <p>Explore video game sales and sentiment with PostgreSQL queries using joins and set operations.</p>
+          <div class="project-action-links">
+            <a href="https://github.com/shuripurin/When-was-the-Golden-Era-of-Video-Games" target="_blank">View on GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item-card" data-file="Starbucks_Branch_Performance.py">
+        <div class="card-header-row">
+          <div class="item-main-title">Retail Branch Performance &amp; Geospatial Analytics (Mini-Hackathon)</div>
+          <div class="item-award-badge">MINI-HACKATHON ENTRY</div>
+        </div>
+        <div class="meta-tag-row">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Pandas</span>
+          <span class="tech-pill">Geospatial Analysis</span>
+        </div>
+        <div class="item-body-narrative">
+          <p>Compared top-performing Starbucks branches in a Python geospatial retail-performance mini-hackathon entry.</p>
+          <div class="project-action-links">
+            <a href="https://github.com/shuripurin/mini_hackathon_analytics_entry" target="_blank">View on GitHub →</a>
           </div>
         </div>
       </div>
@@ -658,7 +826,10 @@
           <span class="tech-pill">Market Research</span>
         </div>
         <div class="item-body-narrative">
-          <p>Led a team of students to conduct comprehensive market research and analysis of Tesla sales and market data, examining trends and patterns to provide strategic insights.</p>
+          <ul>
+            <li>Led a student team analyzing Tesla sales and market data to identify trends and patterns.</li>
+            <li>Translated market research findings into strategic business insights.</li>
+          </ul>
           <div class="embedded-report-iframe-wrap">
             <iframe src="https://www.canva.com/design/DAGc-eYUWlI/npHbidwpv1O2wKQUhzRw9g/view?embed" allowfullscreen></iframe>
           </div>
@@ -692,7 +863,7 @@
       </div>
     </div>
 
-    <!-- New Restored Certifications Viewport -->
+    <!-- Credentials Viewport -->
     <div id="tab-certs" class="tab-viewport-content" style="display:none;">
       <h2 class="viewport-heading">Professional Credentials & Technical Certifications</h2>
       <div class="certifications-matrix-grid">
@@ -749,11 +920,11 @@
       <div class="timeline-year">2026</div>
       <div class="timeline-project">
         <div class="timeline-project-title">OSU Graduation & Major Distinction</div>
-        <div class="timeline-project-desc">Graduated Magna Cum Laude from Oregon State University with a B.S. in Business Analytics. Awarded the Award for Outstanding Achievement (reserved for top 3 students in the major).</div>
+        <div class="timeline-project-desc">Graduated Cum Laude from Oregon State University with a B.S. in Business Analytics. Awarded the Award for Outstanding Achievement (reserved for top 3 students in the major).</div>
       </div>
       <div class="timeline-project">
         <div class="timeline-project-title">AWS Deep Agents Hackathon Triumph</div>
-        <div class="timeline-project-desc">Developed the CRWL multi-agent scrapping node matrix, establishing concurrent PostgreSQL handling, and secured first place prize.</div>
+        <div class="timeline-project-desc">Developed the CRWL multi-agent scraping pipeline, establishing concurrent PostgreSQL handling, and secured first place prize.</div>
       </div>
 
       <div class="timeline-year">2025</div>
@@ -800,18 +971,93 @@
       </div>
     </div>
 
+  </main>
   </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  $(document).ready(function() {
-    $('.nav-tab').on('click', function() {
-      var targetTab = $(this).data('tab');
-      $('.nav-tab').removeClass('active');
-      $(this).addClass('active');
-      $('.tab-viewport-content').hide();
-      $('#tab-' + targetTab).fadeIn(200);
+  document.addEventListener('DOMContentLoaded', function () {
+    var tabs = Array.from(document.querySelectorAll('.nav-tab'));
+    var views = Array.from(document.querySelectorAll('.tab-viewport-content'));
+    var avatar = document.querySelector('.profile-avatar');
+    var avatarFallback = document.querySelector('.profile-mark');
+    var showAvatarFallback = function () {
+      avatar.hidden = true;
+      avatarFallback.hidden = false;
+    };
+
+    avatar.addEventListener('error', showAvatarFallback);
+    if (avatar.complete && !avatar.naturalWidth) showAvatarFallback();
+
+    views.forEach(function (view) {
+      view.hidden = view.id !== 'tab-about';
+    });
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (item) {
+          var selected = item === tab;
+          item.classList.toggle('active', selected);
+          item.setAttribute('aria-selected', String(selected));
+        });
+        views.forEach(function (view) {
+          view.hidden = view.id !== 'tab-' + tab.dataset.tab;
+        });
+      });
+    });
+
+    document.querySelectorAll('.portfolio-item-card').forEach(function (card) {
+      var title = card.querySelector('.item-main-title');
+      if (!title) return;
+      var fileName = card.dataset.file || title.textContent.trim()
+        .replace(/: AI Powered/, '')
+        .replace(/[^a-z0-9]+/gi, '_')
+        .replace(/^_|_$/g, '') + '.exe';
+      var bar = document.createElement('div');
+      bar.className = 'file-titlebar';
+      bar.innerHTML = '<span class="file-icon">&#9632;</span><span></span><span class="file-state">OPEN</span>';
+      bar.children[1].textContent = fileName;
+      card.prepend(bar);
+    });
+
+    document.querySelectorAll('.embedded-report-iframe-wrap').forEach(function (preview) {
+      var details = document.createElement('details');
+      details.className = 'preview-window';
+      var summary = document.createElement('summary');
+      summary.textContent = 'Open interactive presentation';
+      preview.parentNode.insertBefore(details, preview);
+      details.append(summary, preview);
+      details.open = false;
+    });
+
+    document.querySelectorAll('.copy-link').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        if (!navigator.clipboard) return;
+        event.preventDefault();
+        navigator.clipboard.writeText(link.dataset.copy).then(function () {
+          link.textContent = 'Copied!';
+          window.setTimeout(function () { link.textContent = 'Email'; }, 1400);
+        });
+      });
+    });
+
+    document.querySelectorAll('a[target="_blank"]').forEach(function (link) {
+      link.rel = 'noopener noreferrer';
+    });
+
+    var app = document.getElementById('portfolio-app');
+    var controls = document.querySelectorAll('.window-control');
+    controls[0].addEventListener('click', function () {
+      app.classList.toggle('is-minimized');
+    });
+    controls[1].addEventListener('click', function () {
+      app.classList.toggle('is-maximized');
+    });
+    controls[2].addEventListener('click', function () {
+      app.classList.toggle('is-closed');
+    });
+    document.getElementById('window-title-bar').addEventListener('dblclick', function () {
+      app.classList.remove('is-closed');
     });
   });
 </script>
