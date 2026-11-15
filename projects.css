@@ -1,7 +1,6 @@
 :root {
   color-scheme: light;
-  --desk: #171922;
-  --desk-grid: rgba(167, 187, 217, 0.13);
+  --desk: #5d8fe0;
   --window: #c8cdd6;
   --window-light: #f7f8fb;
   --window-body: #edf0f5;
@@ -37,12 +36,13 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  padding: 28px 20px 44px;
-  background-color: var(--desk);
-  background-image:
-    linear-gradient(var(--desk-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--desk-grid) 1px, transparent 1px);
-  background-size: 24px 24px;
+  padding: 28px clamp(36px, 6vw, 88px) 44px;
+  background-color: #e7edf8;
+  background-image: url("projects/dream-sky.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--ink);
   font-family: var(--body-font);
   font-size: 14px;

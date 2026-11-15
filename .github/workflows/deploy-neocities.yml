@@ -21,6 +21,7 @@ jobs:
           if [ -f "style.css" ]; then cp style.css deploy_out/; fi
           if [ -d "projects" ]; then cp -r projects deploy_out/; fi
           if [ -d "stickers" ]; then cp -r stickers deploy_out/; fi
+          if [ -d "buttons" ]; then cp -r buttons deploy_out/; fi
           if [ -d "links" ]; then cp -r links deploy_out/; fi
           if [ -d "stamps" ]; then cp -r stamps deploy_out/; fi
           if [ -f "purinbanner.gif" ]; then cp purinbanner.gif deploy_out/; fi
